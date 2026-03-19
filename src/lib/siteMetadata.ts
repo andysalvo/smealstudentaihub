@@ -1,24 +1,25 @@
 import type { Metadata } from 'next'
 
-// Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const siteMetadata: Metadata = {
-  metadataBase: new URL('https://ffcworkingsite1.org'),
+  metadataBase: new URL('https://smealstudentaihub.com'),
   title: {
-    default: 'Free For Charity | Reduce Costs, Increase Impact',
-    template: '%s | Free For Charity',
+    default: 'Student AI Hub | Penn State',
+    template: '%s | Student AI Hub',
   },
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'A student-built resource for understanding AI in business, school, and professional life. Designed and curated by Applied AI at Penn State.',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'artificial intelligence',
+    'AI',
+    'Penn State',
+    'Smeal College of Business',
+    'AI education',
+    'AI literacy',
+    'business AI',
+    'student resources',
+    'Applied AI',
   ],
   robots: {
     index: true,
@@ -36,27 +37,26 @@ export const siteMetadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://ffcworkingsite1.org/',
-    siteName: 'Free For Charity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    url: 'https://smealstudentaihub.com/',
+    siteName: 'Student AI Hub',
+    title: 'Student AI Hub | Penn State',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
+      'A student-built resource for understanding AI in business, school, and professional life.',
     images: [
       {
-        url: '/web-app-manifest-512x512.png',
+        url: '/Images/student-ai-hub-logo.png',
         width: 512,
         height: 512,
-        alt: 'Free For Charity',
+        alt: 'Student AI Hub',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@freeforcharity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    title: 'Student AI Hub | Penn State',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-    images: ['/web-app-manifest-512x512.png'],
+      'A student-built resource for understanding AI in business, school, and professional life.',
+    images: ['/Images/student-ai-hub-logo.png'],
   },
   icons: {
     icon: [
