@@ -3,18 +3,19 @@ export default function About() {
     <div className="pt-14">
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
-        <div className="relative max-w-3xl mx-auto px-6 py-14">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-pugh-blue/[0.18] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[0%] left-[-8%] w-[400px] h-[400px] bg-navy/[0.08] rounded-full blur-[100px]" />
+        <div className="relative max-w-3xl mx-auto px-6 py-24 md:py-32">
           <h1 className="text-3xl font-display font-bold tracking-tight text-navy">
             About the Student AI Hub
           </h1>
-          <p className="mt-3 text-[15px] text-text-muted max-w-xl">
+          <p className="mt-3 text-base text-text-muted max-w-xl">
             A student-led initiative dedicated to building AI fluency at Penn State.
           </p>
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-10 pb-16">
+      <section className="max-w-3xl mx-auto px-6 py-12 pb-24">
         <div className="space-y-10">
           <div className="pl-5 border-l-2 border-pugh-blue/30">
             <p className="text-[15px] text-text-muted leading-relaxed">
@@ -68,7 +69,7 @@ export default function About() {
               club focuses on events and programming, applied research through Applied AI Labs, and
               curating tools and resources for students across Smeal.
             </p>
-            <p className="mt-4 text-[13px] text-text-muted">
+            <p className="mt-4 text-sm text-text-muted">
               Contact:{' '}
               <a href="mailto:appliedaipsu@gmail.com" className="text-link hover:text-link-hover">
                 appliedaipsu@gmail.com

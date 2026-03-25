@@ -7,18 +7,19 @@ export default function UsingAIForSchoolAndWork() {
     <div className="pt-14">
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
-        <div className="relative max-w-5xl mx-auto px-6 py-14">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-pugh-blue/[0.18] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[0%] left-[-8%] w-[400px] h-[400px] bg-navy/[0.08] rounded-full blur-[100px]" />
+        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32">
           <Link
             href="/learn"
-            className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+            className="text-xs text-beaver-blue hover:text-navy transition-colors"
           >
             &larr; Learn
           </Link>
           <h1 className="mt-4 text-3xl font-display font-bold tracking-tight text-navy">
             Using AI for School and Work
           </h1>
-          <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
+          <p className="mt-3 text-base text-text-muted max-w-2xl">
             AI tools are increasingly used in academic and professional settings. Students may
             encounter them when writing, researching, analyzing data, or organizing information for
             work.
@@ -26,7 +27,7 @@ export default function UsingAIForSchoolAndWork() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-10 pb-16">
+      <section className="max-w-5xl mx-auto px-6 py-12 pb-24">
         {/* Common Ways - two column */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
@@ -65,7 +66,7 @@ export default function UsingAIForSchoolAndWork() {
               title="Stanford — AI and Your Career"
               description="An overview of how AI tools are becoming part of academic study and professional work."
               source="Stanford HAI"
-              url="https://hai.stanford.edu"
+              url="https://hai.stanford.edu/education/ai-and-your-career"
             />
             <YouTubeEmbed
               videoId="jPhJbKBuNnA"
@@ -95,6 +96,12 @@ export default function UsingAIForSchoolAndWork() {
             </p>
           </div>
           <div className="space-y-4">
+            <SourceCard
+              title="Oregon State University — Using Artificial Intelligence"
+              description="An accessible guide to using AI appropriately and ethically in academic and professional settings, with attention to evaluation, accuracy, and responsible use."
+              source="Oregon State University"
+              url="https://guides.library.oregonstate.edu/ai"
+            />
             <YouTubeEmbed videoId="cW_5DsMJxGM" title="Learning with Agility in the Age of AI" />
           </div>
         </div>
@@ -117,22 +124,49 @@ export default function UsingAIForSchoolAndWork() {
           </p>
         </div>
 
-        {/* Expectations */}
-        <div className="mb-12">
-          <h2 className="text-xl font-display font-semibold text-navy mb-4">
-            Academic and Professional Expectations
-          </h2>
-          <p className="text-[15px] text-text-muted leading-relaxed">
-            Expectations around AI can vary widely across classes, disciplines, employers, and
-            institutions. In academic settings, instructors may have different policies regarding
-            whether and how AI tools can be used. In professional settings, organizations may have
-            guidelines related to data handling, intellectual property, and decision accountability.
-          </p>
-          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
-            Understanding these expectations usually requires consulting the specific policies of
-            your course, instructor, or organization. AI tools do not account for these expectations
-            on their own.
-          </p>
+        {/* Expectations - two column */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="md:col-span-2">
+            <h2 className="text-xl font-display font-semibold text-navy mb-4">
+              Academic and Professional Expectations
+            </h2>
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              Expectations around AI can vary widely across classes, disciplines, employers, and
+              institutions. In academic settings, instructors may have different policies regarding
+              whether and how AI tools can be used. In professional settings, organizations may have
+              guidelines related to data handling, intellectual property, and decision accountability.
+            </p>
+            <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+              Understanding these expectations usually requires consulting:
+            </p>
+            <ul className="mt-3 space-y-2 text-[15px] text-text-muted">
+              <li className="flex items-start gap-2">
+                <span className="text-beaver-blue mt-1">&#x2022;</span>
+                Instructors or supervisors
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-beaver-blue mt-1">&#x2022;</span>
+                Institutional or organizational policies
+              </li>
+            </ul>
+            <p className="mt-3 text-[15px] text-text-muted leading-relaxed">
+              AI tools do not account for these expectations on their own.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <SourceCard
+              title="AAUP — Artificial Intelligence and Academic Integrity"
+              description="A discussion of how AI intersects with academic integrity, including considerations for faculty, students, and institutions."
+              source="American Association of University Professors"
+              url="https://www.aaup.org/article/artificial-intelligence-and-academic-integrity"
+            />
+            <SourceCard
+              title="AAC&U — Artificial Intelligence and the Future of Teaching and Learning"
+              description="Guidance on integrating AI into higher education while preserving academic rigor and student development."
+              source="American Association of Colleges & Universities"
+              url="https://www.aacu.org/trending-topics/artificial-intelligence"
+            />
+          </div>
         </div>
 
         {/* Privacy */}
@@ -146,9 +180,25 @@ export default function UsingAIForSchoolAndWork() {
             confidentiality concerns.
           </p>
           <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
-            In school and work contexts, this may include unpublished research or an
-            organization&apos;s proprietary information. The types of information entered into an AI
-            tool can matter as much as the task the tool is used for.
+            In school and work contexts, this may include:
+          </p>
+          <ul className="mt-3 space-y-2 text-[15px] text-text-muted">
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Unpublished research or assignments
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Client data or medical records
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Proprietary or organizational information
+            </li>
+          </ul>
+          <p className="mt-3 text-[15px] text-text-muted leading-relaxed">
+            The types of information entered into an AI tool can matter as much as the task the tool
+            is used for.
           </p>
         </div>
 
@@ -160,23 +210,23 @@ export default function UsingAIForSchoolAndWork() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
               href="/learn/how-businesses-are-using-ai"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 How Businesses Are Using AI
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 Common applications, industry differences, and ongoing challenges.
               </p>
             </Link>
             <Link
               href="/learn/rules-risks-and-ethics"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 Rules, Risks, and Ethics of AI
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 Fairness, accountability, and the frameworks being developed.
               </p>
             </Link>

@@ -5,10 +5,10 @@ import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
 export default function AIBasics() {
   return (
     <div className="pt-14">
-      <section className="max-w-5xl mx-auto px-6 py-14">
+      <section className="max-w-5xl mx-auto px-6 py-24 md:py-32">
         <Link
           href="/learn"
-          className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+          className="text-xs text-beaver-blue hover:text-navy transition-colors"
         >
           &larr; Learn
         </Link>
@@ -16,12 +16,16 @@ export default function AIBasics() {
         <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
           Artificial intelligence is a broad term used to describe computer systems that can perform
           tasks typically associated with human decision-making, such as recognizing patterns,
-          making predictions, or supporting decisions. These systems don&apos;t think or understand
-          in a human way. They operate by analyzing data and following learned patterns.
+          making predictions, or supporting decisions.
+        </p>
+        <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
+          This section introduces the foundational ideas behind AI, what it can and can&apos;t do,
+          and why understanding these basics matters. The goal is to give students a shared baseline
+          for understanding AI concepts that appear throughout the site.
         </p>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
+      <section className="max-w-5xl mx-auto px-6 pb-24">
         {/* What is AI - two column */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
@@ -83,12 +87,12 @@ export default function AIBasics() {
             <h3 className="text-[15px] font-display font-semibold text-navy">
               Machine Learning and Training
             </h3>
-            <p className="text-[13px] text-text-muted leading-relaxed">
+            <p className="text-sm text-text-muted leading-relaxed">
               Machine learning is a common approach used in AI. Rather than programming specific
               rules, a dataset is used so the system can make predictions or classifications based
               on patterns.
             </p>
-            <p className="text-[13px] text-text-muted leading-relaxed">
+            <p className="text-sm text-text-muted leading-relaxed">
               Because training data reflects real-world conditions, models can inherit existing
               biases or gaps. Understanding how training works helps evaluate both the strengths and
               weaknesses of AI tools.
@@ -130,12 +134,12 @@ export default function AIBasics() {
             <h3 className="text-[15px] font-display font-semibold text-navy">
               Why These Basics Matter for Students
             </h3>
-            <p className="text-[13px] text-text-muted leading-relaxed">
+            <p className="text-sm text-text-muted leading-relaxed">
               Understanding how AI works at a foundational level helps students use these tools more
               carefully. It gives you the vocabulary to ask better questions, evaluate outputs
               critically, and recognize when AI is being used appropriately.
             </p>
-            <p className="text-[13px] text-text-muted leading-relaxed">
+            <p className="text-sm text-text-muted leading-relaxed">
               These basics are especially important in academic and professional settings, where
               accuracy, integrity, and accountability shape how tools are used.
             </p>
@@ -148,27 +152,31 @@ export default function AIBasics() {
           <p className="text-[15px] font-display font-semibold text-navy mb-4">
             Continue Exploring
           </p>
+          <p className="text-sm text-text-muted mb-4">
+            Now that you&apos;ve covered the basics, you can explore how AI is used in academic and
+            professional settings, or review the risks and rules that guide its responsible use.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
               href="/learn/rules-risks-and-ethics"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 Rules, Risks, and Ethics of AI
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 An overview of academic integrity, bias, and ethical considerations related to the
                 use of artificial intelligence.
               </p>
             </Link>
             <Link
               href="/learn/using-ai-for-school-and-work"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 Using AI for School and Work
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 Guidance on how AI tools are commonly used in academic and professional settings.
               </p>
             </Link>

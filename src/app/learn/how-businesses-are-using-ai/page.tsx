@@ -7,18 +7,19 @@ export default function HowBusinessesAreUsingAI() {
     <div className="pt-14">
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
-        <div className="relative max-w-5xl mx-auto px-6 py-14">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-pugh-blue/[0.18] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[0%] left-[-8%] w-[400px] h-[400px] bg-navy/[0.08] rounded-full blur-[100px]" />
+        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32">
           <Link
             href="/learn"
-            className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+            className="text-xs text-beaver-blue hover:text-navy transition-colors"
           >
             &larr; Learn
           </Link>
           <h1 className="mt-4 text-3xl font-display font-bold tracking-tight text-navy">
             How Businesses Are Using AI
           </h1>
-          <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
+          <p className="mt-3 text-base text-text-muted max-w-2xl">
             Businesses across many industries are using artificial intelligence to support
             decision-making, improve efficiency, and manage large volumes of data. Rather than
             replacing human workers, AI systems are most often used to assist with tasks that
@@ -27,12 +28,40 @@ export default function HowBusinessesAreUsingAI() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-10 pb-16">
+      <section className="max-w-5xl mx-auto px-6 py-12 pb-24">
+        {/* Intro context */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="md:col-span-2">
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              In practice, organizations use AI to analyze customer behavior, optimize internal
+              operations, and detect issues such as fraud or equipment failures. These tools work by
+              processing historical data and using those patterns to predict future outcomes. In most
+              cases, AI functions as a component within existing business workflows rather than
+              operating as a fully autonomous system.
+            </p>
+            <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+              While these applications can offer benefits, they also come with limits and tradeoffs.
+              AI systems may be difficult to explain, can reflect bias present in their training
+              data, and often require ongoing maintenance as models and tools evolve. Organizations
+              that adopt AI tools typically frame them within existing governance and oversight
+              frameworks, rather than treating them as fully autonomous decision-makers.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <SourceCard
+              title="LinkedIn Learning — Generative AI for Business Leaders"
+              description="A practical overview of how business leaders are approaching generative AI adoption, strategy, and integration."
+              source="LinkedIn Learning"
+              url="https://www.linkedin.com/learning/generative-ai-for-business-leaders"
+            />
+          </div>
+        </div>
+
         {/* Common Applications - two column */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
             <h2 className="text-xl font-display font-semibold text-navy mb-4">
-              Common Business Applications of AI
+              Common Applications of AI
             </h2>
             <p className="text-[15px] text-text-muted leading-relaxed">
               Across industries, businesses tend to use AI in a few recurring ways. One of the most
@@ -118,6 +147,12 @@ export default function HowBusinessesAreUsingAI() {
             systems that perform well at one point in time may degrade as data, environments, or
             objectives shift.
           </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            For these reasons, businesses rarely treat AI as a fully autonomous decision-maker.
+            Instead, AI is typically combined with human judgment, governance, and oversight. The key
+            question for organizations is not whether AI can help, but how to make adoption
+            practical and responsible.
+          </p>
         </div>
 
         {/* Continue Exploring */}
@@ -128,21 +163,21 @@ export default function HowBusinessesAreUsingAI() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
               href="/learn/ai-basics"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">AI Basics</p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-sm font-display font-semibold text-navy">AI Basics</p>
+              <p className="text-xs text-text-muted mt-1">
                 What AI is, how systems work, and why these fundamentals matter.
               </p>
             </Link>
             <Link
               href="/learn/rules-risks-and-ethics"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 Rules, Risks, and Ethics of AI
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 Fairness, accountability, bias, and the frameworks being developed to address them.
               </p>
             </Link>

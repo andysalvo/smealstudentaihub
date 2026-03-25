@@ -5,10 +5,10 @@ import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
 export default function RulesRisksAndEthics() {
   return (
     <div className="pt-14">
-      <section className="max-w-5xl mx-auto px-6 py-14">
+      <section className="max-w-5xl mx-auto px-6 py-24 md:py-32">
         <Link
           href="/learn"
-          className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+          className="text-xs text-beaver-blue hover:text-navy transition-colors"
         >
           &larr; Learn
         </Link>
@@ -20,9 +20,14 @@ export default function RulesRisksAndEthics() {
           automation. These systems can be useful, but they also raise questions about fairness,
           accountability, and unintended consequences.
         </p>
+        <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
+          This page explains why rules, risks, and ethics matter in AI. It summarizes common
+          concerns in research and policy and connects them to academic and professional contexts.
+          The goal is to give students a clear, usable framework for how these issues are discussed.
+        </p>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
+      <section className="max-w-5xl mx-auto px-6 pb-24">
         {/* Governance - two column with sources */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
@@ -64,30 +69,30 @@ export default function RulesRisksAndEthics() {
             Common Risks and Harms
           </h2>
           <div className="space-y-4">
-            <div className="p-5 bg-surface rounded-lg border border-border">
+            <div className="p-6 bg-surface rounded-xl border border-border">
               <h3 className="text-[15px] font-semibold text-navy">Bias and unequal impact.</h3>
-              <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              <p className="mt-2 text-sm text-text-muted leading-relaxed">
                 Data-driven systems can produce outcomes that disadvantage historically marginalized
                 groups. This happens when data reflects past inequities or when systems are deployed
                 without careful evaluation in real-world contexts.
               </p>
             </div>
-            <div className="p-5 bg-surface rounded-lg border border-border">
+            <div className="p-6 bg-surface rounded-xl border border-border">
               <h3 className="text-[15px] font-semibold text-navy">
                 High-stakes decisions and explainability.
               </h3>
-              <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              <p className="mt-2 text-sm text-text-muted leading-relaxed">
                 AI systems are used in areas like admissions, lending, hiring, and assessment. Many
                 ethical frameworks cite explainability as a basic criterion for accountability. The
                 &quot;black box&quot; problem refers to the fact that some AI outputs cannot be
                 easily explained in human terms, even when those outputs carry real consequences.
               </p>
             </div>
-            <div className="p-5 bg-surface rounded-lg border border-border">
+            <div className="p-6 bg-surface rounded-xl border border-border">
               <h3 className="text-[15px] font-semibold text-navy">
                 Academic integrity and learning.
               </h3>
-              <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              <p className="mt-2 text-sm text-text-muted leading-relaxed">
                 In higher education, concerns about generative AI often focus on plagiarism and the
                 erosion of learning outcomes. Some educators distinguish between dishonesty and
                 failure to learn, noting that both affect academic development. These concerns shape
@@ -147,21 +152,21 @@ export default function RulesRisksAndEthics() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
               href="/learn/ai-basics"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">AI Basics</p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-sm font-display font-semibold text-navy">AI Basics</p>
+              <p className="text-xs text-text-muted mt-1">
                 What AI is, how systems work, and why these fundamentals matter.
               </p>
             </Link>
             <Link
               href="/learn/using-ai-for-school-and-work"
-              className="p-5 bg-surface rounded-lg border border-border hover:border-beaver-blue/40 transition-all"
+              className="p-6 bg-surface rounded-xl border border-border hover:border-beaver-blue/40 hover:shadow-lg hover:shadow-navy/[0.06] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-[14px] font-display font-semibold text-navy">
+              <p className="text-sm font-display font-semibold text-navy">
                 Using AI for School and Work
               </p>
-              <p className="text-[12px] text-text-muted mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 How AI tools are commonly used in academic and professional settings.
               </p>
             </Link>
