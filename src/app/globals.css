@@ -1,85 +1,45 @@
-/* Fonts are now loaded via next/font in layout.tsx for optimal performance */
 @import 'tailwindcss';
 
-:root {
-  /* Brand tokens */
-  --ffc-primary: #2a6682;
-  --ffc-accent: #f58629;
-  --ffc-yellow: #f5c045;
-  --ffc-black: #000000;
-  --ffc-white: #ffffff;
+/* Penn State / Smeal brand tokens */
+@theme {
+  --color-*: initial;
 
-  /* Layout */
-  --ffc-container: 1248px;
-  --ffc-radius-xl: 20px;
-}
+  /* Primary (Smeal-aligned hierarchy) */
+  --color-navy: #001E44;
+  --color-beaver-blue: #1E407C;
+  --color-pugh-blue: #96BEE6;
+  --color-white: #FFFFFF;
+  --color-pa-sky: #009CDE;
 
-html,
-body {
-  scroll-behavior: smooth !important;
-}
+  /* Functional */
+  --color-text: #2B2E34;
+  --color-text-muted: #4B5D73;
+  --color-surface: #F2F4F4;
+  --color-surface-alt: #EBF4FF;
+  --color-border: #D5D7D8;
 
-@theme inline {
-  /* Tailwind design tokens mapped to brand variables */
-  --color-primary: var(--ffc-primary);
-  --color-accent: var(--ffc-accent);
-  --color-yellow: var(--ffc-yellow);
-  --color-ink: var(--ffc-black);
-  --color-paper: var(--ffc-white);
+  /* Semantic */
+  --color-link: #005FA9;
+  --color-link-hover: #009CDE;
+  --color-success: #2E7D32;
+  --color-warning: #F57C00;
+  --color-error: #C62828;
 
-  --radius-xl: var(--ffc-radius-xl);
-  --container: var(--ffc-container);
+  /* Typography */
+  --font-sans: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', 'Helvetica', 'Arial', sans-serif;
+  --font-serif: 'Roboto Slab', 'Georgia', 'Times New Roman', serif;
 
-  /* Fonts (provided via next/font and CSS variables on <body>) */
-  --font-serif-display: var(--font-faustina);
-  --font-serif: var(--font-fauna-one);
-  --font-sans: var(--font-lato);
-}
+  /* Spacing base */
+  --spacing: 4px;
 
-body {
-  font-family: var(--font-faustina), serif !important;
-  background: var(--color-paper);
-  color: var(--color-ink);
-}
-#header {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-#aria-font {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-#lato-font {
-  font-family: var(--font-lato), sans-serif !important;
-}
-#montserrat-font {
-  font-family: var(--font-montserrat), sans-serif !important;
-}
-#abeezee {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-/* Segoe UI is a system font - use native system font stack for best performance (only used 2x) */
-#segoe-font {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
-}
-#cinzel {
-  font-family: var(--font-cinzel), serif !important;
-}
-#fauna-font {
-  font-family: var(--font-fauna-one), serif !important;
-}
-#cantata-font {
-  font-family: var(--font-cantata-one), serif !important;
-}
-#raleway-font {
-  font-family: var(--font-raleway), sans-serif !important;
-}
-#courier-font {
-  font-family: ui-monospace, 'Courier New', monospace !important;
-}
-#faustina-font {
-  font-family: var(--font-faustina), serif !important;
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 }
 
-/* Screen reader only utility class for accessibility */
+/* Accessibility: screen reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -92,71 +52,5 @@ body {
   border-width: 0;
 }
 
-@keyframes fadeTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fadeTop {
-  animation: fadeTop 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-.animate-fadeLeft {
-  animation: fadeLeft 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-.animate-fadeRight {
-  animation: fadeRight 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-/* Utilities aligned to Figma */
-.ffc-container {
-  max-width: var(--container);
-  margin-inline: auto;
-  padding-inline: 16px;
-}
-
-.clip-diagonal {
-  clip-path: polygon(0 80%, 100% 50%, 100% 100%, 0% 100%);
-}
-
-.ffc-card {
-  @apply bg-paper border-4 rounded-xl shadow;
-}
-
-/* Hide scrollbar globally */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/* Dark mode variant (future use) */
+@variant dark (&:where([data-theme="dark"] *));
