@@ -18,7 +18,8 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "test:smoke": "playwright test --config=playwright.smoke.config.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "doctor": "bash scripts/doctor.sh"
   },
   "dependencies": {
     "framer-motion": "^12.23.25",
