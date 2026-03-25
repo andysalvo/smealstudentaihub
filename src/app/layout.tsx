@@ -1,6 +1,8 @@
 import './globals.css'
 import { roboto, robotoSlab } from '@/lib/fonts'
 import { siteMetadata } from '@/lib/siteMetadata'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 export const metadata = siteMetadata
 
@@ -15,8 +17,10 @@ export default function RootLayout({
       className={`${roboto.variable} ${robotoSlab.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans text-text bg-white antialiased">
-        {children}
+      <body className="font-sans text-text bg-white antialiased flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )
