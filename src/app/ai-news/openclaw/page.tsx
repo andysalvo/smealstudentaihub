@@ -1,25 +1,27 @@
 import Link from 'next/link'
+import { ReadingProgress } from '@/components/ui/ReadingProgress'
 
 export default function OpenClaw() {
   return (
     <div className="pt-14">
+      <ReadingProgress />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-surface-alt/40 to-white" />
-        <div className="relative max-w-3xl mx-auto px-6 py-14">
+        <div className="relative max-w-[65ch] mx-auto px-6 py-24 md:py-32">
           <Link
             href="/ai-news"
-            className="text-[12px] text-beaver-blue hover:text-navy transition-colors duration-300"
+            className="text-xs text-beaver-blue hover:text-navy transition-colors duration-300"
           >
             &larr; AI News
           </Link>
-          <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.15em] text-beaver-blue/70">
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-beaver-blue/70">
             November 2025 to March 2026
           </p>
           <h1 className="mt-2 text-2xl md:text-3xl font-display font-bold tracking-tight text-navy leading-tight">
             OpenClaw: How a Weekend Project Became the Fastest-Growing Open Source AI Agent in
             History
           </h1>
-          <p className="mt-4 text-[16px] text-text-muted leading-relaxed">
+          <p className="mt-4 text-base text-text-muted leading-relaxed">
             An Austrian developer built an AI assistant that runs on your own machine, works through
             the chat apps you already use, and hit 138,000 GitHub stars in under three months. Then
             OpenAI hired him.
@@ -27,7 +29,7 @@ export default function OpenClaw() {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-10 pb-16">
+      <section className="max-w-[65ch] mx-auto px-6 py-12 pb-24">
         <div className="space-y-5 text-[15px] text-text-muted leading-relaxed">
           <p>
             OpenClaw is an open-source AI agent platform created by Peter Steinberger. It started as
@@ -44,7 +46,7 @@ export default function OpenClaw() {
             coordinating tasks across applications.
           </p>
 
-          <div className="my-8 p-6 bg-surface-alt rounded-lg border-l-3 border-l-beaver-blue">
+          <div className="my-8 p-6 bg-surface-alt rounded-xl border-l-3 border-l-beaver-blue">
             <p>
               <strong className="text-navy">What makes it different?</strong> OpenClaw is not an AI
               model. It is an <strong className="text-text">agentic harness</strong> -- a framework
@@ -92,7 +94,7 @@ export default function OpenClaw() {
 
         {/* Sources */}
         <div className="mt-10 pt-8 border-t border-border">
-          <p className="text-[12px] font-semibold text-navy uppercase tracking-wide mb-4">
+          <p className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
             Sources
           </p>
           <ul className="space-y-2">
@@ -119,7 +121,7 @@ export default function OpenClaw() {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-link hover:text-link-hover transition-colors duration-300"
+                  className="text-sm text-link hover:text-link-hover transition-colors duration-300"
                 >
                   {source.title}
                 </a>

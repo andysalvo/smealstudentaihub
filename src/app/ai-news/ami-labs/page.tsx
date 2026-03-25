@@ -1,31 +1,33 @@
 import Link from 'next/link'
+import { ReadingProgress } from '@/components/ui/ReadingProgress'
 
 export default function AMILabs() {
   return (
     <div className="pt-14">
+      <ReadingProgress />
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-surface-alt/40 to-white" />
-        <div className="relative max-w-3xl mx-auto px-6 py-14">
+        <div className="relative max-w-[65ch] mx-auto px-6 py-24 md:py-32">
           <Link
             href="/ai-news"
-            className="text-[12px] text-beaver-blue hover:text-navy transition-colors duration-300"
+            className="text-xs text-beaver-blue hover:text-navy transition-colors duration-300"
           >
             &larr; AI News
           </Link>
-          <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.15em] text-beaver-blue/70">
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-beaver-blue/70">
             March 2026
           </p>
           <h1 className="mt-2 text-2xl md:text-3xl font-display font-bold tracking-tight text-navy leading-tight">
             Yann LeCun&apos;s AMI Labs Raises $1B to Build AI That Learns From the Physical World
           </h1>
-          <p className="mt-4 text-[16px] text-text-muted leading-relaxed">
+          <p className="mt-4 text-base text-text-muted leading-relaxed">
             The Turing Award winner left Meta to bet against the technology that powers ChatGPT. His
             startup just raised the largest seed round ever recorded for a European company.
           </p>
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-10 pb-16">
+      <section className="max-w-[65ch] mx-auto px-6 py-12 pb-24">
         <div className="space-y-5 text-[15px] text-text-muted leading-relaxed">
           <p>
             AMI Labs announced a $1.03 billion seed round on March 10, 2026, at a $3.5 billion
@@ -42,7 +44,7 @@ export default function AMILabs() {
             consequences of actions, reason about cause and effect, and plan in real-world settings.
           </p>
 
-          <div className="my-8 p-6 bg-surface-alt rounded-lg border-l-3 border-l-beaver-blue">
+          <div className="my-8 p-6 bg-surface-alt rounded-xl border-l-3 border-l-beaver-blue">
             <p>
               <strong className="text-navy">What is JEPA?</strong> AMI&apos;s approach is built on
               Joint Embedding Predictive Architecture, a framework LeCun developed at Meta. Large
@@ -86,7 +88,7 @@ export default function AMILabs() {
 
         {/* Sources */}
         <div className="mt-10 pt-8 border-t border-border">
-          <p className="text-[12px] font-semibold text-navy uppercase tracking-wide mb-4">
+          <p className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
             Sources
           </p>
           <ul className="space-y-2">
@@ -113,7 +115,7 @@ export default function AMILabs() {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-link hover:text-link-hover transition-colors duration-300"
+                  className="text-sm text-link hover:text-link-hover transition-colors duration-300"
                 >
                   {source.title}
                 </a>
