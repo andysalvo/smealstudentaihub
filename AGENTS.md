@@ -1,191 +1,200 @@
-# AI Agent Instructions: FFC Footer-Only Template
+# AI Agent Instructions: Smeal Student AI Hub
 
-**Project:** FFC Footer-Only Template -- a focused Next.js template providing footer, policy pages, cookie compliance, analytics, and team display for nonprofit websites.
+**Project:** Smeal Student AI Hub -- a student-built educational resource about AI in business, maintained by Applied AI at Penn State.
 
-**Organization:** [Free For Charity](https://freeforcharity.org) provides free, professionally built websites for 501(c)(3) nonprofit organizations. Every repo in this organization serves that mission.
+**Site:** https://andysalvo.github.io/smealstudentaihub/
 
----
-
-## Template Purpose
-
-This is **not** a full website template. It provides the "backend formality" layer that charities with existing designs need:
-
-- Footer with contact info, social media, policy links, GuideStar badge
-- Header with responsive navigation
-- 7 legal/policy pages
-- GDPR-compliant cookie consent system
-- Google Tag Manager integration (consent-aware)
-- Team section with data-driven member cards
-- SEO infrastructure (sitemap, robots.txt, metadata)
-- Static export for GitHub Pages
+**Repo:** https://github.com/andysalvo/smealstudentaihub
 
 ---
 
-## Tech Stack
+## Commands
 
-| Layer     | Technology                                                         |
-| --------- | ------------------------------------------------------------------ |
-| Framework | Next.js with App Router (see package.json for version)             |
-| Language  | TypeScript (strict mode)                                           |
-| Styling   | Tailwind CSS v4 (CSS-based config, no tailwind.config file)        |
-| Export    | Static (`output: 'export'` in next.config.ts)                      |
-| Hosting   | GitHub Pages (custom domain + subpath fallback)                    |
-| CI/CD     | GitHub Actions                                                     |
-| Testing   | Jest + Testing Library, Playwright (E2E), jest-axe (accessibility) |
+| Command | What it does | Duration |
+|---------|-------------|----------|
+| `npm run dev` | Start dev server (Turbopack) | ~3s |
+| `npm run build` | Production static export to `out/` | ~15s |
+| `npm run preview` | Serve static build locally on :3000 | instant |
+| `npm run lint` | ESLint | ~5s |
+| `npm run format:check` | Prettier check | ~3s |
+| `npm run format` | Prettier fix | ~3s |
+| `npm run test` | Jest unit tests | ~5s |
+| `npm run test:e2e` | Playwright E2E tests | ~30s |
+| `npm run doctor` | Check prerequisites (Node, npm, git) | instant |
+| `npm run check-links` | Linkinator broken link check on `out/` | ~15s |
 
----
-
-## Core Commands
-
-| Command            | What It Does                | Typical Duration |
-| ------------------ | --------------------------- | ---------------- |
-| `npm install`      | Install dependencies        | ~17s             |
-| `npm run dev`      | Start dev server            | ~1s startup      |
-| `npm run format`   | Run Prettier to format code | ~2s              |
-| `npm run lint`     | Run ESLint                  | ~2s              |
-| `npm test`         | Run Jest unit tests         | ~5s              |
-| `npm run build`    | Production static build     | ~30s             |
-| `npm run test:e2e` | Run Playwright E2E tests    | ~15s             |
-
-**NEVER CANCEL long-running commands.** Builds and E2E tests take time. Set your timeout to 180+ seconds and let them finish.
+**Before committing:** Run `npm run build` to verify the static export succeeds.
 
 ---
 
-## Development Workflow
+## Testing
 
-All changes follow this process:
-
-1. **Issue** -- Work starts from a GitHub Issue
-2. **Branch** -- Create a feature branch from `main`
-3. **Develop** -- Make changes, commit frequently
-4. **Pre-commit checklist** (run in this order):
-   1. `npm run format` -- Auto-fix formatting
-   2. `npm run lint` -- Catch code quality issues
-   3. `npm test` -- Run unit tests
-   4. `npm run build` -- Verify the static export succeeds
-   5. `npm run test:e2e` -- Run end-to-end tests
-5. **PR** -- Open a Pull Request, link to the issue with `Fixes #NNN` or `Refs #NNN`
-6. **Merge** -- Merge via merge queue (no direct commits to `main`)
+- **Unit tests:** Jest with @testing-library/react. Files in `__tests__/`.
+- **E2E tests:** Playwright. Files in `tests/`.
+- **Accessibility:** @axe-core/playwright in E2E tests. Lighthouse CI in GitHub Actions targets 90% accessibility.
+- **Visual regression:** Playwright `toHaveScreenshot()` (baselines committed to repo).
+- **Run a single test:** `npx jest __tests__/path/test.ts` or `npx playwright test tests/path.spec.ts`
 
 ---
 
-## Project Architecture
+## Project Structure
 
 ```
-src/
-  app/
-    page.tsx                # Home page (renders team section)
-    layout.tsx              # Root layout with global metadata
-    home-page/              # Homepage wrapper component
-    [policy-route]/page.tsx # 7 policy page routes
-    sitemap.ts              # Dynamic sitemap generation
-    robots.ts               # Robots.txt configuration
-  components/
-    footer/                 # Site footer (contact, social, policies, copyright)
-    header/                 # Site header with responsive navigation
-    cookie-consent/         # GDPR-compliant cookie consent system
-    google-tag-manager/     # GTM integration
-    home-page/
-      TheFreeForCharityTeam/ # Team section component
-    ui/
-      TeamMemberCard.tsx    # Team member card component
-  data/
-    team.ts                 # Team member data loader
-    team/*.json             # Individual team member JSON files
-  lib/
-    assetPath.ts            # GitHub Pages asset path helper
-    fonts.ts                # Font configuration
-    siteMetadata.ts         # Site-wide SEO metadata
-public/                     # Static assets (icons, images, fonts)
+smealstudentaihub/
+  content/                     # MDX content (agents edit this most)
+    smeal-majors/              # 10 major-specific content files
+    learn/                     # 4 Learn section pages
+    news/                      # News articles
+    VOICE_BRIEF.md             # Writing style contract for all content
+  src/
+    app/                       # Next.js App Router pages
+      globals.css              # Tailwind v4 @theme with Penn State tokens
+      layout.tsx               # Root layout (fonts, metadata)
+      page.tsx                 # Home page
+    components/                # React components
+      header/                  # Site header/nav
+      footer/                  # Site footer with PSU disclaimer
+    lib/                       # Utilities
+      fonts.ts                 # Roboto + Roboto Slab via next/font
+      siteMetadata.ts          # SEO metadata
+      assetPath.ts             # GitHub Pages basePath helper
+  public/
+    images/modules/            # 40 section images (4 per Smeal major)
+    .nojekyll                  # Prevents GitHub Pages Jekyll processing
+  docs/
+    corpus/                    # Research corpus (34 files, 80+ sources)
+    decisions/                 # Architecture Decision Records (ADRs)
+    superpowers/plans/         # Implementation plans
+  .github/
+    workflows/                 # CI, deploy, CodeQL, Lighthouse
+    ISSUE_TEMPLATE/            # Bug, feature, docs templates
+  .claude/
+    rules/                     # Numbered priority rules
+    settings.json              # Bash command allowlist/denylist
 ```
 
----
-
-## Naming Conventions
-
-**ALL route folders MUST use kebab-case.** This is an SEO best practice per Google Search Central. URLs like `/privacy-policy` are preferred over `/privacyPolicy`.
-
-Component files use PascalCase: `TeamMemberCard.tsx`.
+**Tech stack:** Next.js 16, React 19, TypeScript (strict), Tailwind CSS v4, MDX, Playwright, Jest, GitHub Pages
 
 ---
 
-## GitHub Pages & Asset Paths
+## Code Style
 
-These sites deploy to GitHub Pages and optionally to a custom domain.
+**TypeScript:**
+```ts
+// Use named exports, not default exports (except pages)
+export function ComponentName() { ... }
 
-**Always use the `assetPath()` helper** from `src/lib/assetPath.ts` for image and asset references:
+// Use @/ path alias for imports
+import { assetPath } from '@/lib/assetPath'
 
+// Props as inline types for simple components
+export function Card({ title, children }: { title: string; children: React.ReactNode }) {
+```
+
+**Tailwind:**
 ```tsx
-import { assetPath } from '@/lib/assetPath';
-
-// Correct -- works on both custom domain and GitHub Pages subpath
-<img src={assetPath('/Images/hero.jpg')} alt="Hero" />
-
-// Wrong -- breaks on GitHub Pages subpath
-<img src="/Images/hero.jpg" alt="Hero" />
+// Use brand tokens, NEVER arbitrary values
+<div className="bg-navy text-white">     // correct
+<div className="bg-[#001E44] text-white"> // WRONG -- use tokens
 ```
 
-The `NEXT_PUBLIC_BASE_PATH` environment variable controls the `basePath` in `next.config.ts`. The build system handles this automatically; you should not hardcode paths.
+**Content (MDX):**
+- Follow `content/VOICE_BRIEF.md` for all content writing
+- Field first, AI second. Hedging is intentional. Describe, don't instruct.
+- Each MDX file must have frontmatter: title, description, smealMajor, difficulty, lastUpdated, author
 
 ---
 
-## Security
+## Git Workflow
 
-- **NEVER** expose API tokens or secrets in code, comments, or documentation
-- **NEVER** hardcode secrets in any file
-- In GitHub Actions workflows, **ALWAYS** use `${{ secrets.SECRET_NAME }}` syntax
-- **ALWAYS** validate that secrets exist before using them in workflows
-- **NEVER** echo or print secrets to logs
-- For local development, use `.env` files (excluded from git via `.gitignore`)
-- If a user provides a secret, **DO NOT** write it in any file. Instruct them to add it to GitHub Secrets or a local `.env` file.
+- **Branch:** Create a feature branch for any change. Never commit directly to `main`.
+- **Commits:** Conventional commits enforced by commitlint.
+  - `feat:` new feature
+  - `fix:` bug fix
+  - `docs:` documentation
+  - `style:` formatting, CSS
+  - `chore:` maintenance
+  - `ci:` CI/CD changes
+  - `test:` test changes
+- **PRs:** Every change goes through a PR. CI must pass. At least one human review required.
+- **Branch naming:** `feat/short-description`, `fix/short-description`, `docs/short-description`
 
 ---
 
-## Testing Strategy
+## Boundaries
 
-| Type          | Tool                   | Purpose                                                  |
-| ------------- | ---------------------- | -------------------------------------------------------- |
-| Unit          | Jest + Testing Library | Component rendering, data integrity, utility functions   |
-| Accessibility | jest-axe               | WCAG compliance, ARIA validation                         |
-| E2E           | Playwright             | Footer links, cookie consent, policy pages, social links |
+### Always Do
 
-**Accessibility target:** WCAG AA compliance. The jest-axe integration catches common ARIA issues, color contrast violations, and missing landmarks.
+- Run `npm run build` before committing to verify static export works
+- Follow the voice brief for any content changes
+- Use Penn State brand tokens from `globals.css` (never hardcode colors)
+- Credit sources when adding educational content
+- Write accessible HTML (semantic elements, alt text, ARIA labels, keyboard navigation)
+- Keep commits atomic -- one logical change per commit
+
+### Ask First
+
+- Adding new dependencies (check if existing deps cover the need)
+- Changing the Tailwind @theme tokens (brand colors are locked)
+- Modifying CI/CD workflows
+- Changing the content directory structure
+- Any change to AGENTS.md, CLAUDE.md, or .claude/rules/
+
+### Never Do
+
+- Commit secrets, API keys, or credentials
+- Use `rm -rf` on the repo root
+- Push directly to `main` without a PR
+- Use Penn State marks (Lion Shield, athletic logos, mascot, seal) in any design
+- Put "Penn State" before the org name (it's "Applied AI at Penn State", not "Penn State Applied AI")
+- Delete or modify the NOTICE file or CONTRIBUTORS.md without discussion
+- Use arbitrary Tailwind values (e.g., `bg-[#ff0000]`) -- use brand tokens only
+- Skip the voice brief when writing content
+
+---
+
+## Penn State Branding Rules
+
+- **Name:** "Applied AI at Penn State" (per Policy AD07)
+- **Colors:** Nittany Navy `#001E44`, Beaver Blue `#1E407C`, Pugh Blue `#96BEE6`, White Out `#FFFFFF`, PA Sky `#009CDE`
+- **Fonts:** Roboto (body), Roboto Slab (headings)
+- **Cannot use:** Penn State Lion Shield, athletics logos, Block S, mascot, seal, building images
+- **Can use:** Paw print (unaltered), University-Recognized Student Organization Shield Mark (if requested)
+- **Footer disclaimer required:** "This is a student organization website and does not represent official Penn State positions."
+
+---
+
+## Content: Voice Brief Summary
+
+Full brief at `content/VOICE_BRIEF.md`. Key rules:
+
+1. **Field first, AI second.** Start with the discipline's concerns, then connect AI.
+2. **Hedging is intentional.** "may," "often," "tends to," "typically" -- this is honesty, not weakness.
+3. **Sections stand alone.** No "as we saw" or "building on" language.
+4. **Limits are field-native.** Not "AI hallucinates" but "accounting standards require interpretation of materiality."
+5. **No conclusions.** The last point is just the last point.
+6. **Describe, don't instruct.** "AI is discussed as..." not "students should..."
+7. **No hype.** No "revolutionary," "game-changing," "transforming."
 
 ---
 
 ## Known Issues
 
-- **ESLint `img` warnings:** Some ESLint rules flag `<img>` tags in favor of `next/image`. For static exports, `<img>` with `assetPath()` is the correct approach. These warnings are expected.
-- **Google Fonts:** Font loading may fail on restricted networks. The site should degrade gracefully with system fonts.
-- **Static export limitations:** Dynamic features like API routes, middleware, and ISR are not available. All pages must be statically renderable at build time.
+- The site is in early development. Many pages are placeholder stubs.
+- The interactive Smeal major modules are not yet converted to React components. Source HTML files are in `docs/corpus/wix-extraction/source-modules/` for reference.
+- No favicon yet. The FFC favicons were removed.
+- Lighthouse CI thresholds may need adjustment as we add content.
 
 ---
 
-## Commit Message Format
+## Research Corpus
 
-Use [Conventional Commits](https://www.conventionalcommits.org/) format: `<type>: <description>`
+The `docs/corpus/` directory contains 34 research files with 80+ cited sources covering agent maintainability, Penn State branding, frontend patterns, and agentic development risks. Read the synthesis at `docs/corpus/synthesis/final-synthesis.md` for the full picture.
 
-| Type        | When to Use                             |
-| ----------- | --------------------------------------- |
-| `feat:`     | New feature or page                     |
-| `fix:`      | Bug fix                                 |
-| `docs:`     | Documentation only                      |
-| `style:`    | Formatting (no code change)             |
-| `refactor:` | Code restructuring (no behavior change) |
-| `test:`     | Adding or updating tests                |
-| `chore:`    | Build config, dependencies, CI          |
+Architecture decisions are documented in `docs/decisions/` as numbered ADRs.
 
 ---
 
-## CI Pipeline
+## Attribution
 
-GitHub Actions enforces the following on every PR:
-
-1. **Prettier** -- `npm run format:check` (formatting must pass)
-2. **ESLint** -- `npm run lint` (no errors allowed)
-3. **Jest** -- `npm test` (all unit tests must pass)
-4. **Build** -- `npm run build` (static export must succeed)
-5. **Playwright** -- `npm run test:e2e` (E2E tests must pass)
-6. **CodeQL** -- Static analysis and security scanning (separate workflow)
-
-PRs cannot merge until all checks pass.
+This project's infrastructure was built by Clarke Moyer (@clarkemoyer) as part of Free For Charity. See `NOTICE` and `CONTRIBUTORS.md` for details.
