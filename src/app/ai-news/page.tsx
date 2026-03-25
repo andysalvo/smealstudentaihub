@@ -17,7 +17,7 @@ export default function AINews() {
 
       <section className="max-w-5xl mx-auto px-6 py-10 pb-16 space-y-5">
         <a
-          href="#"
+          href="/ai-news/ami-labs"
           className="group block bg-white p-6 rounded-lg border border-border border-l-4 border-l-pa-sky hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
           <p className="text-[11px] font-semibold text-pa-sky uppercase tracking-wide">
@@ -36,7 +36,7 @@ export default function AINews() {
         </a>
 
         <a
-          href="#"
+          href="/ai-news/openclaw"
           className="group block bg-white p-6 rounded-lg border border-border border-l-4 border-l-navy hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
           <p className="text-[11px] font-semibold text-navy/60 uppercase tracking-wide">
