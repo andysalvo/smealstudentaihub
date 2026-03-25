@@ -15,6 +15,7 @@ Each decision gets a numbered markdown file: `NNNN-short-title.md`
 
 **Date:** YYYY-MM-DD
 **Status:** Proposed | Accepted | Deprecated | Superseded by [NNNN]
+**Author:** psu-id (e.g., ajs10845)
 
 ## Context
 
