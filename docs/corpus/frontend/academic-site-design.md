@@ -9,11 +9,12 @@
 ## Core Principles
 
 **Sources:**
+
 - [Kanopi: Higher Ed Website Design -- 12 Examples & Tips](https://kanopi.com/blog/higher-ed-website-design/)
 - [Modern Campus: Higher Education Website Design Trends](https://moderncampus.com/blog/website-design-trends-in-higher-education.html)
 - [Clique Studios: Best Practices in University Website Design](https://cliquestudios.com/best-practices-designing-university-websites/)
 - [Morweb: Best College & University Websites (2026)](https://morweb.org/post/college-websites)
-**Accessed:** 2026-03-24 | **Confidence:** Institutional | **Method:** WebSearch + WebFetch
+  **Accessed:** 2026-03-24 | **Confidence:** Institutional | **Method:** WebSearch + WebFetch
 
 ### Mobile-First is Non-Negotiable
 
@@ -22,6 +23,7 @@
 ### Audience Segmentation in Navigation
 
 University of Arizona uses an "I am..." dropdown routing prospective students, faculty, and parents to tailored content. For Student AI Hub, potential segments:
+
 - Club members (events, resources, labs)
 - Prospective members (about, join)
 - Faculty advisors (governance, mission)
@@ -37,6 +39,7 @@ University of Arizona uses an "I am..." dropdown routing prospective students, f
 ### Strategic White Space and Visual Hierarchy
 
 Academic sites tend to overcrowd. Use:
+
 - Generous spacing
 - Clear heading hierarchy
 - Let content breathe
@@ -45,6 +48,7 @@ Academic sites tend to overcrowd. Use:
 ### Interactive Elements That Add Value
 
 Not decoration:
+
 - UW-Madison: interactive timeline for history content
 - Loyola Maryland: hover states revealing additional context
 - Rice University: 360-degree campus exploration

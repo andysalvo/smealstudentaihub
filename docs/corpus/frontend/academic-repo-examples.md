@@ -101,12 +101,12 @@ Treat educational resources as structured data with metadata (difficulty, catego
 
 ## Summary: Patterns to Apply
 
-| Pattern | Source | Priority |
-|---------|--------|----------|
-| Consistent resource card format | OSSU | High |
-| Content separated from code | Odin Project | High |
-| Structured metadata per resource | freeCodeCamp | High |
-| Clear page taxonomy | UW-Madison AI Club | High |
-| GitHub Pages with clean domain | OSU AI Club | Medium |
-| Community contribution guidelines | Odin Project | Medium |
-| Learning path / prerequisite chains | OSSU | Future |
+| Pattern                             | Source             | Priority |
+| ----------------------------------- | ------------------ | -------- |
+| Consistent resource card format     | OSSU               | High     |
+| Content separated from code         | Odin Project       | High     |
+| Structured metadata per resource    | freeCodeCamp       | High     |
+| Clear page taxonomy                 | UW-Madison AI Club | High     |
+| GitHub Pages with clean domain      | OSU AI Club        | Medium   |
+| Community contribution guidelines   | Odin Project       | Medium   |
+| Learning path / prerequisite chains | OSSU               | Future   |

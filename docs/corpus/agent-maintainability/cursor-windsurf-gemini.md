@@ -27,10 +27,11 @@ The legacy `.cursorrules` file is deprecated. Rules now live in `.cursor/rules/`
 
 ```markdown
 ---
-description: "Rule purpose"
+description: 'Rule purpose'
 alwaysApply: false
-globs: ["pattern/**/*.ts"]
+globs: ['pattern/**/*.ts']
 ---
+
 Rule content here
 ```
 
@@ -72,20 +73,21 @@ Legacy `.windsurfrules` file in project root still works. New format uses `.wind
 
 ### Four Activation Modes
 
-| Mode | Trigger | Behavior |
-|------|---------|----------|
-| Always On | `always_on` | Included in system prompt on every message |
+| Mode           | Trigger          | Behavior                                                           |
+| -------------- | ---------------- | ------------------------------------------------------------------ |
+| Always On      | `always_on`      | Included in system prompt on every message                         |
 | Model Decision | `model_decision` | Only description shown initially; full content loads when relevant |
-| Glob | `glob` | Applied when matching file patterns |
-| Manual | `manual` | Activated via `@rule-name` mention |
+| Glob           | `glob`           | Applied when matching file patterns                                |
+| Manual         | `manual`         | Activated via `@rule-name` mention                                 |
 
 ### YAML Frontmatter Format
 
 ```markdown
 ---
 trigger: always_on
-description: "Project coding standards"
+description: 'Project coding standards'
 ---
+
 Rule content here
 ```
 

@@ -17,15 +17,15 @@ The Wix site renders content dynamically via JavaScript, making direct scraping 
 
 ## Navigation Structure
 
-| Nav Item | URL | Type |
-|----------|-----|------|
-| Home | `/` | Page |
-| AI by Smeal Major | `/ai-by-smeal-major` | Landing + 10 sub-pages |
-| AI News That Matters | `/ai-news-that-matters` | Page |
-| Learn | dropdown | 4 sub-pages |
-| Foundational Sources | `/foundational-sources` | Page |
-| About | `/about` | Page (not in top nav) |
-| Process and Provenance | `/process-and-provenance` | Page (not in top nav) |
+| Nav Item               | URL                       | Type                   |
+| ---------------------- | ------------------------- | ---------------------- |
+| Home                   | `/`                       | Page                   |
+| AI by Smeal Major      | `/ai-by-smeal-major`      | Landing + 10 sub-pages |
+| AI News That Matters   | `/ai-news-that-matters`   | Page                   |
+| Learn                  | dropdown                  | 4 sub-pages            |
+| Foundational Sources   | `/foundational-sources`   | Page                   |
+| About                  | `/about`                  | Page (not in top nav)  |
+| Process and Provenance | `/process-and-provenance` | Page (not in top nav)  |
 
 ---
 
@@ -34,6 +34,7 @@ The Wix site renders content dynamically via JavaScript, making direct scraping 
 Each module is a self-contained HTML file with identical architecture:
 
 **Design system:**
+
 - Font: Inter (Google Fonts)
 - Primary: Navy #01458F | Hover: #0C5BBF | Background: #F7F9FC | Surface: #FFFFFF | Border: #E3E8F0
 - Text: #0B1F3B (primary), #4B5D73 (secondary)
@@ -41,17 +42,20 @@ Each module is a self-contained HTML file with identical architecture:
 - Transition: 180ms ease
 
 **Layout:**
+
 - Desktop: Two-column (300px sidebar nav + reading panel)
 - Mobile: Stacks vertically (3 breakpoints: 960px, 768px, 480px)
 - Left sidebar with expandable sections and nested concepts
 
 **Structure (identical for all 10):**
+
 1. **Where AI Appears** -- 4-5 concepts
 2. **What AI Helps With** -- 4-5 concepts
 3. **Where AI Falls Short** -- 4 concepts
 4. **What to Keep in Mind** -- 4 concepts
 
 **Each concept contains:**
+
 - Kicker label (section name, uppercase)
 - Title (bold heading) + navy accent bar
 - 3-4 paragraphs of body text
@@ -59,6 +63,7 @@ Each module is a self-contained HTML file with identical architecture:
 - "Key Points" box with 3 numbered bullets
 
 **Accessibility features built-in:**
+
 - ARIA attributes (aria-expanded, aria-pressed, aria-live)
 - Keyboard focus visible states
 - Screen reader text (.hub-sr class)
@@ -66,18 +71,18 @@ Each module is a self-contained HTML file with identical architecture:
 
 ### The 10 Majors
 
-| Major | Wix URL | Source File |
-|-------|---------|------------|
-| Accounting | `/major-accounting` | `modules/ai-by-smeal-major/accounting.html` |
-| Actuarial Science | `/copy-of-accounting` | `modules/ai-by-smeal-major/actuarial-science.html` |
+| Major                | Wix URL                 | Source File                                           |
+| -------------------- | ----------------------- | ----------------------------------------------------- |
+| Accounting           | `/major-accounting`     | `modules/ai-by-smeal-major/accounting.html`           |
+| Actuarial Science    | `/copy-of-accounting`   | `modules/ai-by-smeal-major/actuarial-science.html`    |
 | Corporate Innovation | `/copy-of-accounting-1` | `modules/ai-by-smeal-major/corporate-innovation.html` |
-| Finance | `/copy-of-accounting-2` | `modules/ai-by-smeal-major/finance.html` |
-| Management | `/copy-of-accounting-3` | `modules/ai-by-smeal-major/management.html` |
-| MIS | `/copy-of-accounting-4` | `modules/ai-by-smeal-major/mis.html` |
-| Marketing | `/copy-of-accounting-5` | `modules/ai-by-smeal-major/marketing.html` |
-| Real Estate | `/copy-of-marketing` | `modules/ai-by-smeal-major/real-estate.html` |
-| Risk Management | `/copy-of-accounting-7` | `modules/ai-by-smeal-major/risk-management.html` |
-| Supply Chain | `/copy-of-accounting-6` | `modules/ai-by-smeal-major/supply-chain.html` |
+| Finance              | `/copy-of-accounting-2` | `modules/ai-by-smeal-major/finance.html`              |
+| Management           | `/copy-of-accounting-3` | `modules/ai-by-smeal-major/management.html`           |
+| MIS                  | `/copy-of-accounting-4` | `modules/ai-by-smeal-major/mis.html`                  |
+| Marketing            | `/copy-of-accounting-5` | `modules/ai-by-smeal-major/marketing.html`            |
+| Real Estate          | `/copy-of-marketing`    | `modules/ai-by-smeal-major/real-estate.html`          |
+| Risk Management      | `/copy-of-accounting-7` | `modules/ai-by-smeal-major/risk-management.html`      |
+| Supply Chain         | `/copy-of-accounting-6` | `modules/ai-by-smeal-major/supply-chain.html`         |
 
 ---
 
@@ -115,6 +120,7 @@ These 6 pages have content only in Wix and cannot be extracted without browser r
 ## Applied AI Club Site (appliedaipsu.com)
 
 12 pages on Wix. Three pillars:
+
 1. **Events and Programming** -- guest speakers, case studies, tool walkthroughs
 2. **Applied AI Labs** -- R&D arm, builds real projects
 3. **Explore AI** -- curated tool registry (ChatGPT, Claude, Perplexity, OpenClaw, Ollama, Cursor, v0, Codex)
@@ -137,18 +143,18 @@ Pages: Home, Explore AI, Ledger, Event List, Our Mission, Labs, About Us, 3 even
 
 All at `/Users/andysalvo_1/Documents/GitHub/ai_hub_brain/`:
 
-| File/Directory | Content |
-|---------------|---------|
-| `modules/ai-by-smeal-major/*.html` | 10 interactive HTML modules (crown jewels) |
-| `modules/ai-news-that-matters/*.html` | 2 news article modules |
-| `modules/embeds/*.html` | 2 embed/promo modules |
-| `modules/images/*.jpg` | 40 section images |
-| `canonical/smeal-majors/*.md` | 10 canonical markdown content files |
-| `content/*.txt` | 10 original student text files |
-| `content/v2/VOICE_BRIEF.md` | Voice/tone brief |
-| `content/v2/SOURCE_REGISTRY.md` | ~120 unique sources |
-| `screenshots/dan-ives-day/*.png` | 13 screenshots |
-| `docs/wix-embed-guide.md` | Wix embedding instructions |
+| File/Directory                        | Content                                    |
+| ------------------------------------- | ------------------------------------------ |
+| `modules/ai-by-smeal-major/*.html`    | 10 interactive HTML modules (crown jewels) |
+| `modules/ai-news-that-matters/*.html` | 2 news article modules                     |
+| `modules/embeds/*.html`               | 2 embed/promo modules                      |
+| `modules/images/*.jpg`                | 40 section images                          |
+| `canonical/smeal-majors/*.md`         | 10 canonical markdown content files        |
+| `content/*.txt`                       | 10 original student text files             |
+| `content/v2/VOICE_BRIEF.md`           | Voice/tone brief                           |
+| `content/v2/SOURCE_REGISTRY.md`       | ~120 unique sources                        |
+| `screenshots/dan-ives-day/*.png`      | 13 screenshots                             |
+| `docs/wix-embed-guide.md`             | Wix embedding instructions                 |
 
 ---
 
@@ -156,19 +162,20 @@ All at `/Users/andysalvo_1/Documents/GitHub/ai_hub_brain/`:
 
 ### Student AI Hub (23 pages)
 
-| # | Path | Content Type |
-|---|------|-------------|
-| 1 | `/` | Home (Wix native) |
-| 2 | `/ai-by-smeal-major` | Landing page (Wix native) |
-| 3-12 | `/major-*` | 10 interactive modules (embedded HTML) |
-| 13 | `/ai-news-that-matters` | News articles (embedded HTML) |
-| 14 | `/learn` | Learn section hub |
-| 15-18 | `/ai-basics`, `/how-businesses-are-using-ai`, `/rules-risks-and-ethics-of-ai`, `/using-ai-for-school-and-work` | Learn pages (Wix native, RAG content) |
-| 19 | `/foundational-sources` | Source list (Wix native) |
-| 20 | `/about` | About (Wix native) |
-| 21 | `/process-and-provenance` | Build process (Wix native) |
-| 22 | `/ai-at-penn-state` | Penn State AI info (Wix native) |
-| 23 | `/ai-tools-you-might-use` | Tool recommendations (Wix native) |
+| #     | Path                                                                                                           | Content Type                           |
+| ----- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| 1     | `/`                                                                                                            | Home (Wix native)                      |
+| 2     | `/ai-by-smeal-major`                                                                                           | Landing page (Wix native)              |
+| 3-12  | `/major-*`                                                                                                     | 10 interactive modules (embedded HTML) |
+| 13    | `/ai-news-that-matters`                                                                                        | News articles (embedded HTML)          |
+| 14    | `/learn`                                                                                                       | Learn section hub                      |
+| 15-18 | `/ai-basics`, `/how-businesses-are-using-ai`, `/rules-risks-and-ethics-of-ai`, `/using-ai-for-school-and-work` | Learn pages (Wix native, RAG content)  |
+| 19    | `/foundational-sources`                                                                                        | Source list (Wix native)               |
+| 20    | `/about`                                                                                                       | About (Wix native)                     |
+| 21    | `/process-and-provenance`                                                                                      | Build process (Wix native)             |
+| 22    | `/ai-at-penn-state`                                                                                            | Penn State AI info (Wix native)        |
+| 23    | `/ai-tools-you-might-use`                                                                                      | Tool recommendations (Wix native)      |
 
 ### Applied AI Club (12 pages)
+
 Home, Explore AI, Ledger, Event List, Our Mission, Labs, About Us, 3 event details, donation thank you, copy page.

@@ -11,6 +11,7 @@
 ### What They Built
 
 Two-job pipeline:
+
 1. **Build + Unit:** checkout, Node 20 setup with npm cache, `npm ci`, format check, lint, unit tests, build, upload build artifacts
 2. **E2E:** 4-way sharded Playwright tests that depend on Job 1, download build artifacts, cache Playwright browsers, run sharded tests, upload failure reports
 
@@ -34,6 +35,7 @@ Two-job pipeline:
 ### What They Built
 
 Three-job pipeline triggered by successful CI:
+
 1. **Build for GitHub Pages:** builds with `NEXT_PUBLIC_BASE_PATH`, uses `configure-pages` with Next.js static site generator detection, Next.js cache restoration, uploads Pages artifact
 2. **Deploy:** uses `deploy-pages` action
 3. **Smoke Test:** waits for deployment to be available (polling: 12 attempts, 10s apart), runs Playwright smoke tests against live URL
@@ -86,12 +88,12 @@ Runs after deployment, on PRs, and manually. Builds site, runs `lhci autorun`, d
 
 ### Thresholds
 
-| Metric | Threshold |
-|--------|-----------|
-| Performance | >= 55% (warn) |
-| Accessibility | >= 90% (warn) |
+| Metric         | Threshold     |
+| -------------- | ------------- |
+| Performance    | >= 55% (warn) |
+| Accessibility  | >= 90% (warn) |
 | Best Practices | >= 65% (warn) |
-| SEO | >= 95% (warn) |
+| SEO            | >= 95% (warn) |
 
 ### How We'll Apply This
 

@@ -5,25 +5,25 @@
   --color-*: initial;
 
   /* Primary (Smeal-aligned hierarchy) */
-  --color-navy: #001E44;
-  --color-beaver-blue: #1E407C;
-  --color-pugh-blue: #96BEE6;
-  --color-white: #FFFFFF;
-  --color-pa-sky: #009CDE;
+  --color-navy: #001e44;
+  --color-beaver-blue: #1e407c;
+  --color-pugh-blue: #96bee6;
+  --color-white: #ffffff;
+  --color-pa-sky: #009cde;
 
   /* Functional */
-  --color-text: #2B2E34;
-  --color-text-muted: #4B5D73;
-  --color-surface: #F2F4F4;
-  --color-surface-alt: #EBF4FF;
-  --color-border: #D5D7D8;
+  --color-text: #2b2e34;
+  --color-text-muted: #4b5d73;
+  --color-surface: #f2f4f4;
+  --color-surface-alt: #ebf4ff;
+  --color-border: #d5d7d8;
 
   /* Semantic */
-  --color-link: #005FA9;
-  --color-link-hover: #009CDE;
-  --color-success: #2E7D32;
-  --color-warning: #F57C00;
-  --color-error: #C62828;
+  --color-link: #005fa9;
+  --color-link-hover: #009cde;
+  --color-success: #2e7d32;
+  --color-warning: #f57c00;
+  --color-error: #c62828;
 
   /* Typography */
   --font-sans: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', 'Helvetica', 'Arial', sans-serif;

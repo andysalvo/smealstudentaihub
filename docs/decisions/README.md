@@ -41,9 +41,9 @@ You don't need an ADR for routine work. Only pivots.
 
 ## Index
 
-| # | Title | Date | Status |
-|---|-------|------|--------|
-| 0001 | [Fork FFC template as starting point](0001-fork-ffc-template.md) | 2026-03-24 | Accepted |
-| 0002 | [Research-first corpus before building](0002-research-first-corpus.md) | 2026-03-24 | Accepted |
-| 0003 | [AGENTS.md as canonical instruction file](0003-agents-md-canonical.md) | 2026-03-24 | Accepted |
+| #    | Title                                                                             | Date       | Status   |
+| ---- | --------------------------------------------------------------------------------- | ---------- | -------- |
+| 0001 | [Fork FFC template as starting point](0001-fork-ffc-template.md)                  | 2026-03-24 | Accepted |
+| 0002 | [Research-first corpus before building](0002-research-first-corpus.md)            | 2026-03-24 | Accepted |
+| 0003 | [AGENTS.md as canonical instruction file](0003-agents-md-canonical.md)            | 2026-03-24 | Accepted |
 | 0004 | [Scaffold cleanup and Penn State branding](0004-scaffold-cleanup-and-branding.md) | 2026-03-25 | Accepted |

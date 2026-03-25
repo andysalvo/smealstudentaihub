@@ -11,19 +11,19 @@
 
 Every tool below is free, open source, and integrates with GitHub Actions.
 
-| Layer | Tool | What It Catches |
-|-------|------|----------------|
-| Branch protection | GitHub Rulesets + CODEOWNERS | Agents can't merge their own PRs |
-| Secrets | GitHub Secret Scanning + Gitleaks | Hardcoded API keys, passwords |
-| AI code quality | Open Code Review (L1) | Hallucinated imports, stale APIs, over-engineering |
-| Linting | ESLint + markdownlint-cli2 + commitlint | Code style, markdown format, commit messages |
-| Content validation | remark-lint-frontmatter-schema + lychee | Invalid frontmatter, broken links |
-| Visual regression | Playwright `toHaveScreenshot()` | Layout breakage from CSS/component changes |
-| Accessibility | axe-core via @axe-core/playwright + Lighthouse CI | WCAG violations, performance regressions |
-| PR previews | rossjrw/pr-preview-action | Reviewers see changes before merge |
-| Dependencies | Dependabot + Socket.dev + lockfile-lint | Known CVEs, malicious packages, lockfile tampering |
-| Releases | release-please + conventional commits | Automated changelog |
-| Setup | npm run doctor script | Missing prerequisites |
+| Layer              | Tool                                              | What It Catches                                    |
+| ------------------ | ------------------------------------------------- | -------------------------------------------------- |
+| Branch protection  | GitHub Rulesets + CODEOWNERS                      | Agents can't merge their own PRs                   |
+| Secrets            | GitHub Secret Scanning + Gitleaks                 | Hardcoded API keys, passwords                      |
+| AI code quality    | Open Code Review (L1)                             | Hallucinated imports, stale APIs, over-engineering |
+| Linting            | ESLint + markdownlint-cli2 + commitlint           | Code style, markdown format, commit messages       |
+| Content validation | remark-lint-frontmatter-schema + lychee           | Invalid frontmatter, broken links                  |
+| Visual regression  | Playwright `toHaveScreenshot()`                   | Layout breakage from CSS/component changes         |
+| Accessibility      | axe-core via @axe-core/playwright + Lighthouse CI | WCAG violations, performance regressions           |
+| PR previews        | rossjrw/pr-preview-action                         | Reviewers see changes before merge                 |
+| Dependencies       | Dependabot + Socket.dev + lockfile-lint           | Known CVEs, malicious packages, lockfile tampering |
+| Releases           | release-please + conventional commits             | Automated changelog                                |
+| Setup              | npm run doctor script                             | Missing prerequisites                              |
 
 ---
 
@@ -42,6 +42,7 @@ Every tool below is free, open source, and integrates with GitHub Actions.
 ## 2. Branch Protection
 
 **Required configuration for our repo:**
+
 - Require 1 review from a code owner for all PRs to `main`
 - Require status checks: lint, build, tests, accessibility, visual regression
 - Disallow direct pushes to `main`
@@ -54,16 +55,19 @@ Every tool below is free, open source, and integrates with GitHub Actions.
 ## 3. Visual Regression Testing
 
 **Playwright `toHaveScreenshot()`** (recommended start)
+
 - Built into Playwright. Zero additional deps.
 - Takes screenshots, compares pixel-by-pixel against committed baselines.
 - Agent changes a component's layout -> screenshot diff catches it.
 - Must generate baselines on Linux (same OS as CI).
 
 **Lost Pixel** (upgrade path)
+
 - First-class Next.js page testing. Multi-browser. Per-screenshot sensitivity thresholds.
 - Free open-source core.
 
 **Percy** (if budget allows)
+
 - AI-powered smart diffing (ignores anti-aliasing, sub-pixel noise).
 - Free tier: 5,000 screenshots/month.
 
@@ -88,6 +92,7 @@ Every tool below is free, open source, and integrates with GitHub Actions.
 ## 5. AI-Specific CI Checks
 
 **Open Code Review** -- Three-layer analysis designed for AI-generated code:
+
 - L1 (free, local): hallucinated imports (checks npm registry), deprecated APIs, security anti-patterns, over-engineering, duplication
 - L2: embedding similarity, risk scoring
 - L3: LLM deep scan, cross-file coherence
@@ -133,6 +138,7 @@ Also available as MCP server for Claude Desktop and Cursor.
 ## 9. Environment Setup Validation
 
 **Recommended pattern:** `scripts/doctor.sh` that checks:
+
 1. Node.js version matches `.nvmrc`
 2. npm version
 3. git installed
@@ -165,6 +171,7 @@ Wire to `npm run doctor`. Add `engines` field in package.json with `engine-stric
 ## 12. Dependency Security
 
 Layer three tools:
+
 1. **Dependabot** -- known CVE patching (free, already in scaffold)
 2. **Socket.dev** -- behavioral analysis, catches malicious packages and typosquatting (free tier)
 3. **lockfile-lint** -- validates lockfile registry integrity (free)

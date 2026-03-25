@@ -132,34 +132,34 @@ Strict mode, ES2017 target, bundler module resolution, `@/*` path alias to `./sr
 
 ### Dependencies We're Keeping
 
-| Package | Purpose | Notes |
-|---------|---------|-------|
-| next | Framework | Core |
-| react / react-dom | UI | Core |
-| postcss | CSS processing | Required for Tailwind v4 |
-| lucide-react | Icons | Clean, tree-shakeable icon library |
+| Package           | Purpose        | Notes                              |
+| ----------------- | -------------- | ---------------------------------- |
+| next              | Framework      | Core                               |
+| react / react-dom | UI             | Core                               |
+| postcss           | CSS processing | Required for Tailwind v4           |
+| lucide-react      | Icons          | Clean, tree-shakeable icon library |
 
 ### Dependencies We'll Evaluate as We Build
 
-| Package | Purpose | Notes |
-|---------|---------|-------|
+| Package       | Purpose    | Notes                                                        |
+| ------------- | ---------- | ------------------------------------------------------------ |
 | framer-motion | Animations | Add when/if we need page transitions or interactive elements |
-| swiper | Carousels | Add when/if we need carousel components |
+| swiper        | Carousels  | Add when/if we need carousel components                      |
 
 ### Scripts We're Keeping
 
-| Script | Purpose |
-|--------|---------|
-| `dev` | Next.js dev server with Turbopack |
-| `build` | Production build |
-| `preview` | Local static file serving |
-| `lint` | ESLint |
-| `format` / `format:check` | Prettier |
-| `check-links` | Linkinator broken link detection |
-| `test` / `test:watch` / `test:coverage` | Jest unit tests |
-| `test:e2e` / `test:e2e:ui` / `test:e2e:headed` | Playwright E2E |
-| `test:smoke` | Post-deploy smoke tests |
-| `prepare` | Husky hook installation |
+| Script                                         | Purpose                           |
+| ---------------------------------------------- | --------------------------------- |
+| `dev`                                          | Next.js dev server with Turbopack |
+| `build`                                        | Production build                  |
+| `preview`                                      | Local static file serving         |
+| `lint`                                         | ESLint                            |
+| `format` / `format:check`                      | Prettier                          |
+| `check-links`                                  | Linkinator broken link detection  |
+| `test` / `test:watch` / `test:coverage`        | Jest unit tests                   |
+| `test:e2e` / `test:e2e:ui` / `test:e2e:headed` | Playwright E2E                    |
+| `test:smoke`                                   | Post-deploy smoke tests           |
+| `prepare`                                      | Husky hook installation           |
 
 ---
 

@@ -97,9 +97,11 @@ Granular ownership sections set up the project for team growth. Even with a sing
 ### What They Built
 
 #### commit-msg
+
 Runs `npx --no-install commitlint --edit "$1"` -- validates commit message format.
 
 #### pre-commit
+
 Runs Prettier check only on staged files with supported extensions, then ESLint only on staged JS/TS files. Uses `git diff --cached --name-only --diff-filter=ACMR` to target only staged files. Clear error messages with fix instructions.
 
 ### What They Did Well
@@ -163,18 +165,18 @@ Standard editor config for consistent formatting across editors.
 
 ## Summary: How We're Applying Each Component
 
-| Component | Application | Notes |
-|-----------|-------------|-------|
-| Bug report template | Keep | Standard, works for us |
-| Feature request template | Adapt user types | Replace FFC users with students/faculty/club members |
-| Docs issue template | Keep | "Willing to PR" checkbox is great |
-| Rebrand template | Reference | Already served its purpose for our fork |
-| Reviewer onboarding | Inspire our own | Build Applied AI version when ready |
-| Issue config | Update links | Point to Applied AI contacts |
-| PR template | Adapt scope | Start with 10-12 high-value checkboxes, grow from there |
-| CODEOWNERS | Update owners | Ready for team growth |
-| Husky hooks | Keep | Clean and correct |
-| Commitlint | Keep | Standard |
-| ESLint | Keep pattern | Update rules over time |
-| Prettier | Keep | Standard |
-| EditorConfig | Keep | Standard |
+| Component                | Application      | Notes                                                   |
+| ------------------------ | ---------------- | ------------------------------------------------------- |
+| Bug report template      | Keep             | Standard, works for us                                  |
+| Feature request template | Adapt user types | Replace FFC users with students/faculty/club members    |
+| Docs issue template      | Keep             | "Willing to PR" checkbox is great                       |
+| Rebrand template         | Reference        | Already served its purpose for our fork                 |
+| Reviewer onboarding      | Inspire our own  | Build Applied AI version when ready                     |
+| Issue config             | Update links     | Point to Applied AI contacts                            |
+| PR template              | Adapt scope      | Start with 10-12 high-value checkboxes, grow from there |
+| CODEOWNERS               | Update owners    | Ready for team growth                                   |
+| Husky hooks              | Keep             | Clean and correct                                       |
+| Commitlint               | Keep             | Standard                                                |
+| ESLint                   | Keep pattern     | Update rules over time                                  |
+| Prettier                 | Keep             | Standard                                                |
+| EditorConfig             | Keep             | Standard                                                |

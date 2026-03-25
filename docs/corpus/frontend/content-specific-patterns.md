@@ -11,6 +11,7 @@
 **Two-column on desktop:** Main content (max-width ~720px) + sticky sidebar table-of-contents. TOC appears at 1200px+, collapses on mobile.
 
 **Metadata strip below title:**
+
 - Difficulty badge (Beginner/Intermediate/Advanced, color-coded)
 - Reading time (computed at build time via `reading-time` remark plugin)
 - Category/topic tags
@@ -19,20 +20,22 @@
 - Author name
 
 **MDX frontmatter schema:**
+
 ```yaml
 ---
-title: "Intro to AI in Accounting"
-description: "How AI is changing audit and tax workflows"
+title: 'Intro to AI in Accounting'
+description: 'How AI is changing audit and tax workflows'
 difficulty: beginner
 category: accounting
 tags: [automation, audit, llm]
 smealMajor: accounting
-author: "Jane Doe"
+author: 'Jane Doe'
 lastUpdated: 2026-03-15
 ---
 ```
 
 **Additional elements:**
+
 - Breadcrumbs: Home > Learn > Accounting > Article Title
 - Sticky right sidebar: auto-generated TOC from H2/H3 headings
 - "Related resources" at bottom from matching tags
@@ -52,6 +55,7 @@ lastUpdated: 2026-03-15
 - Text search: client-side via `fuse.js`
 
 **Card layout:**
+
 - CSS Grid: `repeat(auto-fill, minmax(300px, 1fr))`
 - Each card: title, 2-line description, difficulty badge, category tag, reading time, content type icon
 - Hover: subtle elevation change
@@ -78,6 +82,7 @@ import { AccountingModule } from '@/components/modules/AccountingModule'
 **Fallback:** If a module relies on conflicting CSS/JS, use `<iframe src="/modules/accounting/index.html" sandbox="allow-scripts" />`.
 
 **Presentation pattern:**
+
 - Brief intro paragraph + difficulty badge + completion time
 - The interactive module (full-width)
 - "What you learned" summary section below
@@ -116,11 +121,13 @@ import { AccountingModule } from '@/components/modules/AccountingModule'
 **Two-tier card layout:**
 
 **Executive board (top):**
+
 - 3-column grid, 1-column mobile
 - Each: 200x200 headshot, name, title, major, grad year, 2-3 sentence bio, LinkedIn icon
 - Consistent photo styling (same background, crop ratio)
 
 **Members (below):**
+
 - 4-column compact grid
 - 100x100 circle crop, name, role, major
 
@@ -151,16 +158,19 @@ import { AccountingModule } from '@/components/modules/AccountingModule'
 ## 7. Navigation
 
 **Top nav (sticky):** Home | Learn | Events | Team | About
+
 - "Learn" dropdown mega-menu showing categories by Smeal major
 - Mobile: hamburger menu, full-screen overlay
 - Theme toggle (sun/moon) at far right
 
 **Breadcrumbs (interior pages):**
+
 - Below top nav, above page title
 - Format: `Home > Learn > Finance > Article Title`
 - Mobile: back arrow with parent link only
 
 **Left sidebar (Learn section only):**
+
 - 240-280px, lists categories with expandable sub-items
 - Active page highlighted with left border accent
 - Sticky positioning, collapsible on desktop
@@ -175,7 +185,7 @@ import { AccountingModule } from '@/components/modules/AccountingModule'
 **Yes, support it.** Implementation for Tailwind v4 + Next.js static export:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 @variant dark (&:where([data-theme="dark"] *));
 ```
 
@@ -213,15 +223,15 @@ Three elements:
 
 ## Summary of Pattern Decisions
 
-| Pattern | Choice |
-|---------|--------|
-| Article pages | Two-column: content + sticky TOC sidebar |
-| Resource library | Filterable card grid, horizontal filter bar, client-side search |
-| Interactive modules | React components in MDX (preferred) |
-| Events | Static JSON + optional Google Calendar embed |
-| Team | Two-tier: exec cards with bios + compact member grid |
-| About | Five-section narrative scroll |
-| Navigation | Top nav + breadcrumbs + left sidebar (Learn only) |
-| Dark mode | Yes, via next-themes + Tailwind v4 @variant dark |
-| Social proof | Logo bar + stats strip + advisor quote |
-| Footer | Three-column fat footer with disclaimer |
+| Pattern             | Choice                                                          |
+| ------------------- | --------------------------------------------------------------- |
+| Article pages       | Two-column: content + sticky TOC sidebar                        |
+| Resource library    | Filterable card grid, horizontal filter bar, client-side search |
+| Interactive modules | React components in MDX (preferred)                             |
+| Events              | Static JSON + optional Google Calendar embed                    |
+| Team                | Two-tier: exec cards with bios + compact member grid            |
+| About               | Five-section narrative scroll                                   |
+| Navigation          | Top nav + breadcrumbs + left sidebar (Learn only)               |
+| Dark mode           | Yes, via next-themes + Tailwind v4 @variant dark                |
+| Social proof        | Logo bar + stats strip + advisor quote                          |
+| Footer              | Three-column fat footer with disclaimer                         |

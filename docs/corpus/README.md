@@ -7,6 +7,7 @@ This directory contains all research that informs the design and architecture of
 ## How This Corpus Works
 
 **Provenance matters.** Every research file includes:
+
 - Source URLs and titles
 - Date accessed
 - Confidence level: **Official** (vendor/university docs), **Institutional** (W3C, MDN, etc.), or **Community** (blogs, videos, other orgs)

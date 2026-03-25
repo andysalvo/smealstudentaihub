@@ -17,12 +17,14 @@ Fork the FFC template into `andysalvo/smealstudentaihub`. Strip all FFC-specific
 ## Consequences
 
 **Positive:**
+
 - Months of infrastructure work inherited for free
 - Agent instruction architecture already proven
 - CI/CD pipeline already tested and working
 - Can focus effort on content and design rather than tooling
 
 **Negative:**
+
 - Carry some FFC patterns we'll need to adapt (governance docs, font stack, sharding config)
 - Must carefully separate FFC content from infrastructure to avoid shipping their branding
 - Apache 2.0 attribution requirement (minor -- just a NOTICE file)

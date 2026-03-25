@@ -11,6 +11,7 @@
 ## What It Is
 
 Copilot CLI maintains a **local SQLite database** of all session history. It includes a full-text search index with information in different tables for:
+
 - User messages
 - System responses
 - Which files were edited
@@ -44,6 +45,7 @@ This lets the tool learn from your history and give you personalized recommendat
 ### For Club Members Using Copilot
 
 If club members are using Copilot CLI to maintain the site, the session history feature means:
+
 - They can pick up where they left off without losing context
 - They can learn from their own prompting patterns
 - Previous maintenance sessions are queryable -- if someone fixed a similar issue before, the context is retrievable

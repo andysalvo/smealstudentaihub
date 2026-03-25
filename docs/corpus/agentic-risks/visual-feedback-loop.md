@@ -97,12 +97,12 @@ Setup: `claude mcp add paper --transport http http://127.0.0.1:29979/mcp --scope
 
 ### Figma vs Paper for Our Project
 
-| Aspect | Figma MCP | Paper MCP |
-|--------|-----------|-----------|
-| Tools | 3 read-only (expanding) | 24 bidirectional |
-| Output | SVG-to-web (85-90% accuracy) | Native HTML/CSS (production-ready JSX) |
-| Maturity | Beta (Figma-backed) | Open alpha |
-| Best for | Team workflows with existing designs | Solo/agent-first workflows |
+| Aspect   | Figma MCP                            | Paper MCP                              |
+| -------- | ------------------------------------ | -------------------------------------- |
+| Tools    | 3 read-only (expanding)              | 24 bidirectional                       |
+| Output   | SVG-to-web (85-90% accuracy)         | Native HTML/CSS (production-ready JSX) |
+| Maturity | Beta (Figma-backed)                  | Open alpha                             |
+| Best for | Team workflows with existing designs | Solo/agent-first workflows             |
 
 ---
 
@@ -126,20 +126,20 @@ Captures snapshots of every Storybook story. Cross-browser, cross-viewport. Agen
 
 ### For Stock Photography
 
-| Source | License | API | Notes |
-|--------|---------|-----|-------|
-| Unsplash | Free, no attribution | Yes | 34+ Penn State-specific images |
-| Pexels | Free, no attribution | Yes | Good for automation |
-| Pixabay | CC0 | Yes (rate-limited) | |
-| Penn State Adobe Stock | Free with PSU license | Yes | Higher quality, education license |
-| Penn State Media Commons | Various | No | [Free Media Library](https://mediacommons.psu.edu/free-media-library/) |
+| Source                   | License               | API                | Notes                                                                  |
+| ------------------------ | --------------------- | ------------------ | ---------------------------------------------------------------------- |
+| Unsplash                 | Free, no attribution  | Yes                | 34+ Penn State-specific images                                         |
+| Pexels                   | Free, no attribution  | Yes                | Good for automation                                                    |
+| Pixabay                  | CC0                   | Yes (rate-limited) |                                                                        |
+| Penn State Adobe Stock   | Free with PSU license | Yes                | Higher quality, education license                                      |
+| Penn State Media Commons | Various               | No                 | [Free Media Library](https://mediacommons.psu.edu/free-media-library/) |
 
 ### For Generated Images
 
-| Tool | Best For | Notes |
-|------|----------|-------|
-| DALL-E 3 | Hero images, illustrations | API available, conversational refinement |
-| Ideogram | Text-heavy graphics (banners, event announcements) | 95% text accuracy |
+| Tool     | Best For                                           | Notes                                    |
+| -------- | -------------------------------------------------- | ---------------------------------------- |
+| DALL-E 3 | Hero images, illustrations                         | API available, conversational refinement |
+| Ideogram | Text-heavy graphics (banners, event announcements) | 95% text accuracy                        |
 
 ### Penn State Image Rules
 

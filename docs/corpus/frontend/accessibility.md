@@ -34,11 +34,12 @@ While the Student AI Hub is hosted on GitHub Pages (not psu.edu), aligning with 
 ## Developer Checklist (WCAG 2.2 AA)
 
 **Sources:**
+
 - [WebAIM: WCAG 2 Checklist](https://webaim.org/standards/wcag/checklist)
 - [W3C: WCAG 2 at a Glance](https://www.w3.org/WAI/standards-guidelines/wcag/glance/)
 - [Yale: WCAG 2 A and AA Checklist (Developers)](https://usability.yale.edu/web-accessibility/articles/wcag2-checklist/developers)
 - [Level Access: WCAG 2.2 Checklist (2026)](https://www.levelaccess.com/blog/wcag-2-2-aa-summary-and-checklist-for-website-owners/)
-**Accessed:** 2026-03-24 | **Confidence:** Official (W3C) + Institutional | **Method:** WebSearch + WebFetch
+  **Accessed:** 2026-03-24 | **Confidence:** Official (W3C) + Institutional | **Method:** WebSearch + WebFetch
 
 ### Perceivable
 

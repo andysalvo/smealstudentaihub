@@ -20,7 +20,7 @@ const nextConfig = {
   images: { unoptimized: true },
   // basePath only needed if NOT using a custom domain
   // basePath: '/repo-name',
-};
+}
 ```
 
 ---
@@ -39,6 +39,7 @@ const nextConfig = {
 ## What Does NOT Work
 
 Explicitly unsupported with static export:
+
 - Dynamic Routes without `generateStaticParams()`
 - Route Handlers that read `Request`
 - Cookies, Rewrites, Redirects, Headers, Proxy

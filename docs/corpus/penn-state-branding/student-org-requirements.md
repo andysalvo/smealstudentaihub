@@ -66,6 +66,7 @@ However, voluntarily following the brand color palette and typography gives the 
 AD69 **does not legally bind RSO websites.** Student pages that "do not conduct University related business" are outside the policy scope.
 
 **We're building to WCAG 2.2 AA anyway** because:
+
 - It's the right thing to do for inclusivity
 - It protects against accessibility complaints
 - It makes us Smeal-ready if the site ever becomes semi-official
@@ -119,23 +120,23 @@ No mandatory disclaimer language exists for RSO websites. However, AD07 prohibit
 
 ## Summary: What We MUST Do
 
-| Requirement | Status |
-|-------------|--------|
-| Use "Applied AI at Penn State" naming format | Mandatory |
-| Do not use Penn State marks in custom logo | Mandatory |
+| Requirement                                     | Status    |
+| ----------------------------------------------- | --------- |
+| Use "Applied AI at Penn State" naming format    | Mandatory |
+| Do not use Penn State marks in custom logo      | Mandatory |
 | Maintain Discover profile with current officers | Mandatory |
-| Use licensed vendors for any PSU-branded merch | Mandatory |
-| Do not imply University endorsement | Mandatory |
-| Follow Student Code of Conduct on site content | Mandatory |
+| Use licensed vendors for any PSU-branded merch  | Mandatory |
+| Do not imply University endorsement             | Mandatory |
+| Follow Student Code of Conduct on site content  | Mandatory |
 
 ## What We SHOULD Do
 
-| Recommendation | Status |
-|----------------|--------|
-| Add disclaimer on website | Recommended |
-| Build to WCAG 2.2 AA | Recommended |
-| Maintain sites.psu.edu page for directory | Recommended |
-| Include privacy notice if collecting emails | Recommended |
+| Recommendation                                   | Status      |
+| ------------------------------------------------ | ----------- |
+| Add disclaimer on website                        | Recommended |
+| Build to WCAG 2.2 AA                             | Recommended |
+| Maintain sites.psu.edu page for directory        | Recommended |
+| Include privacy notice if collecting emails      | Recommended |
 | Follow Penn State brand colors/fonts voluntarily | Recommended |
 
 ---

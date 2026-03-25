@@ -23,13 +23,13 @@ npm i tailwindcss @tailwindcss/postcss
 ### postcss.config.js
 
 ```js
-export default { plugins: ["@tailwindcss/postcss"] }
+export default { plugins: ['@tailwindcss/postcss'] }
 ```
 
 ### CSS Entry Point
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 ```
 
 One import line. No more `@tailwind base; @tailwind components; @tailwind utilities;`.
@@ -41,7 +41,7 @@ One import line. No more `@tailwind base; @tailwind components; @tailwind utilit
 For the Student AI Hub with Penn State / Smeal branding:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Wipe Tailwind defaults -- use ONLY brand colors */
@@ -52,17 +52,17 @@ For the Student AI Hub with Penn State / Smeal branding:
   --color-white: #ffffff;
   --color-accent: oklch(0.65 0.15 200);
   --color-surface: oklch(0.97 0.01 260);
-  --color-text: oklch(0.20 0.02 260);
+  --color-text: oklch(0.2 0.02 260);
   --color-text-muted: oklch(0.45 0.02 260);
   --color-border: oklch(0.88 0.01 260);
-  --color-success: oklch(0.70 0.15 145);
-  --color-warning: oklch(0.80 0.15 80);
-  --color-error: oklch(0.65 0.20 25);
+  --color-success: oklch(0.7 0.15 145);
+  --color-warning: oklch(0.8 0.15 80);
+  --color-error: oklch(0.65 0.2 25);
 
   /* Typography */
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --font-display: "Cal Sans", "Inter", sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Cal Sans', 'Inter', sans-serif;
 
   /* Spacing base */
   --spacing: 4px;
@@ -81,15 +81,15 @@ This gives you utilities like `bg-navy`, `text-accent`, `font-display` -- all ty
 
 ## Key v4 Features
 
-| Feature | Why It Matters |
-|---------|---------------|
-| `--color-*: initial` | Wipe Tailwind defaults. Use ONLY brand colors. No stray `bg-red-500` leaking in. |
-| OKLCH colors | Wider gamut, better gradients, more vivid on modern displays |
-| Container queries (`@container`, `@sm:`, `@lg:`) | Built-in, no plugin. Useful for card layouts in resource grids. |
-| CSS cascade layers | `@layer theme, base, components, utilities` -- clean override behavior |
-| `@tailwindcss/typography` plugin | Apply `prose` class for styled Markdown/MDX content rendering |
-| No autoprefixer needed | Built into v4 via Lightning CSS |
-| Automatic content detection | No `content: ['./src/**/*.tsx']` config needed. Reads `.gitignore` automatically. |
+| Feature                                          | Why It Matters                                                                    |
+| ------------------------------------------------ | --------------------------------------------------------------------------------- |
+| `--color-*: initial`                             | Wipe Tailwind defaults. Use ONLY brand colors. No stray `bg-red-500` leaking in.  |
+| OKLCH colors                                     | Wider gamut, better gradients, more vivid on modern displays                      |
+| Container queries (`@container`, `@sm:`, `@lg:`) | Built-in, no plugin. Useful for card layouts in resource grids.                   |
+| CSS cascade layers                               | `@layer theme, base, components, utilities` -- clean override behavior            |
+| `@tailwindcss/typography` plugin                 | Apply `prose` class for styled Markdown/MDX content rendering                     |
+| No autoprefixer needed                           | Built into v4 via Lightning CSS                                                   |
+| Automatic content detection                      | No `content: ['./src/**/*.tsx']` config needed. Reads `.gitignore` automatically. |
 
 ---
 

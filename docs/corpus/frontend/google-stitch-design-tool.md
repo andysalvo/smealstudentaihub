@@ -25,6 +25,7 @@ Feed Stitch a website URL and it instantly builds a design system (colors, typog
 ### 2. Natural Language Design
 
 Describe what you want in plain English (or even voice):
+
 - "Build a homepage for [product]"
 - Generates a full page design in ~30 seconds
 - Every element is an interactive, editable component
@@ -32,6 +33,7 @@ Describe what you want in plain English (or even voice):
 ### 3. Interactive Prototypes
 
 Designs aren't static images -- they're interactive prototypes that can be:
+
 - Previewed on different device sizes (responsive)
 - Exported to Figma for further editing
 - Tested with simulated user flows
@@ -43,6 +45,7 @@ You can speak directly to Gemini within Stitch. It asks clarifying questions abo
 ### 5. Design Markdown Export
 
 **This is the standout feature for our workflow.** Stitch can export a design system as a **design markdown file** -- a portable, text-based representation of your design tokens and system. This file can be:
+
 - Used across multiple projects
 - Fed into Claude Code, Copilot, or other coding agents
 - Version controlled in git
@@ -65,22 +68,24 @@ A potential workflow for our Penn State/Smeal branding:
 ### Design Markdown as Agent Context
 
 The design markdown export is directly useful for our agent-maintained site vision:
+
 - Store the design file in the repo
 - Reference it in AGENTS.md: "All UI work must follow the design system in `docs/design-system.md`"
 - Agents read the design system and generate on-brand components
 
 ### Comparison to Our Current Approach
 
-| Aspect | Our Current Plan | With Stitch |
-|--------|-----------------|-------------|
-| Design system | Manual CSS variables in `@theme` | Generated from reference sites, exported as design markdown |
-| Prototyping | Code-first in Next.js | Visual-first in Stitch, then export to code |
-| Brand exploration | Manual color selection | AI-generated variations from brand guidelines |
-| Agent enforcement | AGENTS.md text instructions | Design markdown file as structured reference |
+| Aspect            | Our Current Plan                 | With Stitch                                                 |
+| ----------------- | -------------------------------- | ----------------------------------------------------------- |
+| Design system     | Manual CSS variables in `@theme` | Generated from reference sites, exported as design markdown |
+| Prototyping       | Code-first in Next.js            | Visual-first in Stitch, then export to code                 |
+| Brand exploration | Manual color selection           | AI-generated variations from brand guidelines               |
+| Agent enforcement | AGENTS.md text instructions      | Design markdown file as structured reference                |
 
 ### Not a Replacement, an Accelerator
 
 Stitch doesn't replace our Next.js + Tailwind architecture. It's a design phase accelerator:
+
 - Use Stitch to explore and lock down the visual design
 - Export tokens into our CSS
 - Build components in Next.js

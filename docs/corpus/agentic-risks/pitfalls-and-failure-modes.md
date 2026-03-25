@@ -25,10 +25,12 @@
 **How common:** Very common in naive setups. Microsoft's "Swarm Diaries" had 3 of 6 branches conflict before adopting contract-first planning. Cursor's equal-status approach saw 20-agent throughput collapse to 2-3 agents' worth of work.
 
 **Real incidents:**
+
 - Steve Yegge's "Gas Town" project: agent erased production database passwords, autonomously merged PRs even when tests failed
 - Microsoft experiment: LLM integrator ran `git restore --source=HEAD` and destroyed an entire agent's implementation
 
 **How we prevent it:**
+
 - Git worktrees: each agent gets its own isolated workspace
 - Define interfaces before implementations
 - Sequential merging: merge one branch, rebase remaining on top
@@ -45,6 +47,7 @@
 **How common:** Near-universal without countermeasures. AI PRs average 10.83 issues vs 6.45 for human PRs. Duplicated code increased from 8.3% to 12.3%. Refactoring dropped from 25% to under 10% of commits.
 
 **How we prevent it:**
+
 - Pre-commit hooks (ESLint, Prettier) catch formatting drift automatically
 - Tailwind `no-arbitrary-value` rule prevents off-brand colors
 - Provide 2-3 code snippets as "style anchors" in AGENTS.md
@@ -62,6 +65,7 @@
 **How common:** 65% of developers cite missing context as top cause of poor AI quality (Stack Overflow 2026). One user burned 71% of monthly tokens in 3 days, ~30% wasted on context rebuilding.
 
 **How we prevent it:**
+
 - CLAUDE.md provides persistent context without spending conversation tokens
 - Subagents for discrete tasks -- separate context windows, report back summaries
 - Fresh sessions for distinct tasks, not marathon sessions
@@ -76,11 +80,13 @@
 **What happens:** Agents generate imports referencing packages that don't exist. Attackers register those names as malicious packages ("slopsquatting"). USENIX Security 2025: 1 in 5 AI code samples references non-existent packages. 43% of hallucinations are repeatable -- same fake name across queries.
 
 **Real incidents:**
+
 - "huggingface-cli" (hallucinated PyPI package): 30,000+ downloads in 3 months
 - "react-codeshift" spread to 237 repositories through forks
 - "unused-imports" confirmed malicious, 233 downloads/week
 
 **How we prevent it:**
+
 - Open Code Review L1 checks npm registry for every import
 - lockfile-lint validates registry integrity
 - Socket.dev catches behavioral anomalies in new dependencies
@@ -97,6 +103,7 @@
 **How common:** One staff engineer reported 100% failure rate on CSS layout tasks in early agent testing. Since AI code has 8x more performance issues, visual side effects are frequent.
 
 **How we prevent it:**
+
 - Playwright `toHaveScreenshot()` in CI catches layout changes
 - PR preview deployments so reviewers see changes before merge
 - Design system enforcement via Tailwind `@theme` + no-arbitrary-value
@@ -110,11 +117,13 @@
 **What happens:** 45% of AI-generated code contains OWASP Top 10 vulnerabilities. AI code has 2.74x more security vulnerabilities than human code. Models are NOT improving at security even as coding accuracy improves.
 
 **Specific rates:**
+
 - 86% failed to defend against XSS (CWE-80)
 - 88% vulnerable to log injection (CWE-117)
 - One production report: Claude introduced XSS via unvalidated `javascript:` URLs that passed all functional tests
 
 **How we prevent it:**
+
 - CodeQL in CI on every PR (already in FFC scaffold)
 - Gitleaks pre-commit hook + CI for secrets
 - Never give agents access to production credentials
@@ -131,6 +140,7 @@
 **How common:** Universal. "If you use more than one tool, things drift fast."
 
 **How we prevent it:**
+
 - AGENTS.md as single source of truth -- model-specific files are thin redirects
 - Under 200 lines -- bloated files waste context and get ignored
 - Update instructions when codebase changes, review in PRs
@@ -148,6 +158,7 @@
 **The reality:** First attempt will be 95% garbage (Sanity). METR found experienced developers were 19% slower with AI tools while believing they were 24% faster -- non-developers face an even larger perception gap.
 
 **How we prevent it:**
+
 - CI pipeline catches problems automatically before code ships
 - Pair non-technical members with a developer for first sessions
 - Provide IDE (VS Code) alongside terminal for visual file management
@@ -161,12 +172,14 @@
 ## 9. Cost and Token Usage
 
 **Real data:**
+
 - Average: $6/developer/day, 90% of users below $12/day
 - Multi-agent coordination: ~7x more tokens than single-agent
 - Context rebuilding after compaction wastes ~30% of tokens
 - One user: 71% of monthly allocation in 3 days during unoptimized early use
 
 **How we manage it:**
+
 - Sonnet for routine work, Opus for architecture and security decisions
 - Kill idle agent teammates -- they continue consuming tokens
 - Start with 2 agents max, scale after mastering the review cycle
@@ -181,31 +194,37 @@
 ## Real Team Experiences
 
 ### Sanity (Staff Engineer, 6 weeks)
+
 - AI writes 80% of initial implementations, first attempts are 95% garbage
 - Three-attempt reality: 1st 95% wrong, 2nd 50% wrong, 3rd workable
 - Features ship 2-3x faster after calibration period
 - Cost: $1,000-1,500/month per senior engineer going all-in
 
 ### Expo Web Team (1 month)
+
 - Long sessions cause output quality to deteriorate; must clear between tasks
 - "LLMs still produce poorly architected solutions with surprising frequency"
 - Enabled MCP integrations (Linear, Sentry, Figma, Graphite) to enrich context
 
 ### iximiuz (Production SaaS, 1 month)
+
 - 50,000+ lines generated, all requiring authorship-level review
 - Comprehensive fix prompts (500-750 words) produced worse results than fixing individually
 - Reworking five catalogs "by analogy" took 30 min instead of a full day -- 10-100x velocity on well-scoped tasks
 
 ### Google DORA Report (2025)
+
 - 90% AI adoption increase correlated with 9% climb in bug rates
 - 91% increase in code review time, 154% increase in PR size
 - 67.3% of AI-generated PRs rejected vs 15.6% for manual code
 
 ### METR Randomized Controlled Trial
+
 - Experienced developers 19% slower with AI tools while believing they were 24% faster
 - 39-percentage-point perception gap between belief and reality
 
 ### Amazon Kiro Incident (2026)
+
 - After mandating 80% weekly AI coding assistant usage, suffered six-hour outage
 - Knocked out checkout, login, product pricing
 - Estimated 6.3 million lost orders

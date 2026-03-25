@@ -17,6 +17,7 @@
 ## Must Research (Step 2)
 
 ### Penn State / Smeal Branding
+
 - [ ] What are the official Penn State brand colors (exact hex/RGB values)?
 - [ ] What fonts does Penn State / Smeal use?
 - [ ] Are there logo usage rules for student organizations?
@@ -24,11 +25,13 @@
 - [ ] Are there required disclaimers for student org websites (e.g., "not officially endorsed by...")?
 
 ### Smeal Site Examples
+
 - [ ] What Smeal-affiliated student org websites exist?
 - [ ] What design patterns do the best ones use?
 - [ ] What do bad ones get wrong?
 
 ### Wix Extraction
+
 - [ ] Full sitemap of the current Wix site (ajs10845.wixsite.com/student-ai-hub-1)
 - [ ] All text content per page
 - [ ] All images and assets
@@ -36,6 +39,7 @@
 - [ ] Any forms, embeds, or dynamic elements
 
 ### Penn State Web Requirements
+
 - [ ] Does Penn State have specific web standards for RSO sites?
 - [ ] What accessibility audit process exists for student org sites?
 - [ ] Are there hosting or domain requirements?

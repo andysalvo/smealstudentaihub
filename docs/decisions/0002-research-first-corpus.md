@@ -17,6 +17,7 @@ The corpus is version-controlled, grows over time, and serves as institutional k
 ## Consequences
 
 **Positive:**
+
 - Every design decision has cited backing, not gut feeling
 - Future agents can read the corpus to understand WHY the site is built the way it is
 - The corpus itself demonstrates Applied AI's approach to AI-assisted development
@@ -24,6 +25,7 @@ The corpus is version-controlled, grows over time, and serves as institutional k
 - Discovered that the bar for Smeal org sites is extremely low -- informed our ambition level
 
 **Negative:**
+
 - Upfront time investment before any visible output
 - Corpus maintenance becomes an ongoing responsibility
 - Risk of over-researching (mitigated by ajs10845's "don't overengineer" instinct)

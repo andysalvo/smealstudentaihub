@@ -25,6 +25,7 @@ Looking at the screenshots:
 ### The Content Structure
 
 The four-section framework for each major is excellent:
+
 1. **Where AI Appears** -- grounds the discussion in the discipline
 2. **What AI Helps With** -- functional, not promotional
 3. **Where AI Falls Short** -- field-native limitations, not generic AI caveats
@@ -35,6 +36,7 @@ This structure is the heart of the site. It's what a dean sees at Dan Ives Day. 
 ### The Interactive Module Design
 
 The two-column layout (sidebar nav + reading panel) with expandable sections and nested concepts is genuinely well-designed:
+
 - Left sidebar shows all four sections with their sub-topics
 - Active section highlighted in navy, active concept with light blue
 - Reading panel shows: kicker label, title, navy accent bar, body text, section image, "Key Points" box with 3 numbered bullets
@@ -52,6 +54,7 @@ This voice is what makes the content feel like it was written by a thoughtful st
 ### The Penn State / Smeal Positioning
 
 The current site's positioning is right:
+
 - "A student-built resource" (honest about what it is)
 - "Designed and curated by Applied AI" (credit to the club)
 - Penn State Smeal College of Business logo in header and footer
@@ -88,6 +91,7 @@ The Wix pages are opaque -- content locked in Wix's CMS, not versionable, not se
 Right now, updating the site means logging into Wix and clicking through a WYSIWYG editor. Only the person with the Wix account can make changes. When officers graduate, the site stagnates.
 
 **The fix:** The entire site lives in a GitHub repo. Anyone with repo access and an AI coding agent can:
+
 - Create an issue describing what they want to change
 - Have an agent create a PR with the changes
 - Get the PR reviewed and merged
@@ -98,6 +102,7 @@ The agent reads AGENTS.md for context, follows the voice brief for content, resp
 ### From Single-Maintainer to Club-Wide
 
 The Wix site has one maintainer. The new site has:
+
 - CODEOWNERS defining who reviews what
 - Branch protection requiring review before merge
 - CI that validates content, accessibility, and visual regression
@@ -120,6 +125,7 @@ Here's how specific elements from the current site map to the new one:
 **Current:** Navy hero banner, "A student-built resource..." headline, two CTA buttons (Explore / View Process), mission statement, Applied AI + Smeal logos in footer.
 
 **New:** Same content, same messaging, same CTAs. But:
+
 - Full-bleed navy hero with proper typography hierarchy (Roboto Slab for the headline, Roboto for body)
 - Proper button styles using Beaver Blue with hover states
 - Affiliation logo bar (Applied AI + Penn State Smeal)
@@ -132,6 +138,7 @@ Here's how specific elements from the current site map to the new one:
 **Current:** Vertical list of 10 majors, each with grayscale photo + description + "In this field, AI is often discussed where..." text. Alternating gray/white rows.
 
 **New:** Same 10 majors, same descriptions. But:
+
 - Card grid layout (responsive, 2-col on desktop, 1-col on mobile)
 - Each card links to the interactive module
 - Difficulty badge and "sections" count per card
@@ -143,6 +150,7 @@ Here's how specific elements from the current site map to the new one:
 **Current:** Self-contained HTML files with sidebar nav, four sections, expandable concepts, reading panel, key points boxes, section images. Navy `#01458F` primary color.
 
 **New:** Same structure, same content, same interaction pattern. Rebuilt as React components:
+
 - Sidebar nav becomes a React component with state management
 - Sections and concepts render from the MDX/frontmatter data
 - Key Points boxes become a reusable `<KeyPoints>` component
@@ -158,6 +166,7 @@ The module viewer is the most complex component. It should feel identical to the
 **Current:** Four pages with two-column layouts, foundational source cards (with YouTube embeds and external links), cross-page navigation ("Continue Exploring" section linking to related pages).
 
 **New:** Same content (manually extracted from Wix screenshots and rebuilt as MDX). Same structure:
+
 - Two-column on desktop (content + sidebar with source cards)
 - Foundational source cards as a reusable `<SourceCard>` component
 - YouTube embeds via a `<YouTubeEmbed>` component
@@ -169,6 +178,7 @@ The module viewer is the most complex component. It should feel identical to the
 **Current:** Full-width navy hero, article cards with tag pill, headline, date, lede, body, callout boxes, sources.
 
 **New:** Same format. Articles in `/content/news/` as MDX:
+
 - `<CalloutBox>` component for the navy-border callout boxes
 - `<SourceList>` component for the article sources section
 - Reverse-chronological listing on the index page

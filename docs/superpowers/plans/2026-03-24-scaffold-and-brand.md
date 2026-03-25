@@ -27,6 +27,7 @@
 Clarke Moyer (@clarkemoyer) built the FFC infrastructure. His operational docs represent real expertise. We sort into three buckets: keep as-is, adapt for Applied AI, and consolidate (merge useful content into fewer files).
 
 **Keep as-is (Clarke's patterns are correct):**
+
 - `CODE_OF_CONDUCT.md` -- Contributor Covenant v2.1, update contact email only
 - `GOVERNANCE.md` -- adapt names/roles but keep the lazy consensus model
 - `SECURITY.md` -- keep vulnerability reporting, commit signing, severity timelines
@@ -39,6 +40,7 @@ Clarke Moyer (@clarkemoyer) built the FFC infrastructure. His operational docs r
 - `.github/PULL_REQUEST_TEMPLATE.md` -- keep, adapt checkboxes
 
 **Adapt (Clarke's structure, our content):**
+
 - `CONTRIBUTORS.md` -- rewrite to credit Clarke as founding infrastructure contributor and advisor
 - `README.md` -- rewrite for our project, credit Clarke and FFC
 - `LICENSE` -- update copyright to Applied AI at Penn State (keep Apache 2.0)
@@ -46,12 +48,14 @@ Clarke Moyer (@clarkemoyer) built the FFC infrastructure. His operational docs r
 - `.github/ISSUE_TEMPLATE/reviewer-onboarding.md` -- adapt for Applied AI club member onboarding
 
 **Consolidate (merge useful content, remove standalone files):**
+
 - `CODE_QUALITY.md`, `NAMING_CONVENTIONS.md`, `RESPONSIVE_DESIGN.md` -- merge relevant patterns into AGENTS.md
 - `DEPLOYMENT.md`, `CLOUDFLARE_SETUP.md` -- merge into README quick start
 - `LIGHTHOUSE.md`, `DEPENDABOT.md` -- already documented in CI workflows, remove standalone files
 - `TEMPLATE_SETUP_CHECKLIST.md`, `TEMPLATE_USAGE.md` -- served their purpose for our fork, archive
 
 **Remove (FFC-specific, no Applied AI use):**
+
 - `ADOPTERS.md`, `CITATION.cff`, `COMMUNITY_HEALTH_FILES.md`, `COPILOT_AUTOFIX_GUIDE.md`, `EXTERNAL_DEPENDENCIES.md`, `HUBSPOT_INVESTIGATION.md`, `ISSUE_RESOLUTION.md`, `LESSONS_LEARNED.md`, `MAINTAINERS.md`, `MERGE_QUEUE_VERIFICATION.md`, `QUICK_START.md`, `SITE_IMPROVEMENTS.md`, `SUPPORT.md`, `TECHNICAL_DEBT.md`, `THREAT-MODEL.md`, `.requirements-complete`
 - `.github/ISSUE_TEMPLATE/rebrand-template.md` -- served its purpose for our fork
 - `.github/workflows/nextjs.yml.bak`
@@ -78,6 +82,7 @@ rm CODE_QUALITY.md NAMING_CONVENTIONS.md RESPONSIVE_DESIGN.md DEPLOYMENT.md CLOU
 - [ ] **Step 3: Rewrite CONTRIBUTORS.md to credit Clarke**
 
 Write `CONTRIBUTORS.md`:
+
 ```markdown
 # Contributors
 
@@ -111,6 +116,7 @@ Consolidate redundant standalone docs into AGENTS.md and README."
 ### Task 2: Remove FFC Pages, Components, and Data
 
 **Files:**
+
 - Delete: `src/app/cookie-policy/`, `src/app/donation-policy/`, `src/app/free-for-charity-donation-policy/`, `src/app/privacy-policy/`, `src/app/terms-of-service/`, `src/app/security-acknowledgements/`, `src/app/vulnerability-disclosure-policy/`
 - Delete: `src/app/home-page/index.tsx`
 - Delete: `src/components/cookie-consent/`, `src/components/google-tag-manager/`, `src/components/home-page/`, `src/components/ui/TeamMemberCard.tsx`
@@ -135,12 +141,15 @@ rm -rf src/data
 - [ ] **Step 3: Replace page.tsx with placeholder**
 
 Write `src/app/page.tsx`:
+
 ```tsx
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-navy">Smeal Student AI Hub</h1>
-      <p className="mt-4 text-lg text-text-muted">Coming soon. Maintained by Applied AI at Penn State.</p>
+      <p className="mt-4 text-lg text-text-muted">
+        Coming soon. Maintained by Applied AI at Penn State.
+      </p>
     </main>
   )
 }
@@ -158,6 +167,7 @@ git commit -m "chore: remove FFC pages, components, and data"
 ### Task 3: Remove FFC Assets and Add .nojekyll
 
 **Files:**
+
 - Delete: all files in `public/Images/`, `public/Svgs/`, `public/videos/`
 - Delete: `public/CNAME`
 - Delete: FFC favicons (`public/android-chrome-*.png`, `public/apple-icon.png`, `public/favicon.ico`, `public/icon.png`, `public/web-app-manifest-512x512.png`, `public/site.webmanifest`)
@@ -189,11 +199,13 @@ git commit -m "chore: remove FFC assets, add .nojekyll for GitHub Pages"
 ### Task 4: Add Apache 2.0 Attribution (NOTICE file)
 
 **Files:**
+
 - Create: `NOTICE`
 
 - [ ] **Step 1: Write NOTICE file**
 
 Write `NOTICE`:
+
 ```
 Smeal Student AI Hub
 Copyright (c) 2026 Applied AI at Penn State
@@ -222,11 +234,13 @@ git commit -m "docs: add Apache 2.0 NOTICE attributing Free For Charity"
 ### Task 5: Configure Penn State Brand Tokens in Tailwind
 
 **Files:**
+
 - Modify: `src/app/globals.css` -- replace FFC brand tokens with Penn State/Smeal palette
 
 - [ ] **Step 1: Replace globals.css**
 
 Write `src/app/globals.css`:
+
 ```css
 @import 'tailwindcss';
 
@@ -235,25 +249,25 @@ Write `src/app/globals.css`:
   --color-*: initial;
 
   /* Primary (Smeal-aligned hierarchy) */
-  --color-navy: #001E44;
-  --color-beaver-blue: #1E407C;
-  --color-pugh-blue: #96BEE6;
-  --color-white: #FFFFFF;
-  --color-pa-sky: #009CDE;
+  --color-navy: #001e44;
+  --color-beaver-blue: #1e407c;
+  --color-pugh-blue: #96bee6;
+  --color-white: #ffffff;
+  --color-pa-sky: #009cde;
 
   /* Functional */
-  --color-text: #2B2E34;
-  --color-text-muted: #4B5D73;
-  --color-surface: #F2F4F4;
-  --color-surface-alt: #EBF4FF;
-  --color-border: #D5D7D8;
+  --color-text: #2b2e34;
+  --color-text-muted: #4b5d73;
+  --color-surface: #f2f4f4;
+  --color-surface-alt: #ebf4ff;
+  --color-border: #d5d7d8;
 
   /* Semantic */
-  --color-link: #005FA9;
-  --color-link-hover: #009CDE;
-  --color-success: #2E7D32;
-  --color-warning: #F57C00;
-  --color-error: #C62828;
+  --color-link: #005fa9;
+  --color-link-hover: #009cde;
+  --color-success: #2e7d32;
+  --color-warning: #f57c00;
+  --color-error: #c62828;
 
   /* Typography */
   --font-sans: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', 'Helvetica', 'Arial', sans-serif;
@@ -291,6 +305,7 @@ Write `src/app/globals.css`:
 ```bash
 npm run build
 ```
+
 Expected: Build succeeds with no CSS errors.
 
 - [ ] **Step 3: Commit**
@@ -305,12 +320,14 @@ git commit -m "style: configure Penn State/Smeal brand tokens in Tailwind v4"
 ### Task 6: Configure Fonts via next/font
 
 **Files:**
+
 - Modify: `src/lib/fonts.ts` -- replace 8 FFC fonts with Roboto + Roboto Slab
 - Modify: `src/app/layout.tsx` -- clean up layout, apply new fonts
 
 - [ ] **Step 1: Replace fonts.ts**
 
 Write `src/lib/fonts.ts`:
+
 ```ts
 import { Roboto, Roboto_Slab } from 'next/font/google'
 
@@ -333,6 +350,7 @@ export const robotoSlab = Roboto_Slab({
 - [ ] **Step 2: Replace layout.tsx**
 
 Write `src/app/layout.tsx`:
+
 ```tsx
 import './globals.css'
 import { roboto, robotoSlab } from '@/lib/fonts'
@@ -340,20 +358,14 @@ import { siteMetadata } from '@/lib/siteMetadata'
 
 export const metadata = siteMetadata
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${roboto.variable} ${robotoSlab.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans text-text bg-white antialiased">
-        {children}
-      </body>
+      <body className="font-sans text-text bg-white antialiased">{children}</body>
     </html>
   )
 }
@@ -371,11 +383,13 @@ git commit -m "style: configure Roboto + Roboto Slab fonts for Penn State brand"
 ### Task 7: Update Site Metadata
 
 **Files:**
+
 - Modify: `src/lib/siteMetadata.ts` -- replace FFC metadata with Applied AI
 
 - [ ] **Step 1: Replace siteMetadata.ts**
 
 Write `src/lib/siteMetadata.ts`:
+
 ```ts
 import type { Metadata } from 'next'
 
@@ -436,12 +450,14 @@ git commit -m "chore: update site metadata for Smeal Student AI Hub"
 ### Task 8: Update next.config.ts and package.json
 
 **Files:**
+
 - Modify: `next.config.ts` -- remove FFC remote patterns, set basePath
 - Modify: `package.json` -- update name, description, remove unused deps
 
 - [ ] **Step 1: Replace next.config.ts**
 
 Write `next.config.ts`:
+
 ```ts
 import type { NextConfig } from 'next'
 
@@ -473,6 +489,7 @@ npm uninstall react-icons swiper
 ```bash
 npm run build
 ```
+
 Expected: Clean build, output in `out/` directory.
 
 - [ ] **Step 5: Commit**
@@ -487,6 +504,7 @@ git commit -m "chore: update config for Smeal Student AI Hub, remove unused deps
 ### Task 9: Update Deploy Workflow for Our Repo
 
 **Files:**
+
 - Modify: `.github/workflows/deploy.yml` -- update basePath to `/smealstudentaihub`
 
 - [ ] **Step 1: Update NEXT_PUBLIC_BASE_PATH in deploy.yml**
@@ -505,6 +523,7 @@ git commit -m "ci: update deploy basePath to /smealstudentaihub"
 ### Task 10: Delete FFC Tests and Verify Clean State
 
 **Files:**
+
 - Delete: all files in `__tests__/` and `tests/` (FFC-specific tests)
 
 - [ ] **Step 1: Delete FFC tests**
@@ -518,6 +537,7 @@ rm -rf __tests__ tests
 ```bash
 npm run build && npm run lint
 ```
+
 Expected: Both pass with no errors.
 
 - [ ] **Step 3: Commit and push**
@@ -537,11 +557,13 @@ Expected: GitHub Actions CI runs. Deploy workflow deploys branded skeleton to Gi
 ### Task 11: Write AGENTS.md (Canonical)
 
 **Files:**
+
 - Modify: `AGENTS.md` -- replace FFC content with our canonical agent instructions
 
 - [ ] **Step 1: Write AGENTS.md**
 
 The file must cover the six required areas (per GitHub's 2,500-repo analysis):
+
 1. **Commands** with expected durations
 2. **Testing** instructions
 3. **Project structure** with version numbers
@@ -565,6 +587,7 @@ git commit -m "docs: write canonical AGENTS.md for Smeal Student AI Hub"
 ### Task 12: Write CLAUDE.md (Thin Layer)
 
 **Files:**
+
 - Modify: `CLAUDE.md` -- thin Claude-specific pointer to AGENTS.md
 
 - [ ] **Step 1: Write CLAUDE.md**
@@ -583,6 +606,7 @@ git commit -m "docs: write thin CLAUDE.md referencing AGENTS.md"
 ### Task 13: Update .claude/rules/ and .claude/settings.json
 
 **Files:**
+
 - Modify: `.claude/rules/00-ffc-mission.md` -- replace with Applied AI mission
 - Keep: `.claude/rules/01-security.md` -- already correct
 - Modify: `.claude/settings.json` -- update command allowlist
@@ -607,6 +631,7 @@ git commit -m "docs: update Claude rules for Applied AI mission"
 ### Task 14: Update GitHub Infrastructure
 
 **Files:**
+
 - Modify: `.github/CODEOWNERS` -- update to ajs10845
 - Modify: `.github/PULL_REQUEST_TEMPLATE.md` -- trim to 10-12 checkboxes
 - Modify: `.github/ISSUE_TEMPLATE/feature_request.md` -- replace FFC user types
@@ -663,6 +688,7 @@ git commit -m "docs: rewrite GitHub infrastructure for Applied AI at Penn State"
 ### Task 15: Install Safety Tooling
 
 **Files:**
+
 - Create: `scripts/doctor.sh` -- environment validation
 - Modify: `package.json` -- add doctor script
 - Modify: `.github/workflows/ci.yml` -- add content validation step (future)
@@ -671,6 +697,7 @@ git commit -m "docs: rewrite GitHub infrastructure for Applied AI at Penn State"
 - [ ] **Step 1: Create doctor script**
 
 Write `scripts/doctor.sh`:
+
 ```bash
 #!/bin/bash
 echo "Checking prerequisites..."
@@ -742,6 +769,7 @@ Check that CI passes (build, lint) and deploy workflow triggers.
 - [ ] **Step 3: Verify the deployed site**
 
 Navigate to `https://andysalvo.github.io/smealstudentaihub/` and confirm:
+
 - Page loads with "Smeal Student AI Hub" heading
 - Penn State brand colors visible
 - Roboto font rendering
@@ -754,6 +782,7 @@ Navigate to `https://andysalvo.github.io/smealstudentaihub/` and confirm:
 ### Task 17: Install MDX Dependencies
 
 **Files:**
+
 - Modify: `package.json` -- add @next/mdx, @mdx-js/loader, @mdx-js/react, @types/mdx, remark-gfm, rehype-slug
 - Modify: `next.config.ts` -- configure MDX
 
@@ -793,6 +822,7 @@ export default withMDX(nextConfig)
 - [ ] **Step 3: Create mdx-components.tsx at project root**
 
 Write `mdx-components.tsx`:
+
 ```tsx
 import type { MDXComponents } from 'mdx/types'
 
@@ -807,20 +837,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h3: ({ children }) => (
       <h3 className="text-xl font-serif font-medium text-beaver-blue mt-4 mb-2">{children}</h3>
     ),
-    p: ({ children }) => (
-      <p className="text-text leading-relaxed mb-4">{children}</p>
-    ),
+    p: ({ children }) => <p className="text-text leading-relaxed mb-4">{children}</p>,
     a: ({ href, children }) => (
-      <a href={href} className="text-link hover:text-link-hover underline">{children}</a>
+      <a href={href} className="text-link hover:text-link-hover underline">
+        {children}
+      </a>
     ),
-    ul: ({ children }) => (
-      <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>
-    ),
-    ol: ({ children }) => (
-      <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>
-    ),
+    ul: ({ children }) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-pugh-blue pl-4 italic text-text-muted my-4">{children}</blockquote>
+      <blockquote className="border-l-4 border-pugh-blue pl-4 italic text-text-muted my-4">
+        {children}
+      </blockquote>
     ),
     ...components,
   }
@@ -845,6 +873,7 @@ git commit -m "feat: configure MDX content layer with Penn State-branded compone
 ### Task 18: Create Content Directory Structure
 
 **Files:**
+
 - Create: `content/smeal-majors/` -- 10 canonical MDX files
 - Create: `content/learn/` -- 4 Learn section pages
 - Create: `content/news/` -- news articles
@@ -864,10 +893,11 @@ cp ~/Documents/GitHub/ai_hub_brain/canonical/smeal-majors/*.md content/smeal-maj
 - [ ] **Step 3: Rename .md to .mdx and add frontmatter to each file**
 
 For each of the 10 files, prepend frontmatter:
+
 ```yaml
 ---
-title: "AI in Accounting"
-description: "How AI supports audits, reporting, tax, and internal controls at scale."
+title: 'AI in Accounting'
+description: 'How AI supports audits, reporting, tax, and internal controls at scale.'
 smealMajor: accounting
 difficulty: intermediate
 lastUpdated: 2026-03-24
@@ -893,6 +923,7 @@ git commit -m "feat: create content directory with Smeal major canonical content
 ### Task 19: Copy Module Images
 
 **Files:**
+
 - Create: `public/images/modules/` -- section images for the 10 modules
 
 - [ ] **Step 1: Copy module images**
@@ -916,6 +947,7 @@ git commit -m "feat: add module section images from Student AI Hub"
 ### Task 20: Build Header Component
 
 **Files:**
+
 - Modify: `src/components/header/index.tsx` -- Penn State branded nav
 
 - [ ] **Step 1: Write header component**
@@ -936,11 +968,13 @@ git commit -m "feat: build Penn State branded header with navigation"
 ### Task 21: Build Footer Component
 
 **Files:**
+
 - Modify: `src/components/footer/index.tsx` -- three-column fat footer
 
 - [ ] **Step 1: Write footer component**
 
 Three columns on Nittany Navy background:
+
 1. "Applied AI at Penn State" + "Smeal College of Business" + tagline
 2. Quick links: Learn, Events, Team, About, Join Us
 3. Contact: email, social icons (LinkedIn, Instagram, GitHub)
@@ -961,6 +995,7 @@ git commit -m "feat: build three-column footer with Penn State disclaimer"
 ### Task 22: Update Layout with Header and Footer
 
 **Files:**
+
 - Modify: `src/app/layout.tsx` -- add Header and Footer
 
 - [ ] **Step 1: Update layout.tsx**
@@ -987,11 +1022,13 @@ git commit -m "feat: add header and footer to root layout"
 ### Task 23: Build Home Page
 
 **Files:**
+
 - Modify: `src/app/page.tsx` -- home page matching current site's structure
 
 - [ ] **Step 1: Write home page**
 
 Match the current site's home page (home.png screenshot):
+
 - Hero banner: "A student-built resource for understanding AI in business, school, and professional life."
 - Subtitle: "Designed and curated by Applied AI."
 - CTA buttons: "Explore the Student AI Hub" + "View the Process"
@@ -1027,6 +1064,7 @@ Confirm: home page with hero, nav, footer, Penn State branding, all links workin
 ### Task 25: Write ADR for This Implementation
 
 **Files:**
+
 - Create: `docs/decisions/0004-scaffold-cleanup-and-branding.md`
 
 - [ ] **Step 1: Write ADR**
@@ -1046,6 +1084,7 @@ git push origin main
 ## What Comes Next (Not in This Plan)
 
 After this plan is complete, the site will be a branded skeleton with:
+
 - Clean FFC scaffold with Penn State/Smeal branding
 - MDX content layer with 10 Smeal major files
 - Agent instructions (AGENTS.md, CLAUDE.md, rules)
@@ -1054,6 +1093,7 @@ After this plan is complete, the site will be a branded skeleton with:
 - Research corpus and ADRs
 
 **Next plans (separate):**
+
 1. Build all content pages (AI by Smeal Major, Learn section, News, About, Foundational Sources)
 2. Convert interactive HTML modules to React components
 3. Build resource library with filtering

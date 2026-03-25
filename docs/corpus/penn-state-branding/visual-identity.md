@@ -11,32 +11,32 @@
 **Source:** [Penn State Brand Book - Design Essentials](https://brand.psu.edu/design-toolkit/design-essentials)
 **Accessed:** 2026-03-24 | **Confidence:** Official | **Method:** WebSearch + WebFetch
 
-| Color Name | HEX | RGB | Pantone | Role |
-|---|---|---|---|---|
-| **Nittany Navy** | `#001E44` | 0, 30, 68 | PMS 282 C | Primary dark |
-| **Beaver Blue** | `#1E407C` | 30, 64, 124 | PMS 287 C | Primary blue |
-| **White Out** | `#FFFFFF` | 255, 255, 255 | -- | Primary light |
-| **Pugh Blue** | `#96BEE6` | 150, 190, 230 | PMS 284 C | Secondary |
+| Color Name       | HEX       | RGB           | Pantone   | Role          |
+| ---------------- | --------- | ------------- | --------- | ------------- |
+| **Nittany Navy** | `#001E44` | 0, 30, 68     | PMS 282 C | Primary dark  |
+| **Beaver Blue**  | `#1E407C` | 30, 64, 124   | PMS 287 C | Primary blue  |
+| **White Out**    | `#FFFFFF` | 255, 255, 255 | --        | Primary light |
+| **Pugh Blue**    | `#96BEE6` | 150, 190, 230 | PMS 284 C | Secondary     |
 
 ### Extended/Accent Colors
 
-| Color Name | HEX | Notes |
-|---|---|---|
-| **PA Sky** | `#009CDE` | Signature brand blue |
-| **Slate** | `#314D64` | Neutral dark blue-gray |
-| **Creek** | ~`#3EA39E` | Teal-green accent |
-| **Limestone** | ~`#A2AAAD` | Warm gray neutral |
+| Color Name        | HEX        | Notes                   |
+| ----------------- | ---------- | ----------------------- |
+| **PA Sky**        | `#009CDE`  | Signature brand blue    |
+| **Slate**         | `#314D64`  | Neutral dark blue-gray  |
+| **Creek**         | ~`#3EA39E` | Teal-green accent       |
+| **Limestone**     | ~`#A2AAAD` | Warm gray neutral       |
 | **Original 1889** | ~`#BC204B` | Historic Penn State red |
 
 ### Functional CSS Colors (observed on brand.psu.edu)
 
-| Role | HEX |
-|------|-----|
-| Link blue | `#005FA9` |
-| Hover blue | `#009CDE` |
-| Body text dark | `#2B2E34` |
-| Light background | `#F2F4F4` |
-| Callout gray | `#D5D7D8` |
+| Role                  | HEX       |
+| --------------------- | --------- |
+| Link blue             | `#005FA9` |
+| Hover blue            | `#009CDE` |
+| Body text dark        | `#2B2E34` |
+| Light background      | `#F2F4F4` |
+| Callout gray          | `#D5D7D8` |
 | Light blue background | `#EBF4FF` |
 
 ---
@@ -47,6 +47,7 @@
 **Accessed:** 2026-03-24 | **Confidence:** Official | **Method:** WebSearch + WebFetch
 
 Smeal modifies the Penn State palette hierarchy:
+
 - **Pugh Blue elevated to Primary** (secondary at university level)
 - **Beaver Blue de-emphasized to Accent** (primary at university level)
 - **Nittany Navy remains primary**
@@ -77,12 +78,13 @@ Smeal modifies the Penn State palette hierarchy:
 
 ### Web Fonts (recommended for our project)
 
-| Font | Weights | Role | Source |
-|------|---------|------|--------|
-| **Roboto** | 300, 400, 500, 700 + italics | Body text, UI | Google Fonts (free) |
-| **Roboto Slab** | 300, 400, 500, 600, 700 | Headings, display | Google Fonts (free) |
+| Font            | Weights                      | Role              | Source              |
+| --------------- | ---------------------------- | ----------------- | ------------------- |
+| **Roboto**      | 300, 400, 500, 700 + italics | Body text, UI     | Google Fonts (free) |
+| **Roboto Slab** | 300, 400, 500, 600, 700      | Headings, display | Google Fonts (free) |
 
 **Fallback stacks (observed on brand.psu.edu):**
+
 - Sans-serif: `'Roboto', 'Franklin Gothic Medium', 'Tahoma', 'Helvetica', 'Arial', sans-serif`
 - Serif/Slab: `'Roboto Slab', 'Georgia', 'Times New Roman', serif`
 
@@ -96,6 +98,7 @@ Smeal modifies the Penn State palette hierarchy:
 ### Recommendation for Our Project
 
 Use **Roboto + Roboto Slab** via Google Fonts. They are:
+
 - The officially recommended Penn State web fonts
 - Free with no license requirements
 - Already in use on brand.psu.edu
@@ -107,15 +110,15 @@ Use **Roboto + Roboto Slab** via Google Fonts. They are:
 
 Based on Smeal sub-brand hierarchy:
 
-| Role | Color | HEX | Usage |
-|---|---|---|---|
-| Primary dark | Nittany Navy | `#001E44` | Headers, nav, footers, primary backgrounds |
-| Primary light | Pugh Blue | `#96BEE6` | Secondary backgrounds, accents, highlights |
-| Accent | Beaver Blue | `#1E407C` | Buttons, links, interactive elements |
-| Background | White Out | `#FFFFFF` | Page background |
-| Text | Dark gray | `#2B2E34` | Body text |
-| Light backgrounds | Soft gray | `#F2F4F4` | Section backgrounds, cards |
-| Hover/active | PA Sky | `#009CDE` | Link hover states, active indicators |
+| Role              | Color        | HEX       | Usage                                      |
+| ----------------- | ------------ | --------- | ------------------------------------------ |
+| Primary dark      | Nittany Navy | `#001E44` | Headers, nav, footers, primary backgrounds |
+| Primary light     | Pugh Blue    | `#96BEE6` | Secondary backgrounds, accents, highlights |
+| Accent            | Beaver Blue  | `#1E407C` | Buttons, links, interactive elements       |
+| Background        | White Out    | `#FFFFFF` | Page background                            |
+| Text              | Dark gray    | `#2B2E34` | Body text                                  |
+| Light backgrounds | Soft gray    | `#F2F4F4` | Section backgrounds, cards                 |
+| Hover/active      | PA Sky       | `#009CDE` | Link hover states, active indicators       |
 
 ---
 

@@ -31,6 +31,7 @@ AGENTS.md is a simple, open format for guiding coding agents. Think of it as a "
 **Accessed:** 2026-03-24 | **Confidence:** Official + Community | **Method:** WebSearch + WebFetch
 
 Over 25 coding agents support AGENTS.md natively:
+
 - **OpenAI Codex** (reads it directly)
 - **GitHub Copilot** (reads it)
 - **Google Jules & Gemini CLI** (reads it)
@@ -80,14 +81,14 @@ Over 25 coding agents support AGENTS.md natively:
 **Source:** [DeployHQ - AI Config Files Guide](https://www.deployhq.com/blog/ai-coding-config-files-guide)
 **Accessed:** 2026-03-24 | **Confidence:** Community | **Method:** WebSearch + WebFetch
 
-| Config File | Primary Tool | Also Read By | Location |
-|---|---|---|---|
-| `CLAUDE.md` | Claude Code | -- | Project root + `~/.claude/` |
-| `AGENTS.md` | Codex CLI | Cursor, Claude Code, Gemini CLI, Windsurf, Copilot, Aider, 20+ more | Project root + subdirectories |
-| `.cursor/rules/` | Cursor | -- | `.cursor/rules/` directory |
-| `GEMINI.md` | Gemini CLI | -- | Project root + `~/.gemini/` |
-| `.windsurf/rules/` | Windsurf | -- | `.windsurf/rules/` directory |
-| `copilot-instructions.md` | GitHub Copilot | -- | `.github/` directory |
+| Config File               | Primary Tool   | Also Read By                                                        | Location                      |
+| ------------------------- | -------------- | ------------------------------------------------------------------- | ----------------------------- |
+| `CLAUDE.md`               | Claude Code    | --                                                                  | Project root + `~/.claude/`   |
+| `AGENTS.md`               | Codex CLI      | Cursor, Claude Code, Gemini CLI, Windsurf, Copilot, Aider, 20+ more | Project root + subdirectories |
+| `.cursor/rules/`          | Cursor         | --                                                                  | `.cursor/rules/` directory    |
+| `GEMINI.md`               | Gemini CLI     | --                                                                  | Project root + `~/.gemini/`   |
+| `.windsurf/rules/`        | Windsurf       | --                                                                  | `.windsurf/rules/` directory  |
+| `copilot-instructions.md` | GitHub Copilot | --                                                                  | `.github/` directory          |
 
 **AGENTS.md is the most universally supported format** across 25+ tools and 60,000+ repos.
 

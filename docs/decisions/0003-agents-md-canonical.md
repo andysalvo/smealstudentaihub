@@ -19,11 +19,13 @@ AGENTS.md will cover the six required areas identified by GitHub's analysis of 2
 ## Consequences
 
 **Positive:**
+
 - One place to update when the project changes
 - Any AI coding tool works with the repo out of the box
 - Follows the Linux Foundation standard, not a proprietary format
 - Reduced maintenance burden vs. 4 overlapping files
 
 **Negative:**
+
 - Model-specific optimizations are limited to the thin layer files
 - If AGENTS.md gets too long, it could hit context limits on some tools (mitigated by keeping it concise)

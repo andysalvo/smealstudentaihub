@@ -64,14 +64,14 @@ The v1 was conceptually sound but generic. V2 adds:
 
 ## Sentence rules
 
-| Rule | Detail |
-|------|--------|
-| Length | 10-20 words typical, 25 max |
-| Commas | Use periods over commas for distinct thoughts |
-| Chains | Break "A, which B, can C, though D" into separate sentences |
-| Signposting | No "more broadly," "it's important to note," "additionally" |
-| Meta | No "This section will discuss," "As we've seen" |
-| Endings | Vary paragraph endings. Don't end every paragraph "in this field" |
+| Rule        | Detail                                                            |
+| ----------- | ----------------------------------------------------------------- |
+| Length      | 10-20 words typical, 25 max                                       |
+| Commas      | Use periods over commas for distinct thoughts                     |
+| Chains      | Break "A, which B, can C, though D" into separate sentences       |
+| Signposting | No "more broadly," "it's important to note," "additionally"       |
+| Meta        | No "This section will discuss," "As we've seen"                   |
+| Endings     | Vary paragraph endings. Don't end every paragraph "in this field" |
 
 ---
 

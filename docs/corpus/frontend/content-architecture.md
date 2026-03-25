@@ -49,7 +49,11 @@ import type { MDXComponents } from 'mdx/types'
 export function useMDXComponents(): MDXComponents {
   return {
     h1: ({ children }) => <h1 className="text-3xl font-bold mt-8">{children}</h1>,
-    a: ({ href, children }) => <a href={href} className="text-accent underline">{children}</a>,
+    a: ({ href, children }) => (
+      <a href={href} className="text-accent underline">
+        {children}
+      </a>
+    ),
     // map all elements to your design system
   }
 }
@@ -85,6 +89,7 @@ export const metadata = {
 }
 
 # Introduction to Large Language Models
+
 ...
 ```
 
@@ -94,6 +99,7 @@ export const metadata = {
 **Accessed:** 2026-03-24 | **Confidence:** Official | **Method:** WebFetch
 
 Nextra wraps Next.js and provides:
+
 - File-system routing for docs
 - Built-in search (Pagefind)
 - Sidebar navigation from folder structure
@@ -104,6 +110,7 @@ Nextra wraps Next.js and provides:
 ### Pattern 3: Content Hub with Taxonomy
 
 For a resource library with categories, difficulty levels, and search:
+
 - Use route groups: `app/(resources)/` and `app/(learn)/`
 - Build index pages that read MDX metadata at build time using `fs` and `globby`
 - Implement client-side filtering with simple state machine (no server needed)

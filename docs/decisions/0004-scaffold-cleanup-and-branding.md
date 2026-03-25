@@ -20,11 +20,12 @@ Executed a 25-task plan across 5 phases:
 
 **Phase 4 (Components):** Built Penn State branded header (navy logo bar, nav, mobile menu), three-column footer (identity, links, connect, disclaimer, FFC credit), home page matching current Wix site structure.
 
-**Branding:** Nittany Navy #001E44, Beaver Blue #1E407C, Pugh Blue #96BEE6, PA Sky #009CDE. Roboto + Roboto Slab. Tailwind v4 @theme with --color-*: initial to lock brand colors.
+**Branding:** Nittany Navy #001E44, Beaver Blue #1E407C, Pugh Blue #96BEE6, PA Sky #009CDE. Roboto + Roboto Slab. Tailwind v4 @theme with --color-\*: initial to lock brand colors.
 
 ## Consequences
 
 **Positive:**
+
 - Site builds and deploys to GitHub Pages with Penn State branding
 - Any AI coding tool reads AGENTS.md and can work on the repo
 - 10 Smeal major content files ready as MDX
@@ -32,6 +33,7 @@ Executed a 25-task plan across 5 phases:
 - 34 research files provide institutional knowledge for future agents
 
 **Negative:**
+
 - All FFC tests deleted (new tests needed as we build pages)
 - Many pages are stubs (no content pages beyond home yet)
 - No favicon yet

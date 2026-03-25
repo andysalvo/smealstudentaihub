@@ -14,6 +14,7 @@
 **Accessed:** 2026-03-24 | **Confidence:** Official
 
 The proven flow:
+
 1. Issue created with clear description
 2. Agent assigned (via @copilot mention, label, or direct assignment)
 3. Agent boots VM, clones repo, analyzes codebase
@@ -25,6 +26,7 @@ The proven flow:
 9. Human merges
 
 **Real data from Microsoft's dotnet/runtime:**
+
 - 2,963 Copilot Coding Agent PRs across seven .NET repos
 - 67.9% merge rate in dotnet/runtime (535 merged out of 878)
 - Success rate jumped from 38.1% (before writing copilot-instructions.md) to ~71% after
@@ -49,11 +51,11 @@ The proven flow:
 
 ### Task Size Guide
 
-| Size | Example | Verdict |
-|------|---------|---------|
-| Too big | "Implement the feature" with no file refs | Agent goes off in random directions |
-| Too small | Single-line changes, trivial renames | More overhead than doing it by hand |
-| Just right | "Add login form in src/components/LoginForm.tsx using AuthContext from src/context/auth.ts. Include validation. Write tests in src/__tests__/LoginForm.test.tsx." | Clear deliverable, specific files |
+| Size       | Example                                                                                                                                                           | Verdict                             |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| Too big    | "Implement the feature" with no file refs                                                                                                                         | Agent goes off in random directions |
+| Too small  | Single-line changes, trivial renames                                                                                                                              | More overhead than doing it by hand |
+| Just right | "Add login form in src/components/LoginForm.tsx using AuthContext from src/context/auth.ts. Include validation. Write tests in src/**tests**/LoginForm.test.tsx." | Clear deliverable, specific files   |
 
 ---
 
@@ -131,13 +133,13 @@ Each agent task = one PR = one revertable unit. Atomic PRs are the foundation of
 **Source:** [Claude Code vs Cursor vs GitHub Copilot 2026 Showdown](https://dev.to/alexcloudstar/claude-code-vs-cursor-vs-github-copilot-the-2026-ai-coding-tool-showdown-53n4)
 **Accessed:** 2026-03-24 | **Confidence:** Community
 
-| Task | Best Tool | Why |
-|------|-----------|-----|
-| Daily feature work, inline suggestions | Cursor or Windsurf | Low latency |
-| Multi-file refactors, subtle bugs | Claude Code | 200K token context, best reasoning |
-| GitHub-centric workflows, issue-to-PR | Copilot Coding Agent | Native GitHub integration |
-| Automation, scripting, CI/CD | Claude Code or Gemini CLI | Terminal-native |
-| Quick inline completions | Cursor with fast model | Lowest latency |
+| Task                                   | Best Tool                 | Why                                |
+| -------------------------------------- | ------------------------- | ---------------------------------- |
+| Daily feature work, inline suggestions | Cursor or Windsurf        | Low latency                        |
+| Multi-file refactors, subtle bugs      | Claude Code               | 200K token context, best reasoning |
+| GitHub-centric workflows, issue-to-PR  | Copilot Coding Agent      | Native GitHub integration          |
+| Automation, scripting, CI/CD           | Claude Code or Gemini CLI | Terminal-native                    |
+| Quick inline completions               | Cursor with fast model    | Lowest latency                     |
 
 ---
 
@@ -171,6 +173,7 @@ Start restrictive (require review on every PR, manual approval in agents). Gradu
 ### What Works
 
 Intentional, human-directed agent contributions with:
+
 - Clear issue scoping
 - Instruction files (AGENTS.md, copilot-instructions.md)
 - Mandatory human review on every PR
@@ -185,12 +188,12 @@ Autonomous bots making unsolicited PRs. The "AI Slopageddon" of 2026 forced curl
 
 ## How This Applies to Our Project
 
-| Pattern | Our Implementation |
-|---------|-------------------|
-| Issue-to-PR | Club member creates issue, agent picks it up, creates PR, human reviews |
-| Task scoping | Each issue is one clear deliverable in one directory |
-| Human review | Required on every PR to main, CODEOWNERS for critical files |
-| Content contribution | Pattern B (issue-based) for now, Pattern A (CMS) when scale demands |
-| Rollback | Atomic PRs, git revert, tagged releases |
-| Multi-model | Claude Code for architecture, Copilot for issue-to-PR, Cursor for quick edits |
-| Progressive autonomy | Start with full review, loosen as we build trust |
+| Pattern              | Our Implementation                                                            |
+| -------------------- | ----------------------------------------------------------------------------- |
+| Issue-to-PR          | Club member creates issue, agent picks it up, creates PR, human reviews       |
+| Task scoping         | Each issue is one clear deliverable in one directory                          |
+| Human review         | Required on every PR to main, CODEOWNERS for critical files                   |
+| Content contribution | Pattern B (issue-based) for now, Pattern A (CMS) when scale demands           |
+| Rollback             | Atomic PRs, git revert, tagged releases                                       |
+| Multi-model          | Claude Code for architecture, Copilot for issue-to-PR, Cursor for quick edits |
+| Progressive autonomy | Start with full review, loosen as we build trust                              |

@@ -11,6 +11,7 @@
 ### What They Built
 
 Project-specific instructions for Claude Code. Points to AGENTS.md as canonical reference. Covers:
+
 - Terminal/tool usage preferences
 - Timeout requirements (180s+ for builds)
 - Pre-commit checklist (format, lint, test, build, e2e)
@@ -41,6 +42,7 @@ Project-specific instructions for Claude Code. Points to AGENTS.md as canonical 
 ### What They Built
 
 The canonical AI agent reference. Covers:
+
 - Template purpose and tech stack table
 - Core commands with typical durations
 - Development workflow (issue to merge)
@@ -76,6 +78,7 @@ The canonical AI agent reference. Covers:
 ### What They Built
 
 Gemini-specific instructions with:
+
 - "Quick Context" table
 - Step-by-step task guides (adding a page, updating content, fixing lint errors, creating a PR)
 - Troubleshooting section with specific error messages and solutions
@@ -121,9 +124,11 @@ Condensed AGENTS.md for Copilot: workflow, pre-push checks, architecture summary
 ### What They Built
 
 #### 00-ffc-mission.md
+
 Mission statement, conventional commits format, PR workflow rules, naming conventions, build command timeouts, code style principles. Includes: **"Don't over-engineer. Keep solutions simple and focused. Don't add features beyond what was asked."**
 
 #### 01-security.md
+
 Secret handling rules (never expose, never hardcode, never echo), GitHub Actions secret syntax, local dev `.env` guidance, user-provided secret handling protocol (4 numbered steps), list of files that must never be committed.
 
 ### What They Did Well
@@ -148,6 +153,7 @@ Secret handling rules (never expose, never hardcode, never echo), GitHub Actions
 ### What They Built
 
 Permission allowlist/denylist for Claude Code bash operations.
+
 - Allows: `npm install`, `npm run *`, `npx playwright *`, `git *`, `gh *`
 - Denies: `rm -rf *`, `*API_TOKEN*`, `*SECRET*`
 

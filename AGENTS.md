@@ -10,18 +10,18 @@
 
 ## Commands
 
-| Command | What it does | Duration |
-|---------|-------------|----------|
-| `npm run dev` | Start dev server (Turbopack) | ~3s |
-| `npm run build` | Production static export to `out/` | ~15s |
-| `npm run preview` | Serve static build locally on :3000 | instant |
-| `npm run lint` | ESLint | ~5s |
-| `npm run format:check` | Prettier check | ~3s |
-| `npm run format` | Prettier fix | ~3s |
-| `npm run test` | Jest unit tests | ~5s |
-| `npm run test:e2e` | Playwright E2E tests | ~30s |
-| `npm run doctor` | Check prerequisites (Node, npm, git) | instant |
-| `npm run check-links` | Linkinator broken link check on `out/` | ~15s |
+| Command                | What it does                           | Duration |
+| ---------------------- | -------------------------------------- | -------- |
+| `npm run dev`          | Start dev server (Turbopack)           | ~3s      |
+| `npm run build`        | Production static export to `out/`     | ~15s     |
+| `npm run preview`      | Serve static build locally on :3000    | instant  |
+| `npm run lint`         | ESLint                                 | ~5s      |
+| `npm run format:check` | Prettier check                         | ~3s      |
+| `npm run format`       | Prettier fix                           | ~3s      |
+| `npm run test`         | Jest unit tests                        | ~5s      |
+| `npm run test:e2e`     | Playwright E2E tests                   | ~30s     |
+| `npm run doctor`       | Check prerequisites (Node, npm, git)   | instant  |
+| `npm run check-links`  | Linkinator broken link check on `out/` | ~15s     |
 
 **Before committing:** Run `npm run build` to verify the static export succeeds.
 
@@ -80,6 +80,7 @@ smealstudentaihub/
 ## Code Style
 
 **TypeScript:**
+
 ```ts
 // Use named exports, not default exports (except pages)
 export function ComponentName() { ... }
@@ -92,6 +93,7 @@ export function Card({ title, children }: { title: string; children: React.React
 ```
 
 **Tailwind:**
+
 ```tsx
 // Use brand tokens, NEVER arbitrary values
 <div className="bg-navy text-white">     // correct
@@ -99,6 +101,7 @@ export function Card({ title, children }: { title: string; children: React.React
 ```
 
 **Content (MDX):**
+
 - Follow `content/VOICE_BRIEF.md` for all content writing
 - Field first, AI second. Hedging is intentional. Describe, don't instruct.
 - Each MDX file must have frontmatter: title, description, smealMajor, difficulty, lastUpdated, author

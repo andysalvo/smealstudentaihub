@@ -64,6 +64,7 @@ The featured demo shows an agentic workflow that goes beyond what Dependabot can
 **Problem:** Upgrading a framework like Astro isn't just bumping version numbers. There are migrations, breaking changes, and docs to read. Dependabot can't handle this because it requires intelligence and judgment.
 
 **Solution:** An agentic workflow that:
+
 1. Checks npm daily for new releases of your dependencies
 2. Reviews the changelog and upgrade guide
 3. Figures out what to bump and what migrations are needed
@@ -75,6 +76,7 @@ The featured demo shows an agentic workflow that goes beyond what Dependabot can
 ### Extending to Dependabot Alerts
 
 When Dependabot opens a PR but can't handle breaking changes (low confidence):
+
 - "Every time Dependabot opens a PR on my repo, look at the PR and figure out what additional work needs to be done for my repo not to break. Try building it, find errors, fix them, look at the documentation."
 
 ---
@@ -154,6 +156,7 @@ The workflow description is natural language. You don't need to know YAML or Act
 ## How This Fits Our Corpus
 
 This research directly informs:
+
 - `agent-maintainability/ci-cd-guardrails.md` -- the guardrail model from agentic workflows
 - `synthesis/open-questions.md` -- "What CI guardrails are needed before we let agents create PRs?"
 - `ffc-audit/verdict.md` -- Opportunity #4 (reusable agent task definitions)

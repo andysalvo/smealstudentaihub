@@ -4,16 +4,17 @@ See **AGENTS.md** for the full project reference. This file covers only what is 
 
 ## Timeouts
 
-| Command | Timeout |
-|---------|---------|
-| `npm run build` | 180s |
-| `npm run test:e2e` | 180s |
-| `npm install` / `npm ci` | 120s |
-| Everything else | 30s |
+| Command                  | Timeout |
+| ------------------------ | ------- |
+| `npm run build`          | 180s    |
+| `npm run test:e2e`       | 180s    |
+| `npm install` / `npm ci` | 120s    |
+| Everything else          | 30s     |
 
 ## Pre-Commit Checklist
 
 Before committing, run these in order:
+
 1. `npm run format:check`
 2. `npm run lint`
 3. `npm run build`

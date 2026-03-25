@@ -8,6 +8,7 @@
 ## The Big Picture
 
 We're building a website for the Smeal Student AI Hub, maintained by the Applied AI club at Penn State. The site needs to:
+
 1. Meet Penn State / Smeal visual and accessibility standards
 2. Be maintainable by anyone with repo access and an AI coding agent
 3. Serve as a lasting educational resource about AI in business
@@ -80,6 +81,7 @@ The FFC repo already follows this pattern. We keep it and tighten it by consolid
 ### Finding 2: Six Things Every Agent Instruction File Needs
 
 From GitHub's analysis of 2,500+ repos:
+
 1. Commands (with expected durations)
 2. Testing
 3. Project structure (with version numbers)
@@ -171,6 +173,7 @@ Additional agent-friendly patterns: flat directory structure, no re-export chain
 ### Finding 9: Academic Site Patterns Point to Clear Taxonomy
 
 Best academic org sites use:
+
 - Consistent resource card formats (OSSU)
 - Structured metadata per resource (freeCodeCamp)
 - Clear page taxonomy: about, resources, events, leadership, projects (UW-Madison AI Club)
@@ -196,6 +199,7 @@ Real-world example: Home Assistant uses an agentic workflow that reads stack tra
 ### Finding 11: Multi-Agent Parallel Workflows Are Production-Ready
 
 VS Code supports running multiple Copilot sessions simultaneously, each using different models. A club member could run:
+
 - Session 1 (Sonnet): "Add the March workshop event"
 - Session 2 (Opus): "Redesign the resource page layout"
 - Session 3 (GPT-5): "Write documentation for the API"
@@ -225,40 +229,46 @@ Two tools are changing design workflows:
 This corpus isn't just research notes -- it's the blueprint for an agent-maintained site. Here's how the 12 findings form a complete system:
 
 ### Layer 1: Agent Instructions (Findings 1-2)
+
 AGENTS.md becomes the single source of truth, tuned for content operations. Six core sections (commands, testing, structure, style, git workflow, boundaries) adapted for an educational content site. Agent task definitions in `.claude/agents/` give any coding agent a menu of predefined workflows.
 
 ### Layer 2: Infrastructure Guardrails (Findings 3, 10)
+
 FFC's CI pipeline, security boundaries, and commit hooks give agents guardrails. GitHub's agentic workflow model shows how to constrain agent outputs (max 1 PR, restricted tool access) at the infrastructure level, not the prompt level. Lighthouse CI catches accessibility regressions. Commitlint enforces clean history.
 
 ### Layer 3: Content Layer (Findings 4-5)
+
 MDX in `/content/` with validated frontmatter schemas means agents primarily work with structured Markdown, not React components. Content validation in CI catches broken data before it ships. Content and code are separate concerns.
 
 ### Layer 4: Quality Gates (Findings 6-8)
+
 Accessibility targets (WCAG 2.2 AA, 90% Lighthouse), brand-locked Tailwind colors (`--color-*: initial`), and strict TypeScript all serve the same purpose -- they make it hard for an agent (or a human) to ship something that doesn't meet our standards.
 
 ### Layer 5: Multi-Agent Capability (Findings 11-12)
+
 Multiple agents can work in parallel on non-overlapping tasks. AI design tools (Paper, Stitch) can accelerate the visual phase. Session history is queryable so context persists across maintenance sessions.
 
 ### The End State
+
 A club member opens an issue like "add the March workshop recording." An agent picks it up, reads AGENTS.md for context, creates the MDX file in `/content/` with proper frontmatter, CI validates the content, Lighthouse checks accessibility, and a PR is ready for human review. Meanwhile, another agent is updating the events page in a parallel session. A third is running an accessibility audit via an agentic workflow on a schedule.
 
 ---
 
 ## Decisions Made So Far
 
-| Decision | Choice | Source |
-|----------|--------|--------|
-| Framework | Next.js 16 static export | Already in repo |
-| Styling | Tailwind CSS v4 with `@theme` brand tokens | Already in repo, needs reconfiguration |
-| Deployment | GitHub Pages via GitHub Actions | Already in repo |
-| Agent instructions | AGENTS.md canonical, thin model-specific layers | FFC pattern + ecosystem research |
-| TypeScript | Strict mode | Already in repo |
-| Testing | Jest + Playwright | Already in repo |
-| CI/CD | Build + test + deploy + smoke test pipeline | Already in repo |
-| Accessibility target | WCAG 2.2 AA / 90% Lighthouse | Penn State AD69 + research |
-| Content layer | MDX with frontmatter schemas | Ecosystem research |
-| Content structure | `/content/` separate from `/src/` | freeCodeCamp + Odin Project patterns |
-| FFC attribution | NOTICE file + README credit | Apache 2.0 requirement |
+| Decision             | Choice                                          | Source                                 |
+| -------------------- | ----------------------------------------------- | -------------------------------------- |
+| Framework            | Next.js 16 static export                        | Already in repo                        |
+| Styling              | Tailwind CSS v4 with `@theme` brand tokens      | Already in repo, needs reconfiguration |
+| Deployment           | GitHub Pages via GitHub Actions                 | Already in repo                        |
+| Agent instructions   | AGENTS.md canonical, thin model-specific layers | FFC pattern + ecosystem research       |
+| TypeScript           | Strict mode                                     | Already in repo                        |
+| Testing              | Jest + Playwright                               | Already in repo                        |
+| CI/CD                | Build + test + deploy + smoke test pipeline     | Already in repo                        |
+| Accessibility target | WCAG 2.2 AA / 90% Lighthouse                    | Penn State AD69 + research             |
+| Content layer        | MDX with frontmatter schemas                    | Ecosystem research                     |
+| Content structure    | `/content/` separate from `/src/`               | freeCodeCamp + Odin Project patterns   |
+| FFC attribution      | NOTICE file + README credit                     | Apache 2.0 requirement                 |
 
 ---
 
@@ -266,13 +276,13 @@ A club member opens an issue like "add the March workshop recording." An agent p
 
 Now that we know HOW to build (agent patterns, infrastructure, content architecture), we need to know WHAT to build (brand, content, design). Five parallel research tasks:
 
-| Task | What We're Researching | Why |
-|------|----------------------|-----|
-| A | Penn State brand guidelines + Smeal branding | Colors, fonts, logos -- the visual identity |
-| B | Smeal student org site examples | What the bar looks like in practice |
-| C | Penn State web accessibility / student org requirements | Any RSO-specific rules or disclaimers |
-| D | Wix site full extraction | Every page, image, text from the current site |
-| E | Frontend patterns specific to our content needs | Informed by everything above |
+| Task | What We're Researching                                  | Why                                           |
+| ---- | ------------------------------------------------------- | --------------------------------------------- |
+| A    | Penn State brand guidelines + Smeal branding            | Colors, fonts, logos -- the visual identity   |
+| B    | Smeal student org site examples                         | What the bar looks like in practice           |
+| C    | Penn State web accessibility / student org requirements | Any RSO-specific rules or disclaimers         |
+| D    | Wix site full extraction                                | Every page, image, text from the current site |
+| E    | Frontend patterns specific to our content needs         | Informed by everything above                  |
 
 This corpus will grow as we add those findings. The synthesis will be updated with design decisions as they're made.
 
@@ -280,10 +290,10 @@ This corpus will grow as we add those findings. The synthesis will be updated wi
 
 ## Source Count
 
-| Category | Files | Sources Cited |
-|----------|-------|--------------|
-| Agent Maintainability | 9 | 25+ (Anthropic, GitHub, Linux Foundation, Google, Cursor, Windsurf, StepSecurity, Datadog, community) |
-| FFC Audit | 5 | Direct repo analysis (33 files audited) |
-| Frontend | 9 | 20+ (Next.js, Tailwind, W3C, Penn State, WebAIM, Yale, Kanopi, Fireship, DesignCourse) |
-| Synthesis | 2 | Cross-references all above |
-| **Total** | **25** | **45+ unique sources** |
+| Category              | Files  | Sources Cited                                                                                         |
+| --------------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| Agent Maintainability | 9      | 25+ (Anthropic, GitHub, Linux Foundation, Google, Cursor, Windsurf, StepSecurity, Datadog, community) |
+| FFC Audit             | 5      | Direct repo analysis (33 files audited)                                                               |
+| Frontend              | 9      | 20+ (Next.js, Tailwind, W3C, Penn State, WebAIM, Yale, Kanopi, Fireship, DesignCourse)                |
+| Synthesis             | 2      | Cross-references all above                                                                            |
+| **Total**             | **25** | **45+ unique sources**                                                                                |

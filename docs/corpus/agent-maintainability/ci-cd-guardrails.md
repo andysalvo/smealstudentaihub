@@ -31,8 +31,8 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "Review this pull request for code quality, correctness, and security."
-          claude_args: "--max-turns 5"
+          prompt: 'Review this pull request for code quality, correctness, and security.'
+          claude_args: '--max-turns 5'
 ```
 
 ### Interactive @claude Mentions

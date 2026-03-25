@@ -26,15 +26,16 @@ VS Code supports running **multiple Copilot sessions simultaneously**, each usin
 
 The video demonstrates selecting the right model for each task's complexity:
 
-| Task | Model | Reasoning |
-|------|-------|-----------|
+| Task                    | Model             | Reasoning                                  |
+| ----------------------- | ----------------- | ------------------------------------------ |
 | Color schemes (styling) | Claude Sonnet 4.6 | Not in-depth, doesn't need heavy reasoning |
-| Backend architecture | Claude Opus 4.6 | In-depth task, used plan mode first |
-| Documentation | GPT-5/4 | Straightforward writing task |
+| Backend architecture    | Claude Opus 4.6   | In-depth task, used plan mode first        |
+| Documentation           | GPT-5/4           | Straightforward writing task               |
 
 ### Avoiding Conflicts
 
 **Key rule:** Don't work on the same pieces of the codebase across sessions. The demo specifically chose non-overlapping tasks:
+
 - Color schemes (CSS/styling)
 - Backend storage (new files)
 - Documentation (markdown files)
@@ -46,6 +47,7 @@ For extra safety, you can switch a session to **worktree mode**. This creates a 
 ### Approval Modes
 
 For hands-off parallel work, you can set approval methods per session:
+
 - **Manual** -- approve each step
 - **Bypass approvals** -- agent works without asking
 - **Autopilot** -- fully autonomous
@@ -61,6 +63,7 @@ For complex tasks, start in **plan mode** to get an architecture plan before imp
 ### Club Members Running Parallel Tasks
 
 A club member maintaining the Student AI Hub could run parallel sessions:
+
 - Session 1: "Add the March workshop event to the events page"
 - Session 2: "Update the AI Basics resource with new content"
 - Session 3: "Fix the accessibility issue on the leadership page"
@@ -74,6 +77,7 @@ Our planned `.claude/agents/` task definitions could be designed to work in para
 ### Model Selection Guidance
 
 We could document recommended models per task type in our AGENTS.md:
+
 - Content updates: lighter model (Sonnet/Haiku)
 - New feature development: heavier model (Opus) with plan mode
 - Documentation: any model

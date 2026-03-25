@@ -17,18 +17,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: Identity */}
         <div>
-          <p className="font-serif text-xl font-bold">
-            Student AI Hub
-          </p>
-          <p className="text-pugh-blue text-sm mt-1">
-            Applied AI at Penn State
-          </p>
-          <p className="text-pugh-blue text-sm">
-            Smeal College of Business
-          </p>
+          <p className="font-serif text-xl font-bold">Student AI Hub</p>
+          <p className="text-pugh-blue text-sm mt-1">Applied AI at Penn State</p>
+          <p className="text-pugh-blue text-sm">Smeal College of Business</p>
           <p className="text-pugh-blue text-xs mt-4 leading-relaxed">
-            A student-built resource for understanding AI in business,
-            school, and professional life.
+            A student-built resource for understanding AI in business, school, and professional
+            life.
           </p>
         </div>
 
@@ -89,23 +83,16 @@ export default function Footer() {
       <div className="border-t border-beaver-blue">
         <div className="max-w-6xl mx-auto px-4 py-4 text-center text-xs text-pugh-blue space-y-1">
           <p>
-            &copy; {currentYear} Applied AI at Penn State. This is a student
-            organization website and does not represent official Penn State
-            positions.
+            &copy; {currentYear} Applied AI at Penn State. This is a student organization website
+            and does not represent official Penn State positions.
           </p>
           <p>
             Infrastructure by{' '}
-            <a
-              href="https://github.com/clarkemoyer"
-              className="underline hover:text-white"
-            >
+            <a href="https://github.com/clarkemoyer" className="underline hover:text-white">
               Clarke Moyer
-            </a>
-            {' '}&amp;{' '}
-            <a
-              href="https://freeforcharity.org"
-              className="underline hover:text-white"
-            >
+            </a>{' '}
+            &amp;{' '}
+            <a href="https://freeforcharity.org" className="underline hover:text-white">
               Free For Charity
             </a>
           </p>
