@@ -2,7 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Strip all FFC content from the scaffold, configure Penn State/Smeal branding, set up the content layer with MDX, install safety tooling, write agent instructions, and deploy a branded skeleton to GitHub Pages -- so that any future agent can start building pages immediately.
+**Goal:** Adapt Clarke Moyer's FFC scaffold for Applied AI at Penn State -- keep and credit his infrastructure, configure Penn State/Smeal branding, set up the content layer with MDX, install safety tooling, write agent instructions, and deploy a branded skeleton to GitHub Pages.
+
+**Credit:** Clarke Moyer (@clarkemoyer) built the FFC infrastructure that this project is built on. He is a friend of and advisor to Applied AI. His operational thinking (governance, security, contributing guidelines, CI/CD, issue templates) is preserved and adapted, not stripped. He is credited in NOTICE, CONTRIBUTORS, and README.
 
 **Architecture:** Next.js 16 static export with Tailwind v4 `@theme` brand tokens, MDX content in `/content/` separate from `/src/` components, GitHub Actions CI/CD with safety tooling (Gitleaks, Lighthouse CI, content validation, visual regression), AGENTS.md as canonical agent instruction file.
 
@@ -18,31 +20,90 @@
 
 ---
 
-## Phase 1: Strip FFC Content and Configure Branding
+## Phase 1: Adapt Clarke's Scaffold and Configure Branding
 
-### Task 1: Remove FFC-Specific Documentation Files
+### Task 1: Sort and Adapt Clarke's Documentation
 
-**Files:**
-- Delete: `ADOPTERS.md`, `CHANGELOG.md`, `CITATION.cff`, `CLOUDFLARE_SETUP.md`, `CODE_QUALITY.md`, `COMMUNITY_HEALTH_FILES.md`, `CONTRIBUTORS.md`, `COPILOT_AUTOFIX_GUIDE.md`, `DEPENDABOT.md`, `DEPLOYMENT.md`, `EXTERNAL_DEPENDENCIES.md`, `HUBSPOT_INVESTIGATION.md`, `ISSUE_RESOLUTION.md`, `LESSONS_LEARNED.md`, `LIGHTHOUSE.md`, `MAINTAINERS.md`, `MERGE_QUEUE_VERIFICATION.md`, `NAMING_CONVENTIONS.md`, `QUICK_START.md`, `RESPONSIVE_DESIGN.md`, `SITE_IMPROVEMENTS.md`, `SUPPORT.md`, `TECHNICAL_DEBT.md`, `TEMPLATE_SETUP_CHECKLIST.md`, `TEMPLATE_USAGE.md`, `TESTING.md`, `THREAT-MODEL.md`, `.requirements-complete`
-- Delete: `.github/ISSUE_TEMPLATE/rebrand-template.md`, `.github/ISSUE_TEMPLATE/reviewer-onboarding.md`
-- Delete: `.github/workflows/nextjs.yml.bak`
-- Delete: `src/components/google-tag-manager/README.md`
+Clarke Moyer (@clarkemoyer) built the FFC infrastructure. His operational docs represent real expertise. We sort into three buckets: keep as-is, adapt for Applied AI, and consolidate (merge useful content into fewer files).
 
-- [ ] **Step 1: Delete FFC documentation files**
+**Keep as-is (Clarke's patterns are correct):**
+- `CODE_OF_CONDUCT.md` -- Contributor Covenant v2.1, update contact email only
+- `GOVERNANCE.md` -- adapt names/roles but keep the lazy consensus model
+- `SECURITY.md` -- keep vulnerability reporting, commit signing, severity timelines
+- `CONTRIBUTING.md` -- adapt for Applied AI club onboarding, keep AI workflow section
+- `TESTING.md` -- adapt commands for our project
+- `.github/ISSUE_TEMPLATE/bug_report.md` -- keep
+- `.github/ISSUE_TEMPLATE/feature_request.md` -- adapt user types
+- `.github/ISSUE_TEMPLATE/documentation.md` -- keep
+- `.github/ISSUE_TEMPLATE/config.yml` -- update links
+- `.github/PULL_REQUEST_TEMPLATE.md` -- keep, adapt checkboxes
+
+**Adapt (Clarke's structure, our content):**
+- `CONTRIBUTORS.md` -- rewrite to credit Clarke as founding infrastructure contributor and advisor
+- `README.md` -- rewrite for our project, credit Clarke and FFC
+- `LICENSE` -- update copyright to Applied AI at Penn State (keep Apache 2.0)
+- `CHANGELOG.md` -- reset for our project
+- `.github/ISSUE_TEMPLATE/reviewer-onboarding.md` -- adapt for Applied AI club member onboarding
+
+**Consolidate (merge useful content, remove standalone files):**
+- `CODE_QUALITY.md`, `NAMING_CONVENTIONS.md`, `RESPONSIVE_DESIGN.md` -- merge relevant patterns into AGENTS.md
+- `DEPLOYMENT.md`, `CLOUDFLARE_SETUP.md` -- merge into README quick start
+- `LIGHTHOUSE.md`, `DEPENDABOT.md` -- already documented in CI workflows, remove standalone files
+- `TEMPLATE_SETUP_CHECKLIST.md`, `TEMPLATE_USAGE.md` -- served their purpose for our fork, archive
+
+**Remove (FFC-specific, no Applied AI use):**
+- `ADOPTERS.md`, `CITATION.cff`, `COMMUNITY_HEALTH_FILES.md`, `COPILOT_AUTOFIX_GUIDE.md`, `EXTERNAL_DEPENDENCIES.md`, `HUBSPOT_INVESTIGATION.md`, `ISSUE_RESOLUTION.md`, `LESSONS_LEARNED.md`, `MAINTAINERS.md`, `MERGE_QUEUE_VERIFICATION.md`, `QUICK_START.md`, `SITE_IMPROVEMENTS.md`, `SUPPORT.md`, `TECHNICAL_DEBT.md`, `THREAT-MODEL.md`, `.requirements-complete`
+- `.github/ISSUE_TEMPLATE/rebrand-template.md` -- served its purpose for our fork
+- `.github/workflows/nextjs.yml.bak`
+- `.github/FUNDING.yml` -- not applicable
+
+- [ ] **Step 1: Remove FFC-only files (no Applied AI value)**
 
 ```bash
 cd /Users/andysalvo_1/Documents/GitHub/smealstudentaihub
-rm ADOPTERS.md CHANGELOG.md CITATION.cff CLOUDFLARE_SETUP.md CODE_QUALITY.md COMMUNITY_HEALTH_FILES.md CONTRIBUTORS.md COPILOT_AUTOFIX_GUIDE.md DEPENDABOT.md DEPLOYMENT.md EXTERNAL_DEPENDENCIES.md HUBSPOT_INVESTIGATION.md ISSUE_RESOLUTION.md LESSONS_LEARNED.md LIGHTHOUSE.md MAINTAINERS.md MERGE_QUEUE_VERIFICATION.md NAMING_CONVENTIONS.md QUICK_START.md RESPONSIVE_DESIGN.md SITE_IMPROVEMENTS.md SUPPORT.md TECHNICAL_DEBT.md TEMPLATE_SETUP_CHECKLIST.md TEMPLATE_USAGE.md TESTING.md THREAT-MODEL.md .requirements-complete
-rm .github/ISSUE_TEMPLATE/rebrand-template.md .github/ISSUE_TEMPLATE/reviewer-onboarding.md
+rm ADOPTERS.md CITATION.cff COMMUNITY_HEALTH_FILES.md COPILOT_AUTOFIX_GUIDE.md EXTERNAL_DEPENDENCIES.md HUBSPOT_INVESTIGATION.md ISSUE_RESOLUTION.md LESSONS_LEARNED.md MAINTAINERS.md MERGE_QUEUE_VERIFICATION.md QUICK_START.md SITE_IMPROVEMENTS.md SUPPORT.md TECHNICAL_DEBT.md THREAT-MODEL.md .requirements-complete
+rm .github/ISSUE_TEMPLATE/rebrand-template.md
 rm .github/workflows/nextjs.yml.bak
-rm src/components/google-tag-manager/README.md
+rm .github/FUNDING.yml
 ```
 
-- [ ] **Step 2: Commit**
+- [ ] **Step 2: Consolidate and remove redundant standalone docs**
+
+```bash
+rm CODE_QUALITY.md NAMING_CONVENTIONS.md RESPONSIVE_DESIGN.md DEPLOYMENT.md CLOUDFLARE_SETUP.md LIGHTHOUSE.md DEPENDABOT.md TEMPLATE_SETUP_CHECKLIST.md TEMPLATE_USAGE.md
+```
+
+(Useful patterns from these files are already captured in our research corpus at `docs/corpus/ffc-audit/`. Operational details will be in AGENTS.md and README.)
+
+- [ ] **Step 3: Rewrite CONTRIBUTORS.md to credit Clarke**
+
+Write `CONTRIBUTORS.md`:
+```markdown
+# Contributors
+
+## Infrastructure and Scaffolding
+
+**Clarke Moyer, MBA-ITM, PMP, CISSP-ISSEP** ([@clarkemoyer](https://github.com/clarkemoyer))
+Program Manager, Digital Engineering at The Applied Research Laboratory at Penn State University. Smeal Executive DBA program. Founder and Executive Director of [Free For Charity](https://freeforcharity.org) (EIN 46-2471893), a nonprofit that provides IT, business, web, and marketing services to other nonprofits at no cost.
+
+Clarke built the open-source infrastructure that this project is built on. His operational thinking -- governance model, security policies, contributing guidelines, CI/CD pipelines, agent instruction architecture, issue and PR templates, Lighthouse CI, Dependabot configuration, and Husky hooks -- gave this project a foundation that would have taken months to build from scratch.
+
+## Project Lead
+
+**ajs10845** ([@andysalvo](https://github.com/andysalvo))
+Programming Lead, Applied AI at Penn State. Research corpus, Penn State/Smeal branding, content architecture, agent instruction design.
+```
+
+- [ ] **Step 4: Commit**
 
 ```bash
 git add -A
-git commit -m "chore: remove FFC-specific documentation files"
+git commit -m "chore: adapt Clarke Moyer's FFC scaffold for Applied AI
+
+Keep and adapt governance, security, contributing, testing docs.
+Credit Clarke as founding infrastructure contributor and advisor.
+Remove FFC-only files with no Applied AI value.
+Consolidate redundant standalone docs into AGENTS.md and README."
 ```
 
 ---
@@ -137,11 +198,16 @@ Write `NOTICE`:
 Smeal Student AI Hub
 Copyright (c) 2026 Applied AI at Penn State
 
-This project's initial codebase and infrastructure were derived from
-Free For Charity (https://github.com/FreeForCharity), EIN 46-2471893,
-licensed under the Apache License, Version 2.0.
+This project's infrastructure was built by Clarke Moyer
+(https://github.com/clarkemoyer) as part of Free For Charity
+(https://freeforcharity.org), EIN 46-2471893, licensed under
+the Apache License, Version 2.0.
 
-We are grateful for their open-source contribution to the ecosystem.
+Clarke is a Program Manager at The Applied Research Laboratory
+at Penn State University and the Founder/Executive Director of
+Free For Charity. His operational thinking -- governance, security,
+CI/CD, agent instructions, and project templates -- is the
+foundation this project is built on.
 ```
 
 - [ ] **Step 2: Commit**
