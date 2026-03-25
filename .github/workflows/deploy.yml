@@ -63,7 +63,7 @@ jobs:
         env:
           # Set basePath for GitHub Pages deployment
           # This ensures images and assets work correctly at the subpath
-          NEXT_PUBLIC_BASE_PATH: /FFC-IN-Footer_Only_Template
+          NEXT_PUBLIC_BASE_PATH: /smealstudentaihub
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v4

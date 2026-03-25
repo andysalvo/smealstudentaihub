@@ -1,6 +1,7 @@
 {
-  "name": "free-for-charity",
+  "name": "smeal-student-ai-hub",
   "version": "0.1.0",
+  "description": "A student-built resource for understanding AI in business, school, and professional life. Maintained by Applied AI at Penn State.",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -25,9 +26,7 @@
     "next": "^16.0.10",
     "postcss": "^8.5.6",
     "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "react-icons": "^5.5.0",
-    "swiper": "^12.0.3"
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@axe-core/react": "^4.11.0",
