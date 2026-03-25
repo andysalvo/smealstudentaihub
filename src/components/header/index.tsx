@@ -20,7 +20,7 @@ export default function Header() {
       {/* Logo bar */}
       <div className="bg-navy text-white py-3 text-center">
         <Link href="/" className="inline-block">
-          <span className="font-serif text-lg font-bold tracking-wide">Student AI Hub</span>
+          <span className="font-display text-lg font-semibold tracking-tight">Student AI Hub</span>
           <span className="block text-xs text-pugh-blue font-sans">
             Penn State Smeal College of Business
           </span>

@@ -1,5 +1,5 @@
 import './globals.css'
-import { roboto, robotoSlab } from '@/lib/fonts'
+import { inter, roboto, robotoSlab } from '@/lib/fonts'
 import { siteMetadata } from '@/lib/siteMetadata'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${robotoSlab.variable}`}
+      className={`${inter.variable} ${roboto.variable} ${robotoSlab.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans text-text bg-white antialiased flex flex-col min-h-screen">

@@ -28,6 +28,7 @@
   /* Typography */
   --font-sans: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', 'Helvetica', 'Arial', sans-serif;
   --font-serif: 'Roboto Slab', 'Georgia', 'Times New Roman', serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 
   /* Spacing base */
   --spacing: 4px;
