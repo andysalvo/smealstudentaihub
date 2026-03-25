@@ -5,25 +5,29 @@ import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
 export default function HowBusinessesAreUsingAI() {
   return (
     <div className="pt-14">
-      <section className="max-w-5xl mx-auto px-6 py-14">
-        <Link
-          href="/learn"
-          className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
-        >
-          &larr; Learn
-        </Link>
-        <h1 className="mt-4 text-3xl font-display font-bold tracking-tight text-navy">
-          How Businesses Are Using AI
-        </h1>
-        <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
-          Businesses across many industries are using artificial intelligence to support
-          decision-making, improve efficiency, and manage large volumes of data. Rather than
-          replacing human workers, AI systems are most often used to assist with tasks that involve
-          pattern recognition, prediction, and automation at scale.
-        </p>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="relative max-w-5xl mx-auto px-6 py-14">
+          <Link
+            href="/learn"
+            className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+          >
+            &larr; Learn
+          </Link>
+          <h1 className="mt-4 text-3xl font-display font-bold tracking-tight text-navy">
+            How Businesses Are Using AI
+          </h1>
+          <p className="mt-3 text-[15px] text-text-muted max-w-2xl">
+            Businesses across many industries are using artificial intelligence to support
+            decision-making, improve efficiency, and manage large volumes of data. Rather than
+            replacing human workers, AI systems are most often used to assist with tasks that
+            involve pattern recognition, prediction, and automation at scale.
+          </p>
+        </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
+      <section className="max-w-5xl mx-auto px-6 py-10 pb-16">
         {/* Common Applications - two column */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">

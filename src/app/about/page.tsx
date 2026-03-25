@@ -1,63 +1,80 @@
 export default function About() {
   return (
     <div className="pt-14">
-      <section className="max-w-3xl mx-auto px-6 py-14">
-        <h1 className="text-3xl font-display font-bold tracking-tight text-navy">
-          About the Student AI Hub
-        </h1>
-        <div className="mt-6 space-y-5 text-[15px] text-text-muted leading-relaxed">
-          <p>
-            The Student AI Hub is a student-led initiative dedicated to building AI fluency at Penn
-            State. It provides structured, source-based material designed to help students
-            understand how AI systems function, how they are used in business and education, and how
-            to apply them responsibly.
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="relative max-w-3xl mx-auto px-6 py-14">
+          <h1 className="text-3xl font-display font-bold tracking-tight text-navy">
+            About the Student AI Hub
+          </h1>
+          <p className="mt-3 text-[15px] text-text-muted max-w-xl">
+            A student-led initiative dedicated to building AI fluency at Penn State.
           </p>
-          <p>
-            The Hub was produced by Applied AI at Penn State, a registered student organization in
-            the Smeal College of Business. All content was developed using AI tools directed by club
-            members, following an editorial process documented in our voice brief and sourced from
-            public references.
-          </p>
+        </div>
+      </section>
 
-          <h2 className="text-xl font-display font-semibold text-navy pt-4">How it was built</h2>
-          <p>
-            The reference sections were built from 22 curated public sources using
-            retrieval-augmented generation. The AI could only use information from pre-approved
-            material.
-          </p>
-          <p>
-            The AI by Smeal Major modules were produced in two phases. Students drafted the
-            conceptual content using AI tools and shared templates. That content was then designed
-            into interactive HTML modules using AI development tools.
-          </p>
+      <section className="max-w-3xl mx-auto px-6 py-10 pb-16">
+        <div className="space-y-10">
+          <div className="pl-5 border-l-2 border-pugh-blue/30">
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              The Student AI Hub provides structured, source-based material designed to help
+              students understand how AI systems function, how they are used in business and
+              education, and how to apply them responsibly.
+            </p>
+            <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+              The Hub was produced by Applied AI at Penn State, a registered student organization in
+              the Smeal College of Business. All content was developed using AI tools directed by
+              club members, following an editorial process documented in our voice brief and sourced
+              from public references.
+            </p>
+          </div>
 
-          <h2 className="text-xl font-display font-semibold text-navy pt-4">
-            Process and standards
-          </h2>
-          <p>
-            Every piece of content follows the voice brief: field first, AI second. Sections stand
-            alone. Limits are field-native. No conclusions. Describe, don&apos;t instruct.
-          </p>
-          <p>
-            The site itself is open source and maintained through GitHub. Future updates are made
-            through pull requests reviewed by club members. The research corpus, architecture
-            decisions, and editorial standards are all documented in the repository.
-          </p>
+          <div className="pl-5 border-l-2 border-beaver-blue/30">
+            <h2 className="text-lg font-display font-semibold text-navy mb-4">How it was built</h2>
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              The reference sections were built from 22 curated public sources using
+              retrieval-augmented generation. The AI could only use information from pre-approved
+              material.
+            </p>
+            <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+              The AI by Smeal Major modules were produced in two phases. Students drafted the
+              conceptual content using AI tools and shared templates. That content was then designed
+              into interactive HTML modules using AI development tools.
+            </p>
+          </div>
 
-          <h2 className="text-xl font-display font-semibold text-navy pt-4">
-            Applied AI at Penn State
-          </h2>
-          <p>
-            Applied AI is a registered student organization at Penn State University Park. The club
-            focuses on events and programming, applied research through Applied AI Labs, and
-            curating tools and resources for students across Smeal.
-          </p>
-          <p className="text-[13px]">
-            Contact:{' '}
-            <a href="mailto:appliedaipsu@gmail.com" className="text-link hover:text-link-hover">
-              appliedaipsu@gmail.com
-            </a>
-          </p>
+          <div className="pl-5 border-l-2 border-pa-sky/30">
+            <h2 className="text-lg font-display font-semibold text-navy mb-4">
+              Process and standards
+            </h2>
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              Every piece of content follows the voice brief: field first, AI second. Sections stand
+              alone. Limits are field-native. No conclusions. Describe, don&apos;t instruct.
+            </p>
+            <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+              The site itself is open source and maintained through GitHub. Future updates are made
+              through pull requests reviewed by club members. The research corpus, architecture
+              decisions, and editorial standards are all documented in the repository.
+            </p>
+          </div>
+
+          <div className="pl-5 border-l-2 border-navy/20">
+            <h2 className="text-lg font-display font-semibold text-navy mb-4">
+              Applied AI at Penn State
+            </h2>
+            <p className="text-[15px] text-text-muted leading-relaxed">
+              Applied AI is a registered student organization at Penn State University Park. The
+              club focuses on events and programming, applied research through Applied AI Labs, and
+              curating tools and resources for students across Smeal.
+            </p>
+            <p className="mt-4 text-[13px] text-text-muted">
+              Contact:{' '}
+              <a href="mailto:appliedaipsu@gmail.com" className="text-link hover:text-link-hover">
+                appliedaipsu@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </div>

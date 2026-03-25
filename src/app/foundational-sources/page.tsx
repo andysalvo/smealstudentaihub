@@ -35,17 +35,21 @@ const sources = [
 export default function FoundationalSources() {
   return (
     <div className="pt-14">
-      <section className="max-w-5xl mx-auto px-6 py-14">
-        <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-navy">
-          Foundational Sources
-        </h1>
-        <p className="mt-3 text-[15px] text-text-muted max-w-xl">
-          These sources reflect the initial foundation of the Student AI Hub. They document the
-          materials used to develop the Hub&apos;s core reference sections.
-        </p>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-surface-alt via-white to-surface opacity-80" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-pugh-blue/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="relative max-w-5xl mx-auto px-6 py-14">
+          <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-navy">
+            Foundational Sources
+          </h1>
+          <p className="mt-3 text-[15px] text-text-muted max-w-xl">
+            These sources reflect the initial foundation of the Student AI Hub. They document the
+            materials used to develop the Hub&apos;s core reference sections.
+          </p>
+        </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
+      <section className="max-w-5xl mx-auto px-6 py-10 pb-16">
         <div className="bg-white rounded-lg border border-border overflow-hidden">
           <table className="w-full">
             <thead>
