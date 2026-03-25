@@ -5,6 +5,15 @@
 
 ---
 
+## Agentic Structure
+
+- [ ] How should we structure AGENTS.md for a site where content updates are the primary agent task?
+- [ ] What agent task definitions (.claude/agents/) would be most useful for club members?
+- [ ] How do we make the content/ directory structure intuitive enough that an agent can update resources without human guidance?
+- [ ] What CI guardrails are needed before we let agents create PRs?
+
+---
+
 ## Must Research (Step 2)
 
 ### Penn State / Smeal Branding

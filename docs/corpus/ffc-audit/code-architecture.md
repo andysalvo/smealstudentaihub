@@ -1,4 +1,4 @@
-# FFC Audit: Code Architecture
+# FFC Audit: Code Architecture -- Patterns and Application
 
 > Last updated: 2026-03-24
 > Category: ffc-audit
@@ -8,62 +8,61 @@
 
 ## Next.js Configuration (next.config.ts)
 
-Static export (`output: 'export'`), trailingSlash for clean URLs, unoptimized images, remote patterns for 4 FFC domains, basePath/assetPrefix from env var.
+### What They Built
 
-### What's Good
+Static export (`output: 'export'`), trailingSlash for clean URLs, unoptimized images, remote image patterns, basePath/assetPrefix from env var.
 
-- Comment explaining why trailingSlash is true (`serve -s out` compatibility)
-- Dynamic basePath from env var enables dual deployment targets
+### What They Did Well
 
-### What to Change
+- Comment explaining why trailingSlash is true (`serve -s out` compatibility) -- helpful for agents and humans alike
+- Dynamic basePath from env var enables flexible deployment targets
+- Clean, minimal config file
 
-- Remove FFC remote image patterns
-- Keep basePath logic for GitHub Pages
+### How We'll Apply This
+
+- **Keep:** Static export, trailingSlash, dynamic basePath logic for GitHub Pages
+- **Adapt:** Swap remote image patterns to match our asset sources as we build out content
 
 ---
 
 ## Root Layout (src/app/layout.tsx)
 
-globals.css import, Footer/CookieConsent/GoogleTagManager, 8 Google Fonts via next/font, siteMetadata export, preconnect/dns-prefetch for external domains, LCP image preload, font CSS variables on body.
+### What They Built
 
-### What's Good
+globals.css import, Footer/CookieConsent/GoogleTagManager, Google Fonts via next/font, siteMetadata export, preconnect/dns-prefetch for external domains, LCP image preload, font CSS variables on body.
 
-- **Preconnect and dns-prefetch** for external resources is real performance optimization
+### What They Did Well
+
+- **Preconnect and dns-prefetch** for external resources is a real performance optimization
 - **LCP image preload** with `fetchPriority="high"` shows performance awareness
-- **next/font with CSS variables** is the correct modern approach
+- **next/font with CSS variables** is the correct modern approach for font loading
 - **`suppressHydrationWarning`** prevents console noise from browser extensions
+- Clean component composition pattern: persistent layout wrapping children with footer and utilities
 
-### What's Overengineered
+### How We'll Apply This
 
-- **8 Google Fonts is excessive.** 2-3 max.
-- Commented-out popup system should be removed
-
-### Keep / Improve
-
-- **Keep:** Preconnect pattern, LCP preload, next/font CSS variables, basePath from env
-- **Improve:** Reduce to 2-3 fonts. Remove commented-out code.
+- **Keep:** Preconnect pattern, LCP preload, next/font CSS variables, basePath from env, component composition pattern
+- **Adapt:** Select 2-3 fonts that align with Penn State/Smeal brand identity (research pending). Build a clean font stack without ID-selector workarounds.
 
 ---
 
 ## Global Styles (src/app/globals.css)
 
-Tailwind v4 CSS-based config with `@import 'tailwindcss'`, CSS custom properties for brand tokens, `@theme inline` block, font assignments via ID selectors, sr-only utility, animations, utility classes.
+### What They Built
 
-### What's Good
+Tailwind v4 CSS-based config with `@import 'tailwindcss'`, CSS custom properties for brand tokens, `@theme inline` block, font assignments, sr-only utility, animations, utility classes.
 
-- **Tailwind v4 CSS-based config** -- no separate tailwind.config file
-- **Brand tokens as CSS custom properties** + `@theme inline` is the correct v4 pattern
+### What They Did Well
+
+- **Tailwind v4 CSS-based config** -- no separate tailwind.config file needed. Modern and clean.
+- **Brand tokens as CSS custom properties** + `@theme inline` is the correct v4 pattern for design system control
 - **sr-only utility** for accessibility
+- Shows how to build a complete branded design system in pure CSS
 
-### What's Overengineered
+### How We'll Apply This
 
-- Font assignments via **ID selectors** (`#header`, `#lato-font`) is a workaround for the 8-font problem
-- **`!important`** on several properties indicates specificity fights
-
-### Keep / Improve
-
-- **Keep:** `@import 'tailwindcss'`, `@theme inline`, sr-only, CSS custom properties
-- **Improve:** Replace FFC brand tokens with Penn State/Smeal tokens. Kill ID selectors. Kill `!important`.
+- **Keep:** `@import 'tailwindcss'`, `@theme inline`, sr-only, CSS custom properties pattern
+- **Adapt:** Replace FFC brand tokens with Penn State/Smeal colors, typography, and spacing. With a focused 2-3 font stack, we can use straightforward font-family assignments without needing ID selectors or specificity overrides.
 
 ---
 
@@ -73,65 +72,79 @@ Tailwind v4 CSS-based config with `@import 'tailwindcss'`, CSS custom properties
 
 Simple function prepending `NEXT_PUBLIC_BASE_PATH` to asset paths. Well-documented JSDoc.
 
-**Verdict:** Keep. Clean abstraction for GitHub Pages deployment.
+**What they did well:** Clean abstraction that solves the GitHub Pages deployment path problem in one place.
+
+**How We'll Apply This:** Keep as-is. Essential for GitHub Pages deployment.
 
 ### siteMetadata.ts
 
 Complete Next.js Metadata export: metadataBase, title template, description, keywords, robots config (including googleBot directives), canonical URL, OpenGraph, Twitter Card, icons, web manifest.
 
-### What's Good
+**What they did well:** Centralized metadata instead of scattered across layouts. The googleBot-specific directives (max-snippet, max-image-preview) go beyond what most sites configure -- shows attention to SEO detail.
 
-- Centralized metadata instead of scattered across layouts
-- googleBot-specific directives (max-snippet, max-image-preview) go beyond most sites
-
-**Verdict:** Keep pattern. Replace all FFC content with Applied AI metadata.
+**How We'll Apply This:** Keep the centralized pattern. Replace all FFC content with Applied AI / Smeal Student AI Hub metadata.
 
 ### fonts.ts
 
-8 Google Font configurations via next/font/google.
+Google Font configurations via next/font/google with CSS variables, subsets, and display swap.
 
-**Verdict:** Rebuild with 2-3 fonts matching Penn State/Smeal brand.
+**What they did well:** Well-organized font configuration pattern with proper next/font usage.
+
+**How We'll Apply This:** Rebuild with 2-3 fonts matching Penn State/Smeal brand (pending brand research).
 
 ---
 
 ## TypeScript (tsconfig.json)
 
+### What They Built
+
 Strict mode, ES2017 target, bundler module resolution, `@/*` path alias to `./src/*`, incremental compilation, Next.js plugin.
 
-### What's Good
+### What They Did Well
 
-- **Strict mode** is the biggest win for agent code quality
-- **`@/*` path alias** prevents deep relative imports
+- **Strict mode** is the biggest win for agent code quality (research shows ~60% to ~100% success rate improvement)
+- **`@/*` path alias** prevents deep relative imports -- agents navigate the codebase more reliably
 - **Incremental compilation** speeds up builds
 
-### What to Fix
+### How We'll Apply This
 
-- Remove stray manual include entry (`src/components/UI/BlogCard.tsx`)
-
-**Verdict:** Keep with minor cleanup.
+- **Keep:** Strict mode (non-negotiable), path alias, incremental compilation
+- **Adapt:** Clean up any stray manual includes as we rebuild the component structure
 
 ---
 
 ## Package.json
 
-### Dependencies (Production)
+### What They Built
 
-| Package | Purpose | Keep? |
+7 production dependencies, 21 dev dependencies, comprehensive script suite.
+
+### What They Did Well
+
+- **Turbopack** for dev server is modern and fast
+- **Comprehensive test scripts** (unit, watch, coverage, e2e, e2e:ui, e2e:headed, smoke)
+- **`prepare: husky`** auto-installs git hooks on `npm install`
+- **`linkinator`** for broken link detection in static output
+- **`preview`** script for local static file serving
+- Complete and well-organized script suite covering every development workflow
+
+### Dependencies We're Keeping
+
+| Package | Purpose | Notes |
 |---------|---------|-------|
-| next | Framework | Yes |
-| react | UI | Yes |
-| react-dom | UI | Yes |
-| postcss | CSS processing | Yes |
-| framer-motion | Animations | Maybe -- only if we need animations |
-| lucide-react | Icons | Yes (pick ONE icon library) |
-| react-icons | Icons | No -- redundant with lucide-react |
-| swiper | Carousel | No -- unless we need carousels |
+| next | Framework | Core |
+| react / react-dom | UI | Core |
+| postcss | CSS processing | Required for Tailwind v4 |
+| lucide-react | Icons | Clean, tree-shakeable icon library |
 
-### Dependencies (Dev)
+### Dependencies We'll Evaluate as We Build
 
-All dev dependencies are worth keeping: testing (jest, playwright, testing-library), linting (eslint, prettier), types, Tailwind, commitlint, husky, lighthouse CI, linkinator.
+| Package | Purpose | Notes |
+|---------|---------|-------|
+| framer-motion | Animations | Add when/if we need page transitions or interactive elements |
+| swiper | Carousels | Add when/if we need carousel components |
 
-### Scripts Worth Keeping
+### Scripts We're Keeping
 
 | Script | Purpose |
 |--------|---------|
@@ -146,38 +159,32 @@ All dev dependencies are worth keeping: testing (jest, playwright, testing-libra
 | `test:smoke` | Post-deploy smoke tests |
 | `prepare` | Husky hook installation |
 
-**Verdict:** Keep all scripts. Remove react-icons and swiper. Evaluate framer-motion later.
+---
+
+## Page and Component Structure
+
+### FFC Pages (Being Replaced With Our Content)
+
+The FFC repo includes pages for home, cookie policy, donation policy, privacy policy, terms of service, security acknowledgements, and vulnerability disclosure. These served FFC's needs well.
+
+**How We'll Apply This:** We'll build our own page structure informed by academic site research (see `frontend/academic-site-design.md`). The structural patterns -- thin page.tsx files delegating to components, route-based code splitting -- carry forward.
+
+### FFC Components
+
+Header, footer, cookie consent, Google Tag Manager, team section, team member cards.
+
+**What they did well:** Clean component composition. Each component has a single responsibility. The pattern of persistent layout components (header, footer) wrapping page content is standard and correct.
+
+**How We'll Apply This:** Build our own components following the same composition patterns. Our component set will be driven by the site taxonomy we define after Penn State/Smeal research.
+
+### FFC Assets
+
+60+ images, 15+ SVGs, videos, favicons -- all FFC-branded.
+
+**How We'll Apply This:** Start fresh with Penn State/Smeal branded assets. Extract relevant content from the current Wix site during the extraction phase (Step 2, Research Task D).
 
 ---
 
-## Page Structure
+## Attribution
 
-### Current FFC Pages (all must be replaced)
-
-- `/` -- Home page (FFC content)
-- `/cookie-policy` -- Cookie policy
-- `/donation-policy` -- Donation policy
-- `/privacy-policy` -- Privacy policy
-- `/terms-of-service` -- Terms of service
-- `/security-acknowledgements` -- Security acknowledgements
-- `/vulnerability-disclosure-policy` -- Vulnerability disclosure
-- `/free-for-charity-donation-policy` -- FFC-specific donation policy
-
-### Components (all FFC-specific, must be replaced)
-
-- `header/` -- FFC header
-- `footer/` -- FFC footer
-- `cookie-consent/` -- Cookie consent banner
-- `google-tag-manager/` -- GTM integration
-- `home-page/TheFreeForCharityTeam/` -- FFC team section
-- `ui/TeamMemberCard.tsx` -- FFC team member card
-
-### Assets (all FFC-specific, must be removed)
-
-- `public/Images/` -- 60+ FFC images (.webp, .png)
-- `public/Svgs/` -- 15+ FFC SVGs
-- `public/videos/` -- FFC mission video
-- `public/CNAME` -- FFC domain
-- Favicons -- FFC branding
-
-**Verdict:** All content, components, assets, and pages are FFC-specific. Strip everything. Keep the structural patterns (layout.tsx wrapper, page.tsx delegation, lib/ utilities).
+The code architecture patterns in this repo reflect careful engineering by the Free For Charity team. Their choices around static export, font loading, metadata centralization, and TypeScript configuration gave us a strong foundation to build on.

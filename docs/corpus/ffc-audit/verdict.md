@@ -1,4 +1,4 @@
-# FFC Audit: Final Verdict
+# FFC Audit: Patterns and Application
 
 > Last updated: 2026-03-24
 > Category: ffc-audit
@@ -6,68 +6,108 @@
 
 ---
 
-## Top 10 Things They Did Right (Must Keep)
+## Patterns We're Building On
 
-1. **Multi-agent instruction architecture.** AGENTS.md as canonical source, CLAUDE.md/GEMINI.md/copilot-instructions.md as thin model-specific layers. Every AI model that touches the repo knows the rules.
+The Free For Charity team built infrastructure that goes well beyond what most open source projects achieve. These are the patterns we're carrying forward into the Smeal Student AI Hub.
 
-2. **`.claude/settings.json` with explicit bash allowlist/denylist.** Real security boundary for agent operations. Prevents destructive commands and secret exposure.
+### 1. Multi-Agent Instruction Architecture
 
-3. **CI pipeline with build artifact sharing and E2E sharding.** Build once, test in parallel. Concurrency control with cancel-in-progress. Failure artifact uploads.
+AGENTS.md as canonical source, CLAUDE.md/GEMINI.md/copilot-instructions.md as thin model-specific layers. Every AI coding tool that touches the repo knows the rules. This is the pattern the Linux Foundation now recommends and 60k+ repos have adopted.
 
-4. **Post-deploy smoke tests against the live URL.** Catches deployment-specific issues that local tests miss. Polling for deployment availability is practical.
+### 2. Agent Security Boundaries
 
-5. **Husky pre-commit hooks that check only staged files.** Fast, focused, doesn't waste time linting untouched files. The ACMR diff filter is correct.
+`.claude/settings.json` with explicit bash allowlist/denylist. Real security boundary for agent operations. Prevents destructive commands and accidental secret exposure. Simple, practical, effective.
 
-6. **Dependabot with grouped minor/patch and isolated major updates.** Separate npm and GitHub Actions tracking. Conventional commit prefixes on Dependabot PRs.
+### 3. CI Pipeline with Artifact Sharing
 
-7. **Lighthouse CI on PRs with formatted PR comments.** Performance visibility on every change. Warning-level thresholds (not blocking). 90% accessibility threshold.
+Build once, test in parallel. Concurrency control with cancel-in-progress prevents wasted CI minutes. Build artifacts shared between jobs so E2E tests don't rebuild. Failure artifacts uploaded for debugging.
 
-8. **Known issues section in agent instructions.** Prevents agents from "fixing" intentional patterns. Critical for agent-maintained repos.
+### 4. Post-Deploy Smoke Tests
 
-9. **Tailwind v4 CSS-based config with brand token mapping.** Modern, clean, no config file overhead. CSS custom properties + `@theme inline` is the right pattern.
+After every deployment, automated tests hit the live URL to catch deployment-specific issues (asset paths, DNS, CDN). Polling for deployment availability with retry logic. This catches a class of bugs that local testing never will.
 
-10. **`.claude/rules/` with numbered priority files and security as a dedicated rule.** Clean separation of mission rules from security rules. The "don't add features beyond what was asked" instruction is the single most valuable agent rule.
+### 5. Staged-Only Pre-Commit Hooks
 
----
+Husky hooks that check only staged files using the ACMR diff filter. Fast, focused, never wastes time linting untouched files. Clear error messages tell you exactly what to fix.
 
-## Top 10 Things That Are Overengineered (Should Go)
+### 6. Intelligent Dependency Management
 
-1. **300-line rebrand issue template.** Built for FFC's template factory. Completely irrelevant for our project.
+Dependabot configured to group minor/patch updates (safe to batch) while isolating major updates (need individual review). Separate tracking for npm and GitHub Actions. Conventional commit prefixes on Dependabot PRs.
 
-2. **CNCF-grade GOVERNANCE.md with quorum rules and voting procedures.** Keep the concept (lazy consensus, response times), ditch the formal structure until we have 3+ maintainers.
+### 7. Performance Visibility on Every PR
 
-3. **8 Google Fonts with per-element ID selectors.** Excessive font data, CSS specificity fights. Reduce to 2-3 fonts maximum.
+Lighthouse CI posts formatted comments on PRs with scores, thresholds, and emoji indicators. Warning-level thresholds (not blocking) give awareness without gatekeeping. 90% accessibility target.
 
-4. **400-line SECURITY.md documenting disabled branch protections.** Keep vulnerability reporting and commit signing. Cut the rest.
+### 8. Known Issues in Agent Instructions
 
-5. **600-line CONTRIBUTING.md with VS Code Copilot marketing.** Keep AI workflow section and reviewer onboarding concept. Cut the filler.
+A section in AGENTS.md listing intentional patterns that agents might try to "fix." This prevents agents from fighting correct behavior -- critical for any agent-maintained repo.
 
-6. **25-checkbox PR template.** Contributors will ignore this. Cut to 10-12 checkboxes that actually matter.
+### 9. CSS-First Design System
 
-7. **4-way E2E sharding for ~15 tests.** Overkill. 1-2 shards is sufficient until the test suite grows.
+Tailwind v4 with `@theme inline` and CSS custom properties for brand tokens. Modern, clean, no config file overhead. The pattern lets us lock down brand colors so no off-brand values can leak in.
 
-8. **Duplicate content across 4+ agent instruction files.** AGENTS.md, CLAUDE.md, GEMINI.md, copilot-instructions.md, and .claude/rules all overlap. Consolidate to AGENTS.md as single source.
+### 10. Numbered Priority Rules
 
-9. **lucide-react AND react-icons AND framer-motion AND swiper.** Dependency bloat. Pick one icon library, drop animation/carousel deps until actually needed.
-
-10. **120-line inline JS in Lighthouse workflow YAML.** Extract to script file for maintainability and testability.
+`.claude/rules/` with numbered files (00-mission, 01-security) creating a clear priority system. Security rules separated from mission rules. The instruction "Don't add features beyond what was asked" is the single most valuable rule for any AI agent.
 
 ---
 
-## Top 5 Gaps (Things We Should Add)
+## How We're Adapting for Our Context
 
-1. **Content validation.** Tests check code but not content integrity. Need: broken internal link detection, missing metadata validation, orphaned image detection. Even a Jest test that validates data files against a schema would catch data-level bugs.
+FFC built for a nonprofit template factory serving 25+ charity sites. We're building a single educational resource site for a Penn State student org. Different product, different needs -- so we're adapting their patterns to fit.
 
-2. **Environment setup validation.** A `npm run doctor` or setup script that checks all prerequisites (Node version, npm, git, etc.) and reports what's missing. Reduces onboarding friction for new club members.
+### Governance and Documentation
 
-3. **Automated changelog from conventional commits.** They have commitlint enforcing conventional commits but no tool (release-please, changesets, standard-version) to generate changelogs. For an agent-maintained repo, this is a natural extension.
+FFC's detailed governance (quorum rules, voting procedures, maintainer removal) served their multi-stakeholder model. For our student org, we'll start with lightweight governance (lazy consensus, clear response times) and grow the structure as the contributor base grows.
 
-4. **Reusable agent task definitions.** CLAUDE.md references `.claude/agents/` with task-specific agents (dns-audit, site-health, pr-reviewer) but the directory doesn't exist. Shipping actual agent definitions for common tasks would be a differentiator.
+### Typography
 
-5. **Content/code separation.** For a site maintained by non-developers via agents, content should live in `/content/` as MDX files, separate from components in `/src/`. This lets content updates happen without touching React code.
+FFC used a rich font stack for their nonprofit brand. We'll select 2-3 fonts that align with Penn State/Smeal brand identity, keeping the same next/font loading pattern but with a simpler, brand-focused typography system.
+
+### CI Scaling
+
+FFC's 4-way E2E sharding was built for their test suite size. We'll start with a simpler E2E setup and scale sharding as our test suite grows -- the pattern they built makes this easy to expand later.
+
+### Agent Instruction Consolidation
+
+FFC maintained some overlap across their 4+ agent instruction files. We'll tighten this by making AGENTS.md the single source of truth, with model-specific files containing only what's unique to each tool.
+
+### Dependency Selection
+
+FFC included libraries for their specific UI needs (carousels, animations, multiple icon sets). We'll start with a lean dependency set and add libraries as our design demands them.
+
+### Issue and PR Templates
+
+FFC's comprehensive templates (including a 300-line rebrand template) served their template-factory workflow. We'll keep the core templates (bug, feature, docs) and adapt them for our student org context.
+
+---
+
+## Opportunities to Extend
+
+Building on FFC's foundation, here are capabilities we're adding that will make the site truly agent-maintainable:
+
+### 1. Content Validation
+
+Tests that check content integrity, not just code: validated frontmatter schemas, broken internal link detection, orphaned image detection. When an agent adds a resource, CI confirms the data is well-formed.
+
+### 2. Environment Setup Validation
+
+A `npm run doctor` command that checks all prerequisites (Node version, npm, git, etc.) and reports what's missing. Reduces onboarding friction for new club members using agents for the first time.
+
+### 3. Automated Changelog
+
+FFC has conventional commits and commitlint -- we'll close the loop by adding automated changelog generation (release-please or changesets). The club always knows what shipped.
+
+### 4. Reusable Agent Task Definitions
+
+FFC's CLAUDE.md references `.claude/agents/` but the directory wasn't shipped. We'll build actual agent task definitions for common operations: "add a resource," "update event listings," "check accessibility," "onboard a new contributor."
+
+### 5. Content/Code Separation
+
+A `/content/` directory with MDX files, separate from `/src/` components. Club members and agents can update educational resources without touching React code. This is the key architectural decision for long-term agent maintainability.
 
 ---
 
 ## Attribution
 
-This audit covers the Free For Charity (FFC) codebase, licensed under Apache 2.0 (EIN 46-2471893). We are grateful for their open-source work. The infrastructure patterns they built are genuinely good, and our project builds directly on their foundation.
+This project builds directly on the foundation created by the [Free For Charity](https://github.com/FreeForCharity) team (EIN 46-2471893), licensed under Apache 2.0. Their infrastructure engineering -- from multi-agent instruction architecture to CI/CD pipelines to accessibility-first Lighthouse thresholds -- gave us a genuinely strong starting point. We are grateful for their open-source contribution to the ecosystem.
