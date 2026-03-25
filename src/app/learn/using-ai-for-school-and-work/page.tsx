@@ -1,0 +1,143 @@
+import Link from 'next/link'
+
+export default function UsingAIForSchoolAndWork() {
+  return (
+    <div className="pt-14">
+      <section className="max-w-3xl mx-auto px-6 py-14">
+        <Link
+          href="/learn"
+          className="text-[12px] text-beaver-blue hover:text-navy transition-colors"
+        >
+          &larr; Learn
+        </Link>
+        <h1 className="mt-4 text-3xl font-display font-bold tracking-tight text-navy">
+          Using AI for School and Work
+        </h1>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-6 pb-16 space-y-10">
+        <div>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            AI tools are increasingly used in academic and professional settings. Students may
+            encounter them when writing, researching, analyzing data, or organizing information for
+            work.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            This page covers how AI tools commonly show up in school and workplace contexts. It
+            describes what the tools are capable of, what they are updated at, and where careful
+            judgment is needed rather than offering specific recommendations.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-display font-semibold text-navy mb-4">
+            Common Ways AI is Used
+          </h2>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            In school and work environments, AI tools are often used to support tasks that involve
+            language, information retrieval, or pattern analysis. Common uses include:
+          </p>
+          <ul className="mt-3 space-y-2 text-[15px] text-text-muted">
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Drafting or editing written content
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Summarizing readings or documents
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Translating content or languages
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Organizing notes or outlining ideas
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-beaver-blue mt-1">&#x2022;</span>
+              Analyzing large amounts of information
+            </li>
+          </ul>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            In many cases, AI is used to speed up routine work or to help users get unstuck. But
+            these tools also have limitations, and users who do not understand the goals themselves
+            do not usually get good results from AI tools rather than offering specific instructions
+            or recommendations.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-display font-semibold text-navy mb-4">
+            AI as Support, not Replacement
+          </h2>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            In both academic and professional settings, AI is typically cast as a support tool
+            rather than a replacement for human judgment.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            While AI systems can generate text, suggestions or code, they do not understand context
+            in the same way people do. They may produce outputs that sound confident but are
+            incomplete, misleading, or incorrect.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            As a result, AI-generated material usually requires review, interpretation, and judgment
+            by a person before it is appropriate for use in school or work.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-display font-semibold text-navy mb-4">
+            Accuracy and Reliability
+          </h2>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            AI tools can produce errors, make incorrect assumptions, or generate information that
+            appears credible but is not accurate. This is especially common when tools are asked to
+            retrieve factual information or cite sources. Models may generate plausible-sounding
+            references that do not exist.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            Because of this, AI output is often treated as a starting point rather than a final
+            answer. Information generated by AI usually requires the user to check it against known,
+            original sources, or other reliable references.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-display font-semibold text-navy mb-4">
+            Academic and Professional Expectations
+          </h2>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            Expectations around AI can vary widely across classes, disciplines, employers, and
+            institutions. In academic settings, instructors may have different policies or
+            expectations regarding whether and how AI tools can be used. In professional settings,
+            organizations may have guidelines related to data handling, intellectual property, and
+            decision accountability.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            Understanding these expectations usually requires consulting the specific policies of
+            your course, instructor, or organization. AI tools do not account for these expectations
+            on their own.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-display font-semibold text-navy mb-4">
+            Data, Privacy, and Confidentiality
+          </h2>
+          <p className="text-[15px] text-text-muted leading-relaxed">
+            Some AI tools store user input or use them to improve their systems. This can lead to
+            situations where sensitive information enters systems with third-party services,
+            generating privacy or confidentiality concerns.
+          </p>
+          <p className="mt-4 text-[15px] text-text-muted leading-relaxed">
+            In school and work contexts, this may include a student&apos;s unpublished research or
+            an organization&apos;s proprietary or confidential information. For this reason, the
+            types of information entered into an AI tool can matter as much as the task the tool is
+            used for.
+          </p>
+        </div>
+      </section>
+    </div>
+  )
+}
