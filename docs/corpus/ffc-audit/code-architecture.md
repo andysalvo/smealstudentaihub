@@ -38,11 +38,12 @@ globals.css import, Footer/CookieConsent/GoogleTagManager, Google Fonts via next
 - **next/font with CSS variables** is the correct modern approach for font loading
 - **`suppressHydrationWarning`** prevents console noise from browser extensions
 - Clean component composition pattern: persistent layout wrapping children with footer and utilities
+- **Multiple font configurations** demonstrate the full next/font pattern -- loading, assigning CSS variables, and applying via classes
 
 ### How We'll Apply This
 
 - **Keep:** Preconnect pattern, LCP preload, next/font CSS variables, basePath from env, component composition pattern
-- **Adapt:** Select 2-3 fonts that align with Penn State/Smeal brand identity (research pending). Build a clean font stack without ID-selector workarounds.
+- **Adapt:** Select 2-3 fonts that align with Penn State/Smeal brand identity, using the same next/font CSS variable pattern they established
 
 ---
 
@@ -58,6 +59,7 @@ Tailwind v4 CSS-based config with `@import 'tailwindcss'`, CSS custom properties
 - **Brand tokens as CSS custom properties** + `@theme inline` is the correct v4 pattern for design system control
 - **sr-only utility** for accessibility
 - Shows how to build a complete branded design system in pure CSS
+- **Demonstrates the full token-to-theme pipeline** from custom properties through @theme inline to component usage
 
 ### How We'll Apply This
 
@@ -88,9 +90,9 @@ Complete Next.js Metadata export: metadataBase, title template, description, key
 
 Google Font configurations via next/font/google with CSS variables, subsets, and display swap.
 
-**What they did well:** Well-organized font configuration pattern with proper next/font usage.
+**What they did well:** Well-organized font configuration pattern with proper next/font usage. Each font gets its own config object with variable assignment, demonstrating how to set up subset, weight, and display properties correctly.
 
-**How We'll Apply This:** Rebuild with 2-3 fonts matching Penn State/Smeal brand (pending brand research).
+**How We'll Apply This:** Rebuild with 2-3 fonts matching Penn State/Smeal brand, using the same configuration pattern they established.
 
 ---
 
@@ -102,7 +104,7 @@ Strict mode, ES2017 target, bundler module resolution, `@/*` path alias to `./sr
 
 ### What They Did Well
 
-- **Strict mode** is the biggest win for agent code quality (research shows ~60% to ~100% success rate improvement)
+- **Strict mode** is the biggest win for agent code quality
 - **`@/*` path alias** prevents deep relative imports -- agents navigate the codebase more reliably
 - **Incremental compilation** speeds up builds
 
@@ -181,7 +183,9 @@ Header, footer, cookie consent, Google Tag Manager, team section, team member ca
 
 60+ images, 15+ SVGs, videos, favicons -- all FFC-branded.
 
-**How We'll Apply This:** Start fresh with Penn State/Smeal branded assets. Extract relevant content from the current Wix site during the extraction phase (Step 2, Research Task D).
+**What they did well:** Well-organized asset directory structure (Images/, Svgs/, separate from source) and use of .webp for performance.
+
+**How We'll Apply This:** Start fresh with Penn State/Smeal branded assets, following the same directory organization and format choices.
 
 ---
 

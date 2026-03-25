@@ -12,7 +12,7 @@ The Free For Charity team built infrastructure that goes well beyond what most o
 
 ### 1. Multi-Agent Instruction Architecture
 
-AGENTS.md as canonical source, CLAUDE.md/GEMINI.md/copilot-instructions.md as thin model-specific layers. Every AI coding tool that touches the repo knows the rules. This is the pattern the Linux Foundation now recommends and 60k+ repos have adopted.
+AGENTS.md as canonical source, CLAUDE.md/GEMINI.md/copilot-instructions.md as thin model-specific layers. Every AI coding tool that touches the repo knows the rules. This is the foundation of our agent workflow.
 
 ### 2. Agent Security Boundaries
 
@@ -54,7 +54,7 @@ Tailwind v4 with `@theme inline` and CSS custom properties for brand tokens. Mod
 
 ## How We're Adapting for Our Context
 
-FFC built for a nonprofit template factory serving 25+ charity sites. We're building a single educational resource site for a Penn State student org. Different product, different needs -- so we're adapting their patterns to fit.
+FFC built for a nonprofit template factory serving multiple charity sites. We're building a single educational resource site for a Penn State student org. Different product, different needs -- so we're adapting their patterns to fit.
 
 ### Governance and Documentation
 
@@ -70,7 +70,7 @@ FFC's 4-way E2E sharding was built for their test suite size. We'll start with a
 
 ### Agent Instruction Consolidation
 
-FFC maintained some overlap across their 4+ agent instruction files. We'll tighten this by making AGENTS.md the single source of truth, with model-specific files containing only what's unique to each tool.
+FFC maintained some overlap across their 4+ agent instruction files to support multiple AI models. We'll tighten this by making AGENTS.md the single source of truth, with model-specific files containing only what's unique to each tool.
 
 ### Dependency Selection
 
@@ -78,7 +78,11 @@ FFC included libraries for their specific UI needs (carousels, animations, multi
 
 ### Issue and PR Templates
 
-FFC's comprehensive templates (including a 300-line rebrand template) served their template-factory workflow. We'll keep the core templates (bug, feature, docs) and adapt them for our student org context.
+FFC's comprehensive templates served their template-factory workflow. We'll keep the core templates (bug, feature, docs) and adapt them for our student org context. The PR template starts focused at 10-12 checkboxes and grows as our process matures.
+
+### Security and Contributing Docs
+
+FFC wrote thorough security and contributing documentation for their operational model. We'll keep the vulnerability reporting patterns and commit signing, and build our contributing guide around Applied AI club onboarding.
 
 ---
 
@@ -100,7 +104,7 @@ FFC has conventional commits and commitlint -- we'll close the loop by adding au
 
 ### 4. Reusable Agent Task Definitions
 
-FFC's CLAUDE.md references `.claude/agents/` but the directory wasn't shipped. We'll build actual agent task definitions for common operations: "add a resource," "update event listings," "check accessibility," "onboard a new contributor."
+FFC's CLAUDE.md references `.claude/agents/` but the directory wasn't shipped yet. We'll build actual agent task definitions for common operations: "add a resource," "update event listings," "check accessibility," "onboard a new contributor."
 
 ### 5. Content/Code Separation
 
@@ -110,4 +114,4 @@ A `/content/` directory with MDX files, separate from `/src/` components. Club m
 
 ## Attribution
 
-This project builds directly on the foundation created by the [Free For Charity](https://github.com/FreeForCharity) team (EIN 46-2471893), licensed under Apache 2.0. Their infrastructure engineering -- from multi-agent instruction architecture to CI/CD pipelines to accessibility-first Lighthouse thresholds -- gave us a genuinely strong starting point. We are grateful for their open-source contribution to the ecosystem.
+This project builds directly on the foundation created by the [Free For Charity](https://github.com/FreeForCharity) team (EIN 46-2471893), licensed under Apache 2.0. Their infrastructure engineering -- from multi-agent instruction architecture to CI/CD pipelines to accessibility-first Lighthouse thresholds -- gave us a genuinely strong starting point. Every pattern we're building on, every "How We'll Apply This" across these audit documents, is a direct acknowledgment of the quality and thoughtfulness of what they created. We are grateful for their open-source contribution to the ecosystem, and proud to carry their engineering patterns forward into something new.
