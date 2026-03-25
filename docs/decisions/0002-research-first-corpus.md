@@ -6,7 +6,7 @@
 
 ## Context
 
-We could have started building immediately on the FFC scaffold. Instead, Andy decided to build a research corpus first -- studying agent-maintainable repo patterns, auditing the FFC infrastructure, researching Penn State/Smeal branding, extracting the current Wix site, and analyzing frontend patterns before writing any application code.
+We could have started building immediately on the FFC scaffold. Instead, ajs10845 decided to build a research corpus first -- studying agent-maintainable repo patterns, auditing the FFC infrastructure, researching Penn State/Smeal branding, extracting the current Wix site, and analyzing frontend patterns before writing any application code.
 
 ## Decision
 
@@ -26,4 +26,4 @@ The corpus is version-controlled, grows over time, and serves as institutional k
 **Negative:**
 - Upfront time investment before any visible output
 - Corpus maintenance becomes an ongoing responsibility
-- Risk of over-researching (mitigated by Andy's "don't overengineer" instinct)
+- Risk of over-researching (mitigated by ajs10845's "don't overengineer" instinct)
