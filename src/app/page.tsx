@@ -2,54 +2,102 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <>
+    <div className="pt-14">
       {/* Hero */}
-      <section className="bg-navy text-white py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
-            A student-built resource for understanding AI in business, school, and professional
-            life.
-          </h1>
-          <p className="mt-4 text-pugh-blue text-lg">Designed and curated by Applied AI.</p>
-        </div>
-      </section>
-
-      {/* CTAs */}
-      <section className="py-12 px-4">
-        <div className="max-w-2xl mx-auto space-y-8 text-center">
+      <section className="max-w-5xl mx-auto px-6 py-14 md:py-20">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-beaver-blue mb-4">
+          Penn State Smeal College of Business
+        </p>
+        <h1 className="text-3xl md:text-[40px] font-display font-bold tracking-tight text-navy leading-[1.15] max-w-2xl">
+          A student-built resource for understanding AI in business, school, and professional life.
+        </h1>
+        <p className="mt-4 text-[15px] text-text-muted">Designed and curated by Applied AI.</p>
+        <div className="mt-8 space-y-5">
           <div>
             <Link
               href="/ai-by-smeal-major"
-              className="inline-block bg-beaver-blue text-white px-8 py-3 rounded-md font-medium hover:bg-navy transition-colors"
+              className="inline-block bg-navy text-white px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-beaver-blue transition-colors"
             >
               Explore the Student AI Hub
             </Link>
-            <p className="mt-3 text-text-muted text-sm max-w-md mx-auto">
+            <p className="mt-2 text-[13px] text-text-muted max-w-md">
               View all topics covered in the Hub, including AI basics, academic and professional
               use, business applications, and ethical considerations.
             </p>
           </div>
-
           <div>
             <Link
               href="/about"
-              className="inline-block border-2 border-beaver-blue text-beaver-blue px-8 py-3 rounded-md font-medium hover:bg-beaver-blue hover:text-white transition-colors"
+              className="inline-block bg-surface text-text px-6 py-2.5 rounded-md text-[13px] font-semibold hover:bg-border/50 transition-colors"
             >
               View the Process
             </Link>
-            <p className="mt-3 text-text-muted text-sm max-w-md mx-auto">
+            <p className="mt-2 text-[13px] text-text-muted max-w-md">
               Learn how the Hub&apos;s content was developed, sourced, and maintained, including its
               academic and ethical foundations.
             </p>
           </div>
-
-          <p className="text-text-muted text-sm italic max-w-lg mx-auto pt-4">
-            The Student AI Hub is maintained as a student-led resource to support foundational
-            understanding and ethical reflection on artificial intelligence in academic and
-            professional contexts.
-          </p>
         </div>
       </section>
-    </>
+
+      {/* Cards */}
+      <section className="bg-surface py-14 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
+          <Link
+            href="/ai-by-smeal-major"
+            className="group bg-white p-6 rounded-lg border border-border hover:border-beaver-blue/40 hover:shadow-sm transition-all"
+          >
+            <h3 className="text-[15px] font-display font-semibold text-navy group-hover:text-beaver-blue transition-colors">
+              AI by Smeal Major
+            </h3>
+            <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              How artificial intelligence is discussed across Smeal majors and business fields.
+            </p>
+            <p className="mt-4 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
+              10 modules
+            </p>
+          </Link>
+          <Link
+            href="/learn"
+            className="group bg-white p-6 rounded-lg border border-border hover:border-beaver-blue/40 hover:shadow-sm transition-all"
+          >
+            <h3 className="text-[15px] font-display font-semibold text-navy group-hover:text-beaver-blue transition-colors">
+              Learn
+            </h3>
+            <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              AI basics, how businesses are using AI, rules, risks, and ethics, and using AI for
+              school and work.
+            </p>
+            <p className="mt-4 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
+              4 sections
+            </p>
+          </Link>
+          <Link
+            href="/ai-news"
+            className="group bg-white p-6 rounded-lg border border-border hover:border-beaver-blue/40 hover:shadow-sm transition-all"
+          >
+            <h3 className="text-[15px] font-display font-semibold text-navy group-hover:text-beaver-blue transition-colors">
+              AI News That Matters
+            </h3>
+            <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+              Impactful news, recent developments, important info. Researched and produced by
+              Applied AI.
+            </p>
+            <p className="mt-4 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
+              Latest
+            </p>
+          </Link>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="max-w-3xl mx-auto px-6 py-14 text-center">
+        <p className="text-[14px] text-text-muted italic leading-relaxed">
+          The Student AI Hub is maintained as a student-led resource to support foundational
+          understanding and ethical reflection on artificial intelligence in academic and
+          professional contexts.
+        </p>
+      </section>
+    </div>
   )
 }
