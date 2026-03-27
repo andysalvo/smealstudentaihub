@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function AINews() {
   return (
     <div className="pt-14">
@@ -16,7 +18,27 @@ export default function AINews() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 py-10 pb-16 space-y-5">
-        <a
+        <Link
+          href="/ai-news/anthropic-injunction"
+          className="group block bg-white p-6 rounded-lg border border-border border-l-4 border-l-beaver-blue hover:shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          <p className="text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
+            March 2026
+          </p>
+          <h2 className="mt-2 text-lg font-display font-semibold text-navy group-hover:text-beaver-blue transition-colors">
+            Anthropic Wins Injunction in Court Battle With Trump Administration
+          </h2>
+          <p className="mt-2 text-[13px] text-text-muted leading-relaxed">
+            A federal judge ruled the government&apos;s supply chain risk designation appears
+            designed to punish Anthropic for refusing to allow unrestricted military use of its
+            Claude AI model.
+          </p>
+          <p className="mt-3 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
+            Read article &rarr;
+          </p>
+        </Link>
+
+        <Link
           href="/ai-news/ami-labs"
           className="group block bg-white p-6 rounded-lg border border-border border-l-4 border-l-pa-sky hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
@@ -33,9 +55,9 @@ export default function AINews() {
           <p className="mt-3 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
             Read article &rarr;
           </p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/ai-news/openclaw"
           className="group block bg-white p-6 rounded-lg border border-border border-l-4 border-l-navy hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
@@ -53,7 +75,7 @@ export default function AINews() {
           <p className="mt-3 text-[11px] font-semibold text-beaver-blue uppercase tracking-wide">
             Read article &rarr;
           </p>
-        </a>
+        </Link>
       </section>
     </div>
   )
