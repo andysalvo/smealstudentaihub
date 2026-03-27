@@ -30,27 +30,27 @@ export default function AnthropicInjunction() {
         <div className="space-y-5 text-[15px] text-text-muted leading-relaxed">
           <p>
             U.S. District Judge Rita Lin granted Anthropic a preliminary injunction on March 26,
-            2026, blocking the Trump administration from enforcing a designation that had effectively
-            banned the company&apos;s Claude AI from all government use. The ruling came after weeks
-            of escalation between the AI company and the Department of Defense over what restrictions
-            should apply to military applications of the technology.
+            2026, blocking the Trump administration from enforcing a designation that had
+            effectively banned the company&apos;s Claude AI from all government use. The ruling came
+            after weeks of escalation between the AI company and the Department of Defense over what
+            restrictions should apply to military applications of the technology.
           </p>
 
           <p>
-            The dispute began in February 2026 during contract negotiations between Anthropic and the
-            Pentagon. Anthropic refused to agree to &quot;all lawful use&quot; contract clauses,
+            The dispute began in February 2026 during contract negotiations between Anthropic and
+            the Pentagon. Anthropic refused to agree to &quot;all lawful use&quot; contract clauses,
             citing safety concerns about two specific applications:{' '}
             <strong className="text-text">fully autonomous weapons without human oversight</strong>{' '}
-            and <strong className="text-text">mass domestic surveillance</strong>. The company argued
-            that Claude had not been adequately tested for those purposes and that removing its safety
-            guardrails in those areas would be irresponsible.
+            and <strong className="text-text">mass domestic surveillance</strong>. The company
+            argued that Claude had not been adequately tested for those purposes and that removing
+            its safety guardrails in those areas would be irresponsible.
           </p>
 
           <p>
             On February 27, Defense Secretary Pete Hegseth designated Anthropic as a &quot;national
             security supply chain risk,&quot; a classification that prohibited the Department of
-            Defense and all government contractors from using the company&apos;s technology. President
-            Trump directed federal agencies to cease Anthropic use the same day.
+            Defense and all government contractors from using the company&apos;s technology.
+            President Trump directed federal agencies to cease Anthropic use the same day.
           </p>
 
           <div className="my-8 p-6 bg-surface-alt rounded-xl border-l-3 border-l-beaver-blue">
@@ -58,9 +58,9 @@ export default function AnthropicInjunction() {
               <strong className="text-navy">What is a supply chain risk designation?</strong> Under
               federal procurement rules, the government can flag companies as risks to the national
               security supply chain. The designation goes beyond simply ending a contract. It bars
-              not just direct government use, but also use by any company that does business with the
-              government. For a technology company, it functions as an effective ban from the entire
-              federal ecosystem.
+              not just direct government use, but also use by any company that does business with
+              the government. For a technology company, it functions as an effective ban from the
+              entire federal ecosystem.
             </p>
           </div>
 
@@ -73,18 +73,18 @@ export default function AnthropicInjunction() {
 
           <p>
             The government countered that the dispute involved &quot;contract negotiations and
-            national security concerns rather than retaliation,&quot; and that officials were worried
-            about Anthropic&apos;s &quot;potential future conduct&quot; if the company retained
-            access to government infrastructure.
+            national security concerns rather than retaliation,&quot; and that officials were
+            worried about Anthropic&apos;s &quot;potential future conduct&quot; if the company
+            retained access to government infrastructure.
           </p>
 
           <p>
             At the March 24 hearing in San Francisco, Judge Lin was skeptical of the
             government&apos;s arguments. She questioned whether Anthropic faced punishment
-            specifically for criticizing the government publicly, and referenced an amicus brief that
-            described the situation as &quot;attempted corporate murder.&quot; &quot;I don&apos;t
-            know if it&apos;s murder,&quot; she said, &quot;but it looks like an attempt to cripple
-            Anthropic.&quot;
+            specifically for criticizing the government publicly, and referenced an amicus brief
+            that described the situation as &quot;attempted corporate murder.&quot; &quot;I
+            don&apos;t know if it&apos;s murder,&quot; she said, &quot;but it looks like an attempt
+            to cripple Anthropic.&quot;
           </p>
 
           <p>
@@ -105,9 +105,9 @@ export default function AnthropicInjunction() {
             safety restrictions into its product and refused to remove them when a government
             customer demanded it. The government responded by attempting to cut the company off from
             the entire federal market. The court ruled that the government cannot use procurement
-            authority to punish companies for their public positions on how their technology should be
-            used. For students entering careers where AI is increasingly present, the question of who
-            decides the boundaries of AI deployment, and what happens when those boundaries are
+            authority to punish companies for their public positions on how their technology should
+            be used. For students entering careers where AI is increasingly present, the question of
+            who decides the boundaries of AI deployment, and what happens when those boundaries are
             contested, is not theoretical.
           </p>
         </div>
@@ -120,7 +120,8 @@ export default function AnthropicInjunction() {
           <ul className="space-y-2">
             {[
               {
-                title: 'Wall Street Journal: Anthropic Wins Injunction in Court Battle With Trump Administration',
+                title:
+                  'Wall Street Journal: Anthropic Wins Injunction in Court Battle With Trump Administration',
                 url: 'https://www.wsj.com/tech/ai/anthropic-wins-injunction-in-court-battle-with-trump-administration-c6b4f8a2',
               },
               {
